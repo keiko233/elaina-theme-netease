@@ -46,6 +46,9 @@ plugin.onLoad(async () => {
   .m-plylist .itm:before {
     color: #ffffff !important;
   }
+  .bg.j-flag.z-show {
+    background: #0000003b !important;
+  }
   
   div.p-recmd.g-recmd.g-wrap5.q-lrc.j-flag .m-banner {
     display: none;
@@ -72,9 +75,8 @@ plugin.onLoad(async () => {
   }
 
   .g-single-bd {
-    height: 0;
+    height: 100%;
   }
-  
   .g-singlec-comment.j-flag {
     display: none;
   }
