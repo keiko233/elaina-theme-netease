@@ -52,6 +52,19 @@ plugin.onLoad(async () => {
   .bg.j-flag.z-show {
     background: #0000003b !important;
   }
+  div.u-arrlay.m-userlist {
+    background-color: #000;
+  }
+  div.u-arrlay.u-arrlay-msg.withNewSongTip {
+    background-color: #000000b5;
+    border-radius: 10px 0 0 10px;
+  }
+  div.u-arrlay.m-schlist.j-flag.j-search-body.z-hashistory.m-schsug {
+    background-color: #000000b5;
+  }
+  .u-playinglocation svg {
+    fill: #000 !important;
+  }
   
   div.p-recmd.g-recmd.g-wrap5.q-lrc.j-flag .m-banner {
     display: none;
