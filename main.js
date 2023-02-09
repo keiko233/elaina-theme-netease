@@ -37,6 +37,9 @@ plugin.onLoad(async () => {
   svg {
     fill: #ffffff !important;
   }
+  .webp {
+    background: #ffffff !important;
+  }
   .m-nav .newlist::before, .m-nav .newlist::after {
     background-color: #ffffff;
   }
