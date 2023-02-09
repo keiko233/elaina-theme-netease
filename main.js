@@ -55,6 +55,30 @@ plugin.onLoad(async () => {
     display: none;
   }
 
+  div.g-singlec .recommend.j-flag {
+    display: none;
+  }
+
+  .g-bd2.j-flag.f-cb {
+    display: none;
+  }
+
+  section.g-single {
+    background-image: url(http://pic.majokeiko.com);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #ffffffad;
+  }
+
+  .g-single-bd {
+    height: 0;
+  }
+  
+  .g-singlec-comment.j-flag {
+    display: none;
+  }
+
   a.u-headtit.f-ff2.f-fwb.f-cb.z-osx-appstore-hide {
     display: none;
   }
