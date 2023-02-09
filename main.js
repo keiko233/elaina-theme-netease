@@ -40,6 +40,12 @@ plugin.onLoad(async () => {
   .m-nav .newlist::before, .m-nav .newlist::after {
     background-color: #ffffff;
   }
+  input.j-flag::placeholder {
+    color: #ffffff !important;
+  }
+  .m-plylist .itm:before {
+    color: #ffffff !important;
+  }
   
   div.p-recmd.g-recmd.g-wrap5.q-lrc.j-flag .m-banner {
     display: none;
