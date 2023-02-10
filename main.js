@@ -152,6 +152,30 @@ plugin.onLoad(async () => {
   ul.sys.firstlist li {
     margin-bottom: 5px;
   }
+
+  .m-fm .fmplay .covers::after,
+  .u-txt,
+  .m-uinfo,
+  .m-timeline .m-dtool {
+    background: none;
+  }
+
+  .m-player, .m-player .spk.z-silence:after {
+    background-color: #00000000;
+  }
+
+  .m-fm .fmplay .btn,
+  .m-fm .fmplay .playbtn {
+    background: #f85f89a3;
+    transition: all 0.3s;
+    border-color: #ff7b9f70;
+  }
+
+  .m-fm .fmplay .btn:hover, .m-fm .fmplay .playbtn:hover {
+    background: #ff7b9f70 !important;
+    border-color: #00000000;
+    box-shadow: 0 0 3px #ffb3d6;
+  }
   `;
   const style = document.createElement("style");
   style.innerHTML = css;
