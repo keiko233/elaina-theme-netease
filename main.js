@@ -65,6 +65,9 @@ plugin.onLoad(async () => {
   .u-playinglocation svg {
     fill: #000 !important;
   }
+  div.m-layer .lyct, div.m-layer, div.m-layer .zcnt {
+    background: #282828;
+  }
   
   div.p-recmd.g-recmd.g-wrap5.q-lrc.j-flag .m-banner {
     display: none;
