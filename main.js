@@ -184,6 +184,11 @@ plugin.onLoad(async () => {
     justify-content: center;
     align-items: center;
     font-size: 16px;
+    bottom: 64px;
+  }
+
+  div.m-queuenotify:before {
+    display: none;
   }
 
   section.g-sd {
