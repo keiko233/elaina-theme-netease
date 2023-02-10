@@ -31,9 +31,6 @@ plugin.onLoad(async () => {
   section.g-mn.g-mn-set.j-flag {
     background-color: #00000000;
   }
-  div#main-player {
-    background-color: #00000000;
-  }
   svg {
     fill: #ffffff !important;
   }
@@ -198,6 +195,11 @@ plugin.onLoad(async () => {
     background-color: #2424243b;
     margin: 10px;
     width: 180px;
+  }
+
+  div#main-player {
+    background-color: #2424243b;
+    border: none;
   }
   `;
   const style = document.createElement("style");
