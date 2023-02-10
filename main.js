@@ -176,6 +176,18 @@ plugin.onLoad(async () => {
     border-color: #00000000;
     box-shadow: 0 0 3px #ffb3d6;
   }
+
+  .u-arrlay, div.u-arrlay {
+    background: #282828;
+    box-shadow: 0 1px 6px 0 rgb(32 32 32 / 88%);
+    border-radius: 25px;
+    height: 48px;
+    width: 192px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+  }
   `;
   const style = document.createElement("style");
   style.innerHTML = css;
