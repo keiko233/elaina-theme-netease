@@ -174,7 +174,7 @@ plugin.onLoad(async () => {
     box-shadow: 0 0 3px #ffb3d6;
   }
 
-  .u-arrlay, div.u-arrlay {
+  .u-arrlay.u-arrlay-dn.m-queuenotify.u-arrlay-opacity {
     background: #282828;
     box-shadow: 0 1px 6px 0 rgb(32 32 32 / 88%);
     border-radius: 25px;
