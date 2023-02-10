@@ -211,6 +211,15 @@ plugin.onLoad(async () => {
   a.col.col-3.s-fc4.src {
     background-color: #ffffff;
   }
+
+  .brtlist.j-brtlist {
+    background: #282828 !important;
+  }
+
+  .m-player .brt .brtlist:before {
+    border-color: #282828 transparent transparent #282828 !important;
+    background-color: #282828 !important;
+  }
   `;
   const style = document.createElement("style");
   style.innerHTML = css;
