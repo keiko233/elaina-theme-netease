@@ -201,6 +201,16 @@ plugin.onLoad(async () => {
     background-color: #2424243b;
     border: none;
   }
+
+  .m-playlist.z-show {
+    background: #282828;
+    border-radius: 24px 24px 0 0;
+    margin: 10px 10px 0 10px;
+  }
+
+  a.col.col-3.s-fc4.src {
+    background-color: #ffffff;
+  }
   `;
   const style = document.createElement("style");
   style.innerHTML = css;
