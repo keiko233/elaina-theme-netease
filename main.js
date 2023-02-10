@@ -110,6 +110,48 @@ plugin.onLoad(async () => {
   .m-myradio.j-recommend-content {
     display: none;
   }
+
+  li.gd.j-flyg a,
+  li.mix.j-flag a,
+  li.rdi.j-flag a,
+  li.cloud.j-flag a,
+  li.xz.j-flag a,
+  li.lke.j-flxg a,
+  li.j-flag.fsection a {
+    border-radius: 25px;
+    transition: all 0.3s;
+  }
+
+  li.j-flag.fsection a {
+    padding-left: 28px;
+  }
+
+  li.gd.j-flyg.z-sel a,
+  li.mix.j-flag.z-sel a,
+  li.rdi.j-flag.z-sel a,
+  li.cloud.j-flag.z-sel a,
+  li.xz.j-flag.z-sel a,
+  li.lke.j-flxg.z-sel a,
+  .m-nav li.z-sel a {
+    background: #f85f89a3;
+    box-shadow: 0 0 3px #ffb3d6;
+  }
+
+  li.gd.j-flyg a:hover,
+  li.mix.j-flag a:hover,
+  li.rdi.j-flag a:hover,
+  li.cloud.j-flag a:hover,
+  li.xz.j-flag a:hover,
+  li.lke.j-flxg a:hover,
+  li.j-flag.fsection a:hover {
+    background: #ff7b9f70;
+  }
+
+  div.j-hostplst ul li,
+  ul#my-music-list li,
+  ul.sys.firstlist li {
+    margin-bottom: 5px;
+  }
   `;
   const style = document.createElement("style");
   style.innerHTML = css;
