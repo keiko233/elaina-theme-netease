@@ -188,6 +188,17 @@ plugin.onLoad(async () => {
     align-items: center;
     font-size: 16px;
   }
+
+  section.g-sd {
+    border: none;
+  }
+
+  .m-nav.m-nav-s {
+    border-radius: 24px;
+    background-color: #2424243b;
+    margin: 10px;
+    width: 180px;
+  }
   `;
   const style = document.createElement("style");
   style.innerHTML = css;
