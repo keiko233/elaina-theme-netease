@@ -315,6 +315,10 @@ plugin.onLoad(async () => {
   li.mv.j-flag.fsection.z-sel {
     display: none;
   }
+
+  .u-select .value {
+    background: none;
+  }
   `;
   const style = document.createElement("style");
   style.innerHTML = css;
