@@ -52,7 +52,7 @@ plugin.onLoad(async () => {
   div.u-arrlay.m-userlist {
     background-color: #000;
   }
-  div.u-arrlay.u-arrlay-msg.withNewSongTip {
+  div.u-arrlay.u-arrlay-msg {
     background-color: #000000b5;
     border-radius: 10px 0 0 10px;
   }
