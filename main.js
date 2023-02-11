@@ -216,7 +216,8 @@ plugin.onLoad(async () => {
   a.col.col-3.s-fc4.src {
     background-color: #ffffff;
   }
-
+  
+  div.u-arrlay.m-schlist.j-flag.j-search-body,
   .brtlist.j-brtlist {
     background: #282828 !important;
   }
@@ -238,6 +239,10 @@ plugin.onLoad(async () => {
   .mq-offline .m-plylist .itm.z-hascache .s-fc1, .m-plylist .itm.z-cloudlocal .s-fc1, .m-plylist .itm.z-hasdown .s-fc1, .m-plylist .itm.z-haslocal .s-fc1, body:not(.mq-offline) .m-plylist .itm.z-hascloud .s-fc1, .m-drank li.z-cloudlocal .s-fc1, .mq-offline .m-tblist .itm.z-hasdown .s-fc1, .mq-offline .m-tblist .itm.z-haslocal .s-fc1, .mq-offline .m-tblist .itm.z-hascache .s-fc1 {
     color: #f85f89 !important;
     text-shadow: 0 0 1px #ad0050;
+  }
+
+  span.heartbeat.f-cp {
+    display: none !important;
   }
   `;
   const style = document.createElement("style");
