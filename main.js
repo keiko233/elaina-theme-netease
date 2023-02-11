@@ -312,7 +312,7 @@ plugin.onLoad(async () => {
     border-radius: 24px 24px 0 0 !important;
   }
 
-  li.mv.j-flag.fsection.z-sel {
+  li.mv.j-flag {
     display: none;
   }
 
