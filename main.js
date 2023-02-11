@@ -335,6 +335,15 @@ plugin.onLoad(async () => {
   span.ply.f-pa.f-cp svg {
     fill: #ad0050 !important;
   }
+
+  .cdbox {
+    background-image: none !important;
+  }
+
+  .cdimg {
+    width: 80% !important;
+    height: 80% !important;
+  }
   `;
   const style = document.createElement("style");
   style.innerHTML = css;
