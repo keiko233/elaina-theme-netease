@@ -323,6 +323,18 @@ plugin.onLoad(async () => {
   .u-cover .lnk {
     border-radius: 0px !important;
   }
+
+  li.j-leftfix {
+    display: none;
+  }
+
+  ul.m-list.m-list-recmd.m-list-flow.f-flex {
+    justify-content: flex-start;
+  }
+
+  span.ply.f-pa.f-cp svg {
+    fill: #ad0050 !important;
+  }
   `;
   const style = document.createElement("style");
   style.innerHTML = css;
