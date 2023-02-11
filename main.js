@@ -319,6 +319,10 @@ plugin.onLoad(async () => {
   .u-select .value {
     background: none;
   }
+
+  .u-cover .lnk {
+    border-radius: 0px !important;
+  }
   `;
   const style = document.createElement("style");
   style.innerHTML = css;
