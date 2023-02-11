@@ -233,7 +233,7 @@ plugin.onLoad(async () => {
   }
 
   .desc {
-    background-color: #282828;
+    background-color: #2424243b;
     height: 48px;
     margin-bottom: 0px !important;
     border-radius: 0 0 24px 24px;
@@ -241,7 +241,7 @@ plugin.onLoad(async () => {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 10px 20px;
+    padding: 10px 14px 0px 14px;
   }
 
   .m-list-recmd li, .m-list-excmv li, .m-list-artist li {
@@ -267,6 +267,37 @@ plugin.onLoad(async () => {
   ul.m-list.m-list-excmv.m-list-excmv-mv.m-list-flow.f-flex,
   a.u-headtit.f-ff2.f-fwb.f-cb {
     display: none;
+  }
+
+  ul.m-tab.j-flag {
+    background-color: #2424243b;
+    padding: 0px 28px;
+    border-radius: 32px;
+  }
+
+  .m-tab li.z-selected a:after {
+    display: none;
+  }
+
+  .m-tab li a {
+    padding: 10px 16px;
+    border-radius: 28px;
+    transition: all 0.3s;
+  }
+
+  .m-tab li a:hover {
+    background: #ff7b9f70 !important;
+  }
+
+  .m-tab li.z-selected a {
+    font-size: 16px;
+    background: #f85f89a3;
+    border-color: #ff7b9f70;
+    box-shadow: 0 0 3px #ffb3d6;
+  }
+
+  .m-tab {
+    width: 488px;
   }
   `;
   const style = document.createElement("style");
