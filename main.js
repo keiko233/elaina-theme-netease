@@ -235,13 +235,18 @@ plugin.onLoad(async () => {
   .desc {
     background-color: #282828;
     height: 48px;
-    margin-bottom: 22px !important;
+    margin-bottom: 0px !important;
     border-radius: 0 0 24px 24px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     padding: 10px 20px;
+  }
+
+  .m-list-recmd li, .m-list-excmv li, .m-list-artist li {
+    width: 25%;
+    padding: 24px 12px;
   }
 
   .u-cover .ci {
