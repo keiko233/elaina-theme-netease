@@ -228,8 +228,20 @@ plugin.onLoad(async () => {
   }
 
   .cvr.u-cover.u-cover-recmd {
-    border-radius: 24px;
+    border-radius: 24px 24px 0 0;
     box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+  }
+
+  .desc {
+    background-color: #282828;
+    height: 48px;
+    margin-bottom: 22px !important;
+    border-radius: 0 0 24px 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px 20px;
   }
 
   .u-cover .ci {
