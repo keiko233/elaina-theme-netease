@@ -261,6 +261,13 @@ plugin.onLoad(async () => {
   span.heartbeat.f-cp {
     display: none !important;
   }
+
+  ul.discover-podcast,
+  ul.m-list.m-list-excmv.m-list-flow.f-flex,
+  ul.m-list.m-list-excmv.m-list-excmv-mv.m-list-flow.f-flex,
+  a.u-headtit.f-ff2.f-fwb.f-cb {
+    display: none;
+  }
   `;
   const style = document.createElement("style");
   style.innerHTML = css;
