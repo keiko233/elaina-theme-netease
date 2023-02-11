@@ -244,9 +244,12 @@ plugin.onLoad(async () => {
     padding: 10px 14px 0px 14px;
   }
 
-  .m-list-recmd li, .m-list-excmv li, .m-list-artist li {
-    width: 25%;
-    padding: 24px 12px;
+  .m-list-radar li,
+  .m-list-recmd li, 
+  .m-list-excmv li, 
+  .m-list-artist li {
+    width: 25% !important;
+    padding: 24px 12px !important;
   }
 
   .u-cover .ci {
@@ -271,8 +274,12 @@ plugin.onLoad(async () => {
 
   ul.m-tab.j-flag {
     background-color: #2424243b;
-    padding: 0px 28px;
+    padding: 0px 12px;
     border-radius: 32px;
+  }
+
+  ul.m-tab.j-flag li {
+    margin-right: 10px;
   }
 
   .m-tab li.z-selected a:after {
@@ -297,7 +304,12 @@ plugin.onLoad(async () => {
   }
 
   .m-tab {
-    width: 488px;
+    width: 543px;
+  }
+
+  .cvr.u-cover.u-cover-list,
+  .m-list-radar li .cvr.cvr.cvr:before, .m-list-radar li .cvr.cvr.cvr .lnk {
+    border-radius: 24px 24px 0 0 !important;
   }
   `;
   const style = document.createElement("style");
