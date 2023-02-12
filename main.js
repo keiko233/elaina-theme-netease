@@ -78,6 +78,7 @@ plugin.onLoad(async () => {
     display: none;
   }
 
+  .mixin-portalified,
   .g-singlec-comment-detail.j-flag,
   .g-bd2.f-cb {
     display: none;
