@@ -278,7 +278,7 @@ plugin.onLoad(async () => {
     padding: 0px 12px;
     border-radius: 32px;
   }
-  
+
   nav.u-tab2.f-cb.f-ff2.j-flag ul.j-flag {
     padding: 0 0 0 12px;
   }
@@ -287,8 +287,13 @@ plugin.onLoad(async () => {
     margin-right: 10px;
   }
 
+  .m-tab li.z-selected a::after,
   .u-tab2 li .z-sel:before {
     content: none;
+  }
+
+  ul.m-tab.m-tab-1.j-flag {
+    width: 280px;
   }
 
   // ul.j-flag li a.j-flxg.z-sel:before,
