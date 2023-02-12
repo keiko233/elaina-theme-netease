@@ -199,11 +199,13 @@ plugin.onLoad(async () => {
     background-color: #ffffff;
   }
   
+  div.brtAndEnvSoundList.j-brtlist,
   div.u-arrlay.m-schlist.j-flag.j-search-body,
   .brtlist.j-brtlist {
     background: #282828 !important;
   }
 
+  div.brtAndEnvSoundList.j-brtlist:before,
   .m-player .brt .brtlist:before {
     border-color: #282828 transparent transparent #282828 !important;
     background-color: #282828 !important;
@@ -302,7 +304,7 @@ plugin.onLoad(async () => {
   }
 
   ul.j-flag li a.j-flxg {
-    padding: 6px 16px !important;
+    padding: 2px 16px !important;
     margin: 8px 10px 8px 0;
     height: 100%;
   }
@@ -370,6 +372,18 @@ plugin.onLoad(async () => {
 
   span.u-tip {
     background-color: #ec4141 !important;
+  }
+
+  a.j-goto.m-newSongTip span {
+    color: #282828 !important;
+  }
+
+  span.j-flag {
+    font-size: 14px !important;
+  }
+
+  .m-player .brt .brtAndEnvSoundList .envSoundList .envSound-item .envSound-switch::after {
+    background-color: #ad0050 !important;
   }
   `;
   const style = document.createElement("style");
