@@ -272,32 +272,52 @@ plugin.onLoad(async () => {
     display: none;
   }
 
+  nav.u-tab2.f-cb.f-ff2.j-flag ul.j-flag,
   ul.m-tab.j-flag {
     background-color: #2424243b;
     padding: 0px 12px;
     border-radius: 32px;
+  }
+  
+  nav.u-tab2.f-cb.f-ff2.j-flag ul.j-flag {
+    padding: 0 0 0 12px;
   }
 
   ul.m-tab.j-flag li {
     margin-right: 10px;
   }
 
+  .u-tab2 li .z-sel:before {
+    content: none;
+  }
+
+  // ul.j-flag li a.j-flxg.z-sel:before,
+  nav.u-tab2.f-cb.f-ff2.j-flag ul.j-flag,
   .m-tab li.z-selected a:after {
     display: none;
   }
 
+  ul.j-flag li a.j-flxg,
   .m-tab li a {
     padding: 10px 16px;
     border-radius: 28px;
     transition: all 0.3s;
   }
 
+  ul.j-flag li a.j-flxg {
+    padding: 6px 16px !important;
+    margin: 8px 10px 8px 0;
+    height: 100%;
+  }
+
+  ul.j-flag li a.j-flxg:hover,
   .m-tab li a:hover {
     background: #ff7b9f70 !important;
   }
 
+  ul.j-flag li a.j-flxg.z-sel,
   .m-tab li.z-selected a {
-    font-size: 16px;
+    font-size: 14px;
     background: #f85f89a3;
     border-color: #ff7b9f70;
     box-shadow: 0 0 3px #ffb3d6;
