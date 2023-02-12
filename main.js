@@ -78,7 +78,8 @@ plugin.onLoad(async () => {
     display: none;
   }
 
-  .g-bd2.j-flag.f-cb {
+  .g-singlec-comment-detail.j-flag,
+  .g-bd2.f-cb {
     display: none;
   }
 
