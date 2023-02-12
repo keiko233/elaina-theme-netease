@@ -102,7 +102,7 @@ plugin.onLoad(async () => {
   }
 
   li.j-flag.fsection a {
-    padding-left: 28px;
+    padding-left: 32px;
   }
 
   li.gd.j-flyg.z-sel a,
@@ -180,7 +180,7 @@ plugin.onLoad(async () => {
   .m-nav.m-nav-s {
     border-radius: 24px;
     background-color: #2424243b;
-    margin: 10px;
+    margin: 0 10px 10px 10px;
     width: 180px;
   }
 
@@ -366,6 +366,10 @@ plugin.onLoad(async () => {
   .cdimg {
     width: 80% !important;
     height: 80% !important;
+  }
+
+  span.u-tip {
+    background-color: #ec4141 !important;
   }
   `;
   const style = document.createElement("style");
