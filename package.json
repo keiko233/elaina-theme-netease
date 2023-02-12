@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "node build.js && vite build && node build.js delete",
     "preview": "vite preview"
   },
   "dependencies": {
