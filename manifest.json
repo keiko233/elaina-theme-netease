@@ -7,7 +7,7 @@
   "author": "keiko233",
   "author_link": "https://majokeiko.com",
   "description": "Elaina Theme",
-  "preview": "preview.png",
+  "preview": "./assets/screenshot01.png",
   "type": "theme",
   "injects": {
     "Main": [
