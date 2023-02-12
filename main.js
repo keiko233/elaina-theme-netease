@@ -40,10 +40,9 @@ plugin.onLoad(async () => {
   .m-nav .newlist::before, .m-nav .newlist::after {
     background-color: #ffffff;
   }
+
+  .m-plylist .itm:before,
   input.j-flag::placeholder {
-    color: #ffffff !important;
-  }
-  .m-plylist .itm:before {
     color: #ffffff !important;
   }
   .bg.j-flag.z-show {
@@ -66,18 +65,13 @@ plugin.onLoad(async () => {
     background: #282828;
   }
   
-  div.p-recmd.g-recmd.g-wrap5.q-lrc.j-flag .m-banner {
-    display: none;
-  }
-
-  div.p-recmd.g-recmd.g-wrap5.q-lrc.j-flag ul.m-list.m-list-recmd.m-list-recmd-live.m-list-flow.f-flex.f-oh {
-    display: none;
-  }
-
-  div.g-singlec .recommend.j-flag {
-    display: none;
-  }
-
+  li#n-side-look,
+  a.u-headtit.f-ff2.f-fwb.f-cb.z-osx-appstore-hide,
+  div.p-recmd.g-recmd.g-wrap5.q-lrc.j-flag .m-banner,
+  div.p-recmd.g-recmd.g-wrap5.q-lrc.j-flag ul.m-list.m-list-recmd.m-list-recmd-live.m-list-flow.f-flex.f-oh,
+  div.g-singlec .recommend.j-flag,
+  .m-myradio.j-recommend-content,
+  .g-singlec-comment.j-flag,
   .mixin-portalified,
   .g-singlec-comment-detail.j-flag,
   .g-bd2.f-cb {
@@ -94,20 +88,6 @@ plugin.onLoad(async () => {
 
   .g-single-bd {
     height: 100%;
-  }
-  .g-singlec-comment.j-flag {
-    display: none;
-  }
-
-  a.u-headtit.f-ff2.f-fwb.f-cb.z-osx-appstore-hide {
-    display: none;
-  }
-
-  li#n-side-look {
-    display: none;
-  }
-  .m-myradio.j-recommend-content {
-    display: none;
   }
 
   li.gd.j-flyg a,
