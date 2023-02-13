@@ -28,9 +28,9 @@ jobs:
             - recursive: true
               args: [--frozen-lockfile, --strict-peer-dependencies]
   
-      - name: Build vite
+      - name: Build repo
         run: |
-          pnpm vite build
+          pnpm build
         env:
           CI: true
       
