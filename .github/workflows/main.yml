@@ -49,7 +49,7 @@ jobs:
           git checkout -b dist
           git add .
           git commit -m "Update dist"
-          git push -f https://${{ secrets.GH_TOKEN }}@github.com/keiko233/elaina-theme-netease.git
+          git push -f --set-upstream https://${{ secrets.GH_TOKEN }}@github.com/keiko233/elaina-theme-netease.git
 
   test:
     name: Run tests on NCM ${{matrix.ncm-downloads}}
