@@ -43,8 +43,8 @@ jobs:
       - name: Commit and push files
         run: |
           cd dist
-          git config --local user.email "keiko23333@gmail.com"
-          git config --local user.name "keiko233"
+          git config --global user.email "keiko23333@gmail.com"
+          git config --global user.name "keiko233"
           git init
           git checkout -b dist
           git add .
