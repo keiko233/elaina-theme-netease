@@ -9,6 +9,7 @@ on:
 jobs:
   test:
     name: Run tests on NCM ${{matrix.ncm-downloads}}
+    needs: build
     runs-on: windows-latest
     strategy:
       max-parallel: 4
