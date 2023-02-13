@@ -56,7 +56,7 @@ jobs:
       - uses: actions/download-artifact@v3
         name: Download Artifact
         with:
-          name: Upload Artifact
+          name: dist-${{ github.sha }}
 
       - name: Copy plugin to plugins_dev
         shell: pwsh
