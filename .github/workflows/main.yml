@@ -11,19 +11,29 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ !contains(github.event.pull_request.title, '[skip ci]') }}
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
         with:
-          node-version: "19"
-          cache: "pnpm"
-      - name: Pnpm
-        run: |
-          pnpm --frozen-lockfile
-      - name: Build
+          node-version: 19
+
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        id: pnpm-install
+        with:
+          version: 7
+          run_install: |
+            - recursive: true
+              args: [--frozen-lockfile, --strict-peer-dependencies]
+  
+      - name: Build vite
         run: |
           pnpm vite build
         env:
           CI: true
+      
       - uses: actions/upload-artifact@v3
         with:
           name: dist
