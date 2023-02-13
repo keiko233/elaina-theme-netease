@@ -35,7 +35,8 @@ jobs:
           CI: true
       
       - uses: actions/upload-artifact@v3
+        name: Upload Artifact
         with:
-          name: dist
+          name: dist-${{ github.sha }}
           path: ./dist/
       
