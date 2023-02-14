@@ -16,7 +16,7 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: none;
+  background: none !important;
 }
 
 html {
@@ -36,5 +36,28 @@ svg {
 }
 
 .m-mask {
+  background-color: var(--background-overlay);
+}
+
+.g-setHd,
+.g-sd-set,
+.g-mn-set {
+  background: none;
+}
+
+.g-mn-set {
+  top: 140px;
+}
+
+.u-select {
+  .select,
+  .sltwrap,
+  .value {
+    background-color: var(--background-overlay);
+  }
+}
+
+.u-txt {
+  border-radius: var(--border-raduis);
   background-color: var(--background-overlay);
 }

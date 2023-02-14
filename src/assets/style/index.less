@@ -143,10 +143,46 @@ div.u-arrlay {
 
 div.m-layer {
   background-color: var(--background-black);
-  
+
   .z-bar,
   .lyct,
   .zcnt {
     background-color: var(--background-black);
+  }
+}
+
+div.j-flag.u-tab2.u-settab {
+  background-color: var(--background-overlay);
+  height: 54px;
+  padding: 0px 12px;
+  border-radius: 32px;
+
+  li {
+    padding: 10px 0;
+
+    a {
+      font-size: 16px;
+      padding: 8px 12px;
+      margin: 0;
+      height: auto;
+      line-height: inherit;
+      border-radius: var(--border-raduis);
+      transition: all 0.3s;
+    }
+
+    a:hover {
+      background: var(--select-color);
+      box-shadow: 0 0 1px #ffffff;
+    }
+
+    a.z-sel {
+      font-size: 16px;
+      background: var(--theme-primary);
+      box-shadow: var(--theme-primary-shadow);
+    }
+
+    a.z-sel:before {
+      content: none;
+    }
   }
 }
