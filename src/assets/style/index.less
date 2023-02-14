@@ -20,20 +20,20 @@ section.g-sd {
 section.g-sd::before {
   content: '';
   position: absolute;
-  height: 24px;
-  width: 24px;
+  height: var(--border-raduis);
+  width: var(--border-raduis);
   left: 200px;
-  background: radial-gradient(48px at right bottom,transparent 50%,var(--background-overlay)50%);
+  background: radial-gradient(calc(var(--border-raduis) * 2) at right bottom,transparent 50%,var(--background-overlay)50%);
 }
 
 section.g-sd::after {
   content: '';
   position: absolute;
-  height: 24px;
-  width: 24px;
+  height: var(--border-raduis);
+  width: var(--border-raduis);
   left: 200px;
-  background: radial-gradient(48px at right top,transparent 50%,var(--background-overlay)50%);
-  top: calc(100% - 24px);
+  background: radial-gradient(calc(var(--border-raduis) * 2) at right top,transparent 50%,var(--background-overlay)50%);
+  top: calc(100% - var(--border-raduis));
 }
 
 .m-tabwrap {
