@@ -79,6 +79,7 @@ ul.m-tab.j-flag {
       border-radius: var(--border-raduis);
       transition: all 0.3s;
     }
+
     a:hover {
       background: var(--select-color);
       box-shadow: 0 0 1px #ffffff;
@@ -98,4 +99,29 @@ section.g-mn.one.z-tab-scroll {
 
 .g-recmdwrap {
   margin-top: 98px;
+}
+
+section.g-sd {
+  nav.m-nav.m-nav-s {
+    li.j-flxg,
+    li.j-flag {
+      a {
+        font-size: 16px;
+        border-radius: var(--border-raduis);
+        transition: all 0.3s;
+      }
+
+      a:hover {
+        background: var(--select-color);
+        box-shadow: 0 0 1px #ffffff;
+      }
+    }
+
+    li.j-flxg.z-sel a,
+    li.j-flag.z-sel a {
+      font-size: 16px;
+      background: var(--theme-primary);
+      box-shadow: var(--theme-primary-shadow);
+    }
+  }
 }
