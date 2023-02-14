@@ -1,0 +1,41 @@
+@import "./root.less";
+
+body#music-163-com {
+  backdrop-filter: blur(5px);
+  background: var(--gradient-bg);
+}
+
+header.g-hd.s-theme-bgc1,
+section.g-sd,
+div#main-player {
+  background-color: var(--background-overlay);
+  border: none;
+}
+
+section.g-sd {
+  width: 200px;
+  bottom: 72px;
+}
+
+section.g-sd::before {
+  content: '';
+  position: absolute;
+  height: 24px;
+  width: 24px;
+  left: 200px;
+  background: radial-gradient(48px at right bottom,transparent 50%,var(--background-overlay)50%);
+}
+
+section.g-sd::after {
+  content: '';
+  position: absolute;
+  height: 24px;
+  width: 24px;
+  left: 200px;
+  background: radial-gradient(48px at right top,transparent 50%,var(--background-overlay)50%);
+  top: calc(100% - 24px);
+}
+
+.m-tabwrap {
+  background: none;
+}
