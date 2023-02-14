@@ -45,6 +45,7 @@ section.g-sd::after {
 
 .m-tabwrap {
   background: none;
+  padding: 24px 30px;
 }
 
 section.g-single {
@@ -61,5 +62,32 @@ section.g-single {
     .bg.j-flag.z-show {
       background: #331a1540 !important;
     }
+  }
+}
+
+ul.m-tab.j-flag {
+  width: 46%;
+  height: auto;
+  padding: 8px;
+  background-color: var(--background-overlay);
+  border-radius: var(--border-raduis);
+
+  li {
+    a {
+      font-size: 16px;
+      padding: 8px 12px;
+      border-radius: var(--border-raduis);
+      transition: all 0.3s;
+    }
+    a:hover {
+      background: #ff7b9f70 !important;
+    }
+  }
+
+  li.z-selected a {
+    font-size: 16px;
+    background: #f85f89a3;
+    border-color: #ff7b9f70;
+    box-shadow: 0 0 3px #ffb3d6;
   }
 }
