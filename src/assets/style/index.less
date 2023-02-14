@@ -6,6 +6,12 @@ body#music-163-com {
   background: var(--gradient-bg);
 }
 
+body.mq-playing {
+  header.g-hd.s-theme-bgc1 {
+    background: none;
+  }
+}
+
 header.g-hd.s-theme-bgc1,
 section.g-sd,
 div#main-player {
@@ -24,7 +30,7 @@ section.g-sd::before {
   height: var(--border-raduis);
   width: var(--border-raduis);
   left: 200px;
-  background: radial-gradient(calc(var(--border-raduis) * 2) at right bottom,transparent 50%,var(--background-overlay)50%);
+  background: radial-gradient(calc(var(--border-raduis) * 2) at right bottom, transparent 50%, var(--background-overlay)50%);
 }
 
 section.g-sd::after {
@@ -33,7 +39,7 @@ section.g-sd::after {
   height: var(--border-raduis);
   width: var(--border-raduis);
   left: 200px;
-  background: radial-gradient(calc(var(--border-raduis) * 2) at right top,transparent 50%,var(--background-overlay)50%);
+  background: radial-gradient(calc(var(--border-raduis) * 2) at right top, transparent 50%, var(--background-overlay)50%);
   top: calc(100% - var(--border-raduis));
 }
 
@@ -47,4 +53,12 @@ section.g-single {
   background-position: center;
   background-repeat: no-repeat;
   background-color: #ff6b4a2e;
+
+  .g-single-bd {
+    height: 100%;
+
+    .bg.j-flag.z-show {
+      background: #0000003b !important;
+    }
+  }
 }
