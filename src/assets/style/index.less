@@ -18,6 +18,18 @@ section.g-sd,
 div#main-player {
   background-color: var(--background-overlay);
   border: none;
+
+  div.brtAndEnvSoundList.j-brtlist:before,
+  .m-player .brt .brtlist:before {
+    border-color: var(--background-black) transparent transparent var(--background-black) !important;
+    background-color: var(--background-black) !important;
+  }
+
+  div.brtAndEnvSoundList.j-brtlist,
+  div.u-arrlay.m-schlist.j-flag.j-search-body,
+  .brtlist.j-brtlist {
+    background: var(--background-black) !important;
+  }
 }
 
 section.g-sd {
@@ -294,5 +306,16 @@ nav.u-tab2.f-cb.f-ff2.j-flag {
         content: none;
       }
     }
+  }
+}
+
+.m-playlist {
+  top: auto !important;
+  height: 500px;
+  background-color: var(--background-black);
+  border-radius: var(--border-raduis) var(--border-raduis) 0 0;
+
+  .src {
+    background-color: #ffffff;
   }
 }
