@@ -28,12 +28,9 @@ function touchManifest() {
 }
 
 switch (process.argv[2]) {
-  case "delete":
+  default:
     touchManifest();
     deleteFile("manifest.json");
-    deleteFile("public/preview.png");
-    break;
-  default:
-    copyFile("preview.png", "public");
+    copyFile("preview.png", "dist");
     break;
 }
