@@ -30,7 +30,6 @@ function touchManifest() {
 switch (process.argv[2]) {
   default:
     touchManifest();
-    deleteFile("manifest.json");
     copyFile("preview.png", "dist");
     break;
 }
