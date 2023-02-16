@@ -6,22 +6,30 @@ plugin.onLoad(async () => {
 	}
 });
 
-plugin.onConfig((tools) => {
-	console.log(tools);
-	return dom(
-		"div",
-		{},
-		dom(
-			"div",
-			{},
-			tools.makeBtn(
-				"GitHub",
-				() =>
-					betterncm.ncm.openUrl(
-						"https://github.com/keiko233/elaina-theme-netease"
-					),
-				false
-			)
-		)
-	);
+plugin.onConfig(() => {
+	const createElement = document.createElement('div');
+
+	const title = createElement.appendChild(document.createElement('div'));
+	title.style = 'font-size: 36px; padding-bottom: 36px;';
+	title.innerHTML = 'Elaina Theme';
+
+	const gitHubBtn = createElement.appendChild(document.createElement('div'));
+	gitHubBtn.className = "elaina-btn";
+	gitHubBtn.innerHTML = '<a>前往 GitHub</a>';
+	gitHubBtn.addEventListener('click', () => {
+		betterncm.ncm.openUrl("https://github.com/keiko233/elaina-theme-netease");
+	});
+
+	return createElement;
+});
+
+betterncm.utils.waitForElement('.g-mn').then(() => {
+	const pluginConfig = document.createElement('li');
+	pluginConfig.className = 'fx j-flag fsection pluginConfig';
+	pluginConfig.appendChild(document.createElement('a')).innerHTML = 'ElainaTheme';
+	pluginConfig.addEventListener('click', () => {
+		betterncm.ncm.openUrl("https://github.com/keiko233/elaina-theme-netease");
+	});
+
+	document.querySelector('.firstlist').appendChild(pluginConfig);
 });
