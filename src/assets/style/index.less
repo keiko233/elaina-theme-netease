@@ -1,6 +1,7 @@
 @import "./root.less";
 @import "./disable.less";
 @import "./skin.less";
+@import "./theme/components.less";
 
 body#music-163-com {
   backdrop-filter: blur(5px);
@@ -151,6 +152,10 @@ section.g-sd {
       font-size: 16px;
       background: var(--theme-primary);
       box-shadow: var(--theme-primary-shadow);
+    }
+
+    li.fsection a {
+      padding: 0px 10px 0px 30px;
     }
   }
 }
@@ -344,7 +349,7 @@ nav.u-tab2.f-cb.f-ff2.j-flag {
 
 span.playbtn.f-pa.j-flag {
   background: none;
-  
+
   svg.play {
     fill: var(--theme-primary) !important;
   }
@@ -360,4 +365,52 @@ span.playbtn.f-pa.j-flag {
 
 .m-tool .u-tip {
   background: none;
+}
+
+ul.m-list.m-list-radar.m-list-radar-single.m-list-flow {
+  width: calc(200% + 420px) !important;
+}
+
+ul.m-list.m-list-recmd,
+ul.m-list.m-list-radar {
+  .cvr.u-cover.u-cover-list {
+    border-radius: var(--border-raduis) var(--border-raduis) 0 0 !important;
+
+    span.ply.f-pa.f-cp {
+      background: none;
+    }
+
+    img.real {
+      border-radius: var(--border-raduis) var(--border-raduis) 0 0;
+    }
+
+    .ci.f-pa {
+      padding: calc(var(--border-raduis) / 2);
+    }
+
+    a {
+      border-radius: var(--border-raduis) var(--border-raduis) 0 0 !important;
+    }
+  }
+
+  .desc {
+    background-color: #2424243b;
+    height: 48px;
+    margin-bottom: 0px !important;
+    border-radius: 0 0 var(--border-raduis) var(--border-raduis);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px 14px;
+
+    h3 {
+      padding: 0;
+
+      b {
+        font-size: 14px !important;
+        font-weight: 700 !important;
+      }
+    }
+  }
 }

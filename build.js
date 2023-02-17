@@ -2,6 +2,8 @@ import { createRequire } from 'module';
 const require = createRequire(import.meta.url);
 const fs = require('fs');
 
+const packageJson = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
+
 function copyFile(filePath, copyPath) {
   fs.copyFile("./" + filePath, "./" + copyPath + "/" + filePath, function (err) {
     if (err) console.error("\x1B[31mCopy " + filePath + " file err\x1B[0m\n" + err);
@@ -16,26 +18,18 @@ function deleteFile(filePath) {
   });
 }
 
-const fileList = [
-  {
-    from: "manifest.json",
-    to: "public"
-  },
-  {
-    from: "preview.png",
-    to: "public"
-  }
-]
+function touchManifest() {
+  const manifest = packageJson.ncm;
+  manifest.version = packageJson.version;
+  fs.writeFile('./dist/manifest.json', (JSON.stringify(manifest)), err => {
+    if (err) console.error(err);
+    else console.log("\x1B[32mmanifest.json created successfully.\x1B[0m");
+  });
+}
 
 switch (process.argv[2]) {
-  case "delete":
-    for (var i = 0; i < fileList.length; i++) {
-      deleteFile(fileList[i].to + "/" + fileList[i].from);
-    }
-    break;
   default:
-    for (var i = 0; i < fileList.length; i++) {
-      copyFile(fileList[i].from, fileList[i].to);
-    }
+    touchManifest();
+    copyFile("preview.png", "dist");
     break;
 }
