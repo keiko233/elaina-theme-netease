@@ -47,3 +47,4 @@ jobs:
           token: ${{ secrets.ACCESS_TOKEN }}
           branch: dist
           force: true
+          commit-message: Update dist
