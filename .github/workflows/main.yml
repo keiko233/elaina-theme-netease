@@ -40,13 +40,9 @@ jobs:
           name: output-dist
           path: ./dist/
 
-      - name: Push to dist
-        run: |
-          cd dist
-          git config --global user.name 'keiko233'
-          git config --global user.email 'keiko23333@gmail.com'
-          git init
-          git checkout -b dist
-          git add .
-          git commit -m "Update dist"
-          git push -f --set-upstream https://github.com/keiko233/elaina-theme-netease.git dist
+      - name: Push dist
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist
+          token: ${{ secrets.ACCESS_TOKEN }}
+          branch: dist
