@@ -43,6 +43,7 @@ jobs:
       - name: Push dist
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: dist
+          folder: ./dist
           token: ${{ secrets.ACCESS_TOKEN }}
+          repository-name: keiko233/elaina-theme-netease
           branch: dist
