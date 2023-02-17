@@ -40,11 +40,8 @@ jobs:
           name: output-dist
           path: ./dist/
 
-      - name: Push dist
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: Deploy dist
+        uses: JamesIves/github-pages-deploy-action@v4.3.3
         with:
-          folder: ./dist
-          token: ${{ secrets.ACCESS_TOKEN }}
           branch: dist
-          force: true
-          commit-message: Update dist
+          folder: dist
