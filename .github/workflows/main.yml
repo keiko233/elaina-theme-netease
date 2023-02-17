@@ -45,5 +45,5 @@ jobs:
         with:
           folder: ./dist
           token: ${{ secrets.ACCESS_TOKEN }}
-          repository-name: keiko233/elaina-theme-netease
           branch: dist
+          force: true
