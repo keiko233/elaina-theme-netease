@@ -541,3 +541,32 @@ ul.m-list.m-list-radar {
     .common-desc();
   }
 }
+
+nav.u-tab2.f-ff2.f-cb {
+  ul:nth-child(1) {
+    background-color: var(--background-overlay);
+    height: 54px;
+    padding: 0px 12px;
+    border-radius: 32px;
+
+    li {
+      padding: 10px 0;
+
+      a {
+        padding: 2px 12px;
+        margin: 0;
+        height: auto;
+      }
+
+      .common-tab-li();
+
+      a.z-sel {
+        .common-tab-li-selected();
+      }
+
+      a.z-sel:before {
+        content: none;
+      }
+    }
+  }
+}
