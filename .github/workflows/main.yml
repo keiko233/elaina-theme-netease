@@ -8,6 +8,9 @@ on:
     branches:
       - dev
       - master
+  pull_request_target:
+    branches:
+      - master
 
 permissions:
   contents: write
