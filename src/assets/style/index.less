@@ -129,7 +129,7 @@ div.g-singlec {
 
   .g-singlec-ct.j-fflag {
     .m-comment.m-comment-play {
-      ul.hotcmt.j-flag {
+      ul.j-flag {
         li.citm.f-cb {
           background-color: var(--background-overlay);
           padding: var(--border-raduis);
@@ -392,6 +392,45 @@ nav.u-tab2.f-cb.f-ff2.j-flag {
 .m-player {
   background-color: var(--background-overlay);
   border: none;
+
+  .prg.prg-ply.jj-flag {
+    padding: 2px 0 !important;
+    top: 49px !important;
+
+    span.has,
+    span.download.j-flag,
+    span.track.j-flag {
+      height: 10px !important;
+      border-radius: 5px !important;
+    }
+
+    span.download.j-flag {
+      top: 2px !important;
+    }
+
+    span.track.j-flag {
+      padding: 0 !important;
+      top: 2px !important;
+      background: rgba(0, 0, 0, 0.1) !important;
+    }
+
+    span.has {
+      background: var(--theme-primary-notransparency) !important;
+
+      .ctrl.j-flag::before {
+        height: 10px !important;
+        width: 10px !important;
+        top: 8px !important;
+        left: 0px !important;
+        background: var(--theme-primary) !important;
+      }
+    }
+
+    span.has:hover {
+      height: 10px !important;
+      border-radius: 5px !important;
+    }
+  }
 }
 
 .m-player.z-shadow {
