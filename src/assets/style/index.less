@@ -76,7 +76,7 @@ section.g-single {
 
 div.g-singlec {
   .sd.j-flag {
-    margin: 100px 0 90px 0 !important;
+    margin: 84px 0 !important;
 
     .cdbg {
       display: none;
@@ -127,6 +127,19 @@ div.g-singlec {
     }
   }
 
+  .g-singlec-ct.j-fflag {
+    .m-comment.m-comment-play {
+      ul.j-flag {
+        li.citm.f-cb {
+          background-color: var(--background-overlay);
+          padding: var(--border-raduis);
+          margin: 10px 0;
+          border-radius: var(--border-raduis);
+        }
+      }
+    }
+  }
+
   .mn.j-flag {
     width: 60% !important;
 
@@ -135,10 +148,11 @@ div.g-singlec {
     }
 
     .lyric.j-flag.m-universal-react-container-parent {
-      width: 470px;
+      width: 520px;
 
       .j-line {
         padding-left: 36px;
+        transition: all 0.3s;
 
         p,
         p:nth-child(1),
@@ -165,7 +179,11 @@ div.g-singlec {
       .cnt.m-playlrc.mixin-portalified {
         article.word.on-track-detail {
           div.j-flag.text {
-            padding: 0 0 0 30px !important;
+            padding: 0 10px 0 30px !important;
+          }
+
+          .side-operators {
+            right: 32px;
           }
         }
       }
@@ -173,7 +191,15 @@ div.g-singlec {
   }
 
   .g-mn2.j-flag {
-    padding-bottom: 52px;
+    padding-bottom: 84px;
+  }
+
+  .g-singlec-comment-detail.j-flag.z-show {
+    bottom: 96px;
+  }
+
+  .g-singlec-comment-top.j-flag.z-show {
+    bottom: 84px;
   }
 }
 
@@ -366,6 +392,41 @@ nav.u-tab2.f-cb.f-ff2.j-flag {
 .m-player {
   background-color: var(--background-overlay);
   border: none;
+
+  .prg.prg-ply.jj-flag {
+    padding: 2px 0 !important;
+    top: 49px !important;
+
+    span.has,
+    span.download.j-flag,
+    span.track.j-flag {
+      height: 10px !important;
+      border-radius: 5px !important;
+    }
+
+    span.download.j-flag {
+      top: 2px !important;
+    }
+
+    span.track.j-flag {
+      padding: 0 !important;
+      top: 2px !important;
+      background: rgba(0, 0, 0, 0.1) !important;
+    }
+
+    span.has {
+      background: var(--theme-primary-notransparency) !important;
+
+      .ctrl.j-flag::before {
+        content: none !important;
+      }
+    }
+
+    span.has:hover {
+      height: 10px !important;
+      border-radius: 5px !important;
+    }
+  }
 }
 
 .m-player.z-shadow {
