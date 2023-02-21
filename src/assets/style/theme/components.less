@@ -123,3 +123,16 @@
     }
   }
 }
+
+.elaina-animation {
+  opacity: 0;
+  -webkit-transform: translate3d(0, 100%, 0);
+  -webkit-transform-origin: 0 100%;
+  -webkit-transition: opacity 0.2s linear, -webkit-transform 0.2s ease-out;
+}
+
+.elaina-animation-show {
+  opacity: 1;
+  -webkit-transform: none;
+  -webkit-transition: all 0.3s ease-out;
+}
