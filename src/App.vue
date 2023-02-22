@@ -4,7 +4,7 @@
   <div class="config-card">
     <h3>播放界面歌曲名显示</h3>
     <p>开启效果很不错，默认不开启，防止与其他插件发生不兼容情况。</p>
-    <n-switch v-model:value="songNameSwitchStaus" @update:value="songNameSwitch">
+    <n-switch v-model:value="songNameSwitchStaus" @update:value="songNameSwitch" size="large">
       <template #checked>
         歌名显示在顶部栏
       </template>
