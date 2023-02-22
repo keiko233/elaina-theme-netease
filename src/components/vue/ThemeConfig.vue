@@ -45,38 +45,12 @@ const toGitHub = () => {
 const songNameStatus = ref(JSON.parse(localStorage.getItem('enableSongNameOnTop')))
 
 const songNameOnTop = (value) => {
-  const style = document.createElement("style");
-  style.id = 'song-name-on-top';
-  style.innerHTML = `
-  div#id-single .g-singlec-hd.j-flag .wrap.j-flag{
-    opacity: 1;
-  }
-
-  div#id-single .g-singlec-ct.j-fflag {
-    top: 60px !important;
-  }
-  
-  div#id-single .g-singlec-ct.j-fflag .n-single {
-    margin-top: 0 !important;
-  }
-  
-  div#id-single .g-singlec-ct.j-fflag .n-single .wrap .content .sd.j-flag {
-    margin: 84px 0 !important;
-  }
-
-  div#id-single .g-singlec-ct.j-fflag .n-single .wrap .content .elaina-song-info .head.j-fflag .inf.j-flag .title {
-    display: none !important;
-  }
-
-  div#id-single .g-singlec-ct.j-fflag .n-single .wrap .content .mn.j-flag {
-    height: 490px !important;
-  }
-  `;
+  const header = document.getElementById('music-163-com');
 
   if (value) {
-    document.head.appendChild(style);
+    header.classList.add('song-name-on-top');
   } else {
-    document.head.removeChild(document.getElementById('song-name-on-top'));
+    header.classList.remove('song-name-on-top');
   }
 }
 
