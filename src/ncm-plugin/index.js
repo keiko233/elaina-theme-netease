@@ -39,21 +39,11 @@ if (isNCMClient()) {
 
   plugin.onConfig(() => {
     const createContainer = document.createElement('div');
-    createContainer.className = 'elaina-container-row';
-
     const createElement = createContainer.appendChild(document.createElement('div'));
-    createElement.className = 'elaina-container-column';
+    createElement.className = 'elaina-container-row';
 
     const vueLoader = createElement.appendChild(document.createElement('div'));
     createApp(h(ThemeConfig)).mount(vueLoader);
-
-    const createElaina = createContainer.appendChild(document.createElement('div'));
-    createElaina.className = 'elaina-pic';
-    const elainaDialog = createElaina.appendChild(document.createElement('div'));
-    elainaDialog.className = 'elaina-dialog';
-    elainaDialog.innerHTML = '<p>Aya: 1145141919810</p>';
-    const elainaPic = createElaina.appendChild(document.createElement('div'));
-    elainaPic.className = 'img';
 
     return createContainer;
   });
