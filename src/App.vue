@@ -4,7 +4,7 @@
   <div class="config-card">
     <h3>播放界面歌曲名显示</h3>
     <p>开启效果很不错，默认不开启，防止与其他插件发生不兼容情况。</p>
-    <n-switch v-model:value="songNameSwitchStaus" @update:value="songNameSwitch" size="large">
+    <n-switch v-model:value="songNameStatus" @update:value="songNameSwitch" size="large">
       <template #checked>
         歌名显示在顶部栏
       </template>
@@ -26,12 +26,10 @@
 </template>
 
 <script setup>
-import { ref, reactive } from "vue"
+import { ref, reactive, onMounted } from "vue"
 import isNCMClient from "./components/js/ClientCheck.js"
 import packageJson from "../package.json"
 import { NSwitch } from 'naive-ui'
-
-const songNameSwitchStaus = ref(false)
 
 const toGitHub = () => {
   const url = 'https://github.com/keiko233/elaina-theme-netease';
@@ -42,7 +40,9 @@ const toGitHub = () => {
   }
 }
 
-const songNameSwitch = (value) => {
+const songNameStatus = ref(JSON.parse(localStorage.getItem('enableSongNameOnTop')))
+
+const songNameOnTop = (value) => {
   const style = document.createElement("style");
   style.id = 'song-name-on-top';
   style.innerHTML = `
@@ -77,6 +77,18 @@ const songNameSwitch = (value) => {
     document.head.removeChild(document.getElementById('song-name-on-top'));
   }
 }
+
+const songNameSwitch = (value) => {
+  localStorage.setItem('enableSongNameOnTop', value);
+  songNameOnTop(value);
+}
+
+onMounted(() => {
+  console.log("onMounted");
+  if (songNameStatus.value == true) {
+    songNameOnTop(true);
+  }
+})
 </script>
 
 <style lang="less" scoped>
