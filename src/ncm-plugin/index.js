@@ -1,9 +1,8 @@
 import { createApp, h } from 'vue'
 import App from '../App.vue'
+import isNCMClient from "../components/js/ClientCheck.js"
 
-if (/NeteaseMusicDesktop/i.test(navigator.userAgent)) {
-  console.log("NeteaseMusicDesktop, load JS Plugin");
-
+if (isNCMClient()) {
   plugin.onLoad(async () => {
     window.onload = async function () {
       document.querySelector(".m-logo").querySelector("a").innerHTML = `
@@ -59,6 +58,4 @@ if (/NeteaseMusicDesktop/i.test(navigator.userAgent)) {
     return createContainer;
   });
 
-} else {
-  console.log("Not NeteaseMusicDesktop, unload JS Plugin.");
 };
