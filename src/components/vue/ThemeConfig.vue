@@ -1,11 +1,11 @@
 <template>
   <n-config-provider :theme="darkTheme">
-    <div class="title">Elaina Theme Config</div>
+    <div class="config-title">Elaina Theme Config</div>
 
     <PlayerStyle />
     <PlayerSongName />
 
-    <div class="info">
+    <div class="config-info">
       <h3>插件信息</h3>
       <p>版本: <span>{{ packageJson.version }}</span></p>
       <div class="elaina-btn-group">
@@ -35,13 +35,13 @@ const toGitHub = () => {
 
 </script>
 
-<style lang="less" >
-.title {
+<style lang="less">
+.config-title {
   font-size: 36px;
   padding-bottom: 12px;
 }
 
-.menu-title {
+.config-menu-title {
   font-size: 24px;
   padding: 12px 0;
 }
@@ -61,7 +61,7 @@ const toGitHub = () => {
   }
 }
 
-.info {
+.config-info {
   padding-top: 12px;
 
   h3 {
