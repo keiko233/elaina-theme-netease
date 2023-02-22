@@ -1,6 +1,9 @@
 <template>
   <div class="container">
     <div class="loadcard">
+      <h1>仅供预览，只有在NCM客户端才能生效</h1>
+    </div>
+    <div class="loadcard">
       <ThemeConfig />
     </div>
   </div>
@@ -23,10 +26,12 @@ import ThemeConfig from './components/vue/ThemeConfig.vue'
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 
   .loadcard {
-    width: 60%;
+    width: 600px;
     padding: 24px 36px;
+    margin: 10px 0;
     background-color: var(--background-overlay);
     border-radius: var(--border-raduis);
   }
