@@ -4,11 +4,6 @@
 @import "./common.less";
 @import "./theme/components.less";
 
-body#music-163-com {
-  backdrop-filter: blur(5px);
-  background: var(--gradient-bg);
-}
-
 body.mq-playing {
   header.g-hd.s-theme-bgc1 {
     background: none;
@@ -76,7 +71,7 @@ section.g-single {
 
 div.g-singlec {
   .sd.j-flag {
-    margin: 84px 0 !important;
+    margin: 104px 0 !important;
 
     .cdbg {
       display: none;
@@ -101,7 +96,6 @@ div.g-singlec {
   .g-singlec-hd.j-flag {
     .wrap.j-flag {
       -webkit-transform: translateY(10px);
-      opacity: 1;
 
       .name.f-thide.s-fc1.j-flag {
         transition: all 0.5s;
@@ -128,13 +122,63 @@ div.g-singlec {
   }
 
   .g-singlec-ct.j-fflag {
+    top: 0;
+    transition: all 0.3s;
+
+    .n-single {
+      margin-top: 26px;
+
+      .mn.j-flag {
+        height: 540px;
+      }
+    }
+
     .m-comment.m-comment-play {
+      margin: 0 56px !important;
+
       ul.j-flag {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
         li.citm.f-cb {
-          background-color: var(--background-overlay);
-          padding: var(--border-raduis);
+          width: 42%;
           margin: 10px 0;
+          padding: var(--border-raduis);
+          background-color: var(--background-overlay);
           border-radius: var(--border-raduis);
+          backdrop-filter: blur(32px);
+
+          div:nth-child(1) {
+            height: 100%;
+
+            .cwrap {
+              height: 100%;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              flex-wrap: nowrap;
+
+              .opers.f-cb {
+                a {
+                  padding-left: 8px;
+                }
+
+                span.sep.s-fc7 {
+                  display: none;
+                }
+              }
+
+              p.f-ust {
+                height: 100%;
+              }
+            }
+          }
+        }
+
+        li.citm.citm-hotmore {
+          margin: 0 auto;
         }
       }
     }
@@ -165,6 +209,7 @@ div.g-singlec {
 
       .j-line.z-crt {
         padding-left: 0;
+        transform: translateX(-12px);
 
         p,
         p:nth-child(1),
@@ -176,10 +221,24 @@ div.g-singlec {
         }
       }
 
+      p.supplier {
+        padding-left: 36px;
+        opacity: 0.7;
+      }
+
       .cnt.m-playlrc.mixin-portalified {
+        .sc-fzoVTD.Atfvz {
+          display: none;
+        }
+        
         article.word.on-track-detail {
+
           div.j-flag.text {
             padding: 0 10px 0 30px !important;
+
+            .textwrap {
+              padding: 268px 0;
+            }
           }
 
           .side-operators {
@@ -306,10 +365,6 @@ div.j-flag.u-tab2.u-settab {
   }
 }
 
-.m-comment.m-comment-play {
-  margin: 0 96px !important;
-}
-
 .m-card.m-emts.z-show.m-card-arrow-bottom-left {
   div {
     background-color: var(--background-black);
@@ -430,7 +485,7 @@ nav.u-tab2.f-cb.f-ff2.j-flag {
 }
 
 .m-player.z-shadow {
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(32px);
 }
 
 .m-fm {
@@ -498,5 +553,44 @@ ul.m-list.m-list-radar {
 
   .desc {
     .common-desc();
+  }
+}
+
+nav.u-tab2.f-ff2.f-cb {
+  ul:nth-child(1) {
+    background-color: var(--background-overlay);
+    height: 54px;
+    padding: 0px 12px;
+    border-radius: 32px;
+
+    li {
+      padding: 10px 0;
+
+      a {
+        padding: 2px 12px;
+        margin: 0;
+        height: auto;
+      }
+
+      .common-tab-li();
+
+      a.z-sel {
+        .common-tab-li-selected();
+      }
+
+      a.z-sel:before {
+        content: none;
+      }
+    }
+  }
+}
+
+body.mq-playing-scroll {
+  section.g-single {
+    div#id-single {
+      .g-singlec-ct.j-fflag {
+        top: 60px;
+      }
+    }
   }
 }
