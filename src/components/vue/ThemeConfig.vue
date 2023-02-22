@@ -1,35 +1,37 @@
 <template>
-  <div class="title">Elaina Theme Config</div>
+  <n-config-provider :theme="darkTheme">
+    <div class="title">Elaina Theme Config</div>
 
-  <div class="config-card">
-    <h3>播放界面歌曲名显示</h3>
-    <p>开启效果很不错，默认不开启，防止与其他插件发生不兼容情况。</p>
-    <n-switch v-model:value="songNameStatus" @update:value="songNameSwitch" size="large">
-      <template #checked>
-        歌名显示在顶部栏
-      </template>
-      <template #unchecked>
-        歌名显示在封面下
-      </template>
-    </n-switch>
-  </div>
+    <div class="config-card">
+      <h3>播放界面歌曲名显示</h3>
+      <p>开启效果很不错，默认不开启，防止与其他插件发生不兼容情况。</p>
+      <n-switch v-model:value="songNameStatus" @update:value="songNameSwitch" size="large">
+        <template #checked>
+          歌名显示在顶部栏
+        </template>
+        <template #unchecked>
+          歌名显示在封面下
+        </template>
+      </n-switch>
+    </div>
 
-  <div class="info">
-    <h3>插件信息</h3>
-    <p>版本: <span>{{ packageJson.version }}</span></p>
-    <div class="elaina-btn-group">
-      <div class="elaina-btn" @click="toGitHub">
-        <a>前往 GitHub</a>
+    <div class="info">
+      <h3>插件信息</h3>
+      <p>版本: <span>{{ packageJson.version }}</span></p>
+      <div class="elaina-btn-group">
+        <div class="elaina-btn" @click="toGitHub">
+          <a>前往 GitHub</a>
+        </div>
       </div>
     </div>
-  </div>
+  </n-config-provider>
 </template>
 
 <script setup>
 import { ref, onMounted } from "vue"
 import isNCMClient from "../js/ClientCheck.js"
 import packageJson from "../../../package.json"
-import { NSwitch } from 'naive-ui'
+import { NConfigProvider, darkTheme, NSwitch } from 'naive-ui'
 
 const toGitHub = () => {
   const url = 'https://github.com/keiko233/elaina-theme-netease';
@@ -125,7 +127,7 @@ onMounted(() => {
   padding-top: 12px;
 
   h3 {
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 700;
     padding-bottom: 12px;
     margin: 0;

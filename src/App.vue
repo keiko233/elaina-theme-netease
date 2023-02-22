@@ -25,8 +25,9 @@ import ThemeConfig from './components/vue/ThemeConfig.vue'
   align-items: center;
 
   .loadcard {
-    background-color: var(--background-overlay);
+    width: 60%;
     padding: 24px 36px;
+    background-color: var(--background-overlay);
     border-radius: var(--border-raduis);
   }
 }
