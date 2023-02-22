@@ -1,5 +1,5 @@
 import { createApp, h } from 'vue'
-import App from '../App.vue'
+import ThemeConfig from '../components/vue/ThemeConfig.vue'
 import isNCMClient from "../components/js/ClientCheck.js"
 
 if (isNCMClient()) {
@@ -45,7 +45,7 @@ if (isNCMClient()) {
     createElement.className = 'elaina-container-column';
 
     const vueLoader = createElement.appendChild(document.createElement('div'));
-    createApp(h(App)).mount(vueLoader);
+    createApp(h(ThemeConfig)).mount(vueLoader);
 
     const createElaina = createContainer.appendChild(document.createElement('div'));
     createElaina.className = 'elaina-pic';
