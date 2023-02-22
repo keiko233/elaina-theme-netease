@@ -1,3 +1,6 @@
+import { createApp, h } from 'vue'
+import App from '../App.vue'
+
 if (/NeteaseMusicDesktop/i.test(navigator.userAgent)) {
   console.log("NeteaseMusicDesktop, load JS Plugin");
 
@@ -42,22 +45,8 @@ if (/NeteaseMusicDesktop/i.test(navigator.userAgent)) {
     const createElement = createContainer.appendChild(document.createElement('div'));
     createElement.className = 'elaina-container-column';
 
-    const title = createElement.appendChild(document.createElement('div'));
-    title.style = 'font-size: 36px; padding-bottom: 12px;';
-    title.innerHTML = 'Elaina Theme';
-
-    const btnGroup = createElement.appendChild(document.createElement('div'));
-    btnGroup.className = "elaina-btn-group";
-
-    const gitHubBtn = btnGroup.appendChild(document.createElement('div'));
-    gitHubBtn.className = "elaina-btn";
-    gitHubBtn.innerHTML = '<a>前往 GitHub</a>';
-    gitHubBtn.addEventListener('click', () => {
-      betterncm.ncm.openUrl("https://github.com/keiko233/elaina-theme-netease");
-    });
-
     const vueLoader = createElement.appendChild(document.createElement('div'));
-    vueLoader.id = 'app';
+    createApp(h(App)).mount(vueLoader);
 
     const createElaina = createContainer.appendChild(document.createElement('div'));
     createElaina.className = 'elaina-pic';
@@ -73,4 +62,3 @@ if (/NeteaseMusicDesktop/i.test(navigator.userAgent)) {
 } else {
   console.log("Not NeteaseMusicDesktop, unload JS Plugin.");
 };
-
