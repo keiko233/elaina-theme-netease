@@ -4,7 +4,7 @@
   <div class="config-card">
     <h3>播放界面歌曲名显示</h3>
     <p>开启效果很不错，默认不开启，防止与其他插件发生不兼容情况。</p>
-    <n-switch v-model:value="songNameSwitchStaus" @update:value="handleChange">
+    <n-switch v-model:value="songNameSwitchStaus" @update:value="songNameSwitch">
       <template #checked>
         歌名显示在顶部栏
       </template>
@@ -42,14 +42,9 @@ const toGitHub = () => {
   }
 }
 
-const removeLogo = () => {
-  document.querySelector(".m-logo").querySelector("a").innerHTML = '';
-}
-
-const handleChange = (value) => {
-  console.log(`Update value: ${value}`);
+const songNameSwitch = (value) => {
   const style = document.createElement("style");
-  style.id = 'custom-style';
+  style.id = 'song-name-on-top';
   style.innerHTML = `
   div#id-single .g-singlec-hd.j-flag .wrap.j-flag{
     opacity: 1;
@@ -78,13 +73,10 @@ const handleChange = (value) => {
 
   if (value) {
     document.head.appendChild(style);
-    // document.getElementById('id-single').class.add('elaina-custom-song-title-on-top');
   } else {
-    document.head.removeChild(document.getElementById('custom-style'));
-    // document.getElementById('id-single').class.remove('elaina-custom-song-title-on-top');
+    document.head.removeChild(document.getElementById('song-name-on-top'));
   }
 }
-
 </script>
 
 <style lang="less" scoped>
