@@ -2,7 +2,7 @@
   <div class="config-card">
     <h3>播放界面歌曲名显示</h3>
     <p>启用需要使用内置的播放界面，用其他的插件可能会出现不兼容问题，所以默认不开启。</p>
-    <n-switch v-model:value="songNameStatus" @update:value="songNameSwitch" size="large">
+    <n-switch v-model:value="songNameOnTopStatus" @update:value="songNameOnTopSwitch" size="large">
       <template #checked>
         歌名显示在顶部栏
       </template>
@@ -17,7 +17,7 @@
 import { ref, onMounted } from "vue"
 import { NSwitch } from 'naive-ui'
 
-const songNameStatus = ref(JSON.parse(localStorage.getItem('enableSongNameOnTop')))
+const songNameOnTopStatus = ref(JSON.parse(localStorage.getItem('enableSongNameOnTop')))
 
 const songNameOnTop = (value) => {
   const header = document.getElementById('music-163-com');
@@ -29,7 +29,7 @@ const songNameOnTop = (value) => {
   }
 }
 
-const songNameSwitch = (value) => {
+const songNameOnTopSwitch = (value) => {
   localStorage.setItem('enableSongNameOnTop', value);
   songNameOnTop(value);
 }
