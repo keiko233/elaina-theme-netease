@@ -5,7 +5,7 @@
     <div class="config-card">
       <h3>使用主题内置的播放界面</h3>
       <p>默认开启。如果遇到问题可以尝试关闭，主题修改了部分CSS具有入侵性，可能会导致和而其他插件不兼容导致布局出错。</p>
-      <n-switch v-model:value="playerStyle" @update:value="playerStyleSwitch" size="large">
+      <n-switch v-model:value="playerStyleStatus" @update:value="playerStyleSwitch" size="large">
         <template #checked>
           启用主题播放界面
         </template>
@@ -87,7 +87,7 @@ if (!localStorage.getItem('enableThemePlayStyle')) {
   setThemePlayStyle(true);
 }
 
-const playerStyle = ref(JSON.parse(localStorage.getItem('enableThemePlayStyle')));
+const playerStyleStatus = ref(JSON.parse(localStorage.getItem('enableThemePlayStyle')));
 
 const playerStyleSwitch = (value) => {
   localStorage.setItem('enableThemePlayStyle', value);
@@ -99,7 +99,7 @@ onMounted(() => {
   if (songNameStatus.value == true) {
     songNameOnTop(true);
   }
-  if (playerStyle.value == true) {
+  if (playerStyleStatus.value == true) {
     setThemePlayStyle(true);
   }
 })
