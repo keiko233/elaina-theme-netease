@@ -4,6 +4,21 @@
     <p>如果你不喜欢默认的粉色的话就自己修改吧。设定后会全局自动计算其他颜色，类似于Material You的效果，但不完全是。</p>
     <n-color-picker placement="top-start" v-model:value="customColor" :modes="['hex']" :show-alpha="false"
       :actions="['confirm']" @confirm="updateCustomColor" />
+    <div class="config-color-card">
+      <p>色彩列表</p>
+      <div class="config-color-perview" style="background-color: var(--theme-primary);">
+        theme-primary
+      </div>
+      <div class="config-color-perview" style="background-color: var(--theme-primary-notransparency);">
+        theme-primary-notransparency
+      </div>
+      <div class="config-color-perview" style="box-shadow: var(--theme-primary-shadow);">
+        theme-primary-shadow
+      </div>
+      <div class="config-color-perview" style="text-shadow: var(--theme-primary-font-shadow);">
+        theme-primary-font-shadow
+      </div>
+    </div>
   </div>
 </template>
 
@@ -42,3 +57,22 @@ onMounted(() => {
 })
 
 </script>
+
+<style lang="less" scoped>
+.config-color-card {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+  p {
+    width: 100%;
+  }
+
+  .config-color-perview {
+    width: 260px;
+    padding: 10px;
+    margin: 0 10px 10px 0;
+    border-radius: var(--border-raduis);
+  }
+}
+</style>
