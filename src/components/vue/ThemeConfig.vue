@@ -1,10 +1,12 @@
 <template>
   <n-config-provider :locale="zhCN" :theme="darkTheme">
     <div class="config-title">Elaina Theme Config</div>
+    <p>注意：建议不要用其他的主题插件，本主题不会修复与其他主题冲突的问题。</p>
 
     <PlayerStyle />
     <PlayerSongName />
     <CustomColor />
+    <CustomBlur />
 
     <div class="config-info">
       <h3>插件信息</h3>
@@ -29,6 +31,7 @@ import { zhCN, darkTheme, NConfigProvider } from 'naive-ui'
 import PlayerStyle from "./template/PlayerStyle.vue"
 import PlayerSongName from "./template/PlayerSongName.vue"
 import CustomColor from "./template/CustomColor.vue"
+import CustomBlur from "./template/CustomBlur.vue"
 
 const openUrl = (url) => {
   if (isNCMClient()) {

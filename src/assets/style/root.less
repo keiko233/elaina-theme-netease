@@ -9,6 +9,10 @@
   --theme-primary-notransparency: #f85f89;
   --theme-primary-shadow: 0 0 3px #bc92a5;
   --theme-primary-font-shadow: 0 0 1px #ff0073;
+  --theme-blur-home: blur(5px);
+  --theme-blur-play: blur(5px);
+  --theme-blur-dock: blur(32px);
+  --theme-blur-comment: blur(32px);
 }
 
 * {
@@ -22,7 +26,7 @@
 }
 
 body#music-163-com {
-  backdrop-filter: blur(5px);
+  backdrop-filter: var(--theme-blur-home);
   .common-bg();
 }
 
