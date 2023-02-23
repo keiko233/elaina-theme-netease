@@ -35,7 +35,7 @@ const songNameOnTopSwitch = (value) => {
 }
 
 onMounted(() => {
-  if (songNameStatus.value == true) {
+  if (songNameOnTopStatus.value == true) {
     songNameOnTop(true);
   }
 })
