@@ -1,6 +1,7 @@
 <template>
   <n-config-provider :locale="zhCN" :theme="darkTheme">
     <div class="config-title">Elaina Theme Config</div>
+    <p>注意：建议不要用其他的主题插件，本主题不会修复与其他主题冲突的问题。</p>
 
     <PlayerStyle />
     <PlayerSongName />
