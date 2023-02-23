@@ -16,6 +16,7 @@
 <script setup>
 import { ref, onMounted } from "vue"
 import { NSwitch } from 'naive-ui'
+import isNCMClient from "../../js/ClientCheck.js"
 
 const songNameOnTopStatus = ref(JSON.parse(localStorage.getItem('enableSongNameOnTop')))
 
@@ -35,7 +36,7 @@ const songNameOnTopSwitch = (value) => {
 }
 
 onMounted(() => {
-  if (songNameOnTopStatus.value == true) {
+  if (songNameOnTopStatus.value == true && isNCMClient()) {
     songNameOnTop(true);
   }
 })

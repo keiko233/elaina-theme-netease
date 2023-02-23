@@ -16,6 +16,7 @@
 <script setup>
 import { ref, onMounted } from "vue"
 import { NSwitch } from 'naive-ui'
+import isNCMClient from "../../js/ClientCheck.js"
 
 const setThemePlayStyle = (value) => {
   const header = document.getElementById('music-163-com');
@@ -41,7 +42,7 @@ const playerStyleSwitch = (value) => {
 
 onMounted(() => {
   console.log("onMounted");
-  if (playerStyleStatus.value == true) {
+  if (playerStyleStatus.value == true && isNCMClient()) {
     setThemePlayStyle(true);
   }
 })
