@@ -24,7 +24,7 @@
 <script setup>
 import isNCMClient from "../js/ClientCheck.js"
 import packageJson from "../../../package.json"
-import { NConfigProvider } from 'naive-ui'
+import { darkTheme, NConfigProvider } from 'naive-ui'
 import PlayerStyle from "./template/PlayerStyle.vue"
 import PlayerSongName from "./template/PlayerSongName.vue"
 
