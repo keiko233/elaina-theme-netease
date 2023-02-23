@@ -73,10 +73,7 @@ onMounted(() => {
     padding: 10px;
     margin: 0 10px 10px 0;
     border-radius: var(--border-raduis);
-<<<<<<< HEAD
     background-color: var(--background-overlay);
-=======
->>>>>>> 6703b76fcadba78316902486cbf8728295e9cb81
   }
 }
 </style>
