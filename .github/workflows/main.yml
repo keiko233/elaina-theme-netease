@@ -50,7 +50,6 @@ jobs:
           path: ./dist/
 
       - name: Deploy dist
-        if: github.ref == 'refs/heads/master'
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: dist
