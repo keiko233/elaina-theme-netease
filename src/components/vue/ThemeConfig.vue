@@ -1,9 +1,10 @@
 <template>
-  <n-config-provider :theme="darkTheme">
+  <n-config-provider :locale="zhCN" :theme="darkTheme">
     <div class="config-title">Elaina Theme Config</div>
 
     <PlayerStyle />
     <PlayerSongName />
+    <CustomColor />
 
     <div class="config-info">
       <h3>插件信息</h3>
@@ -24,9 +25,10 @@
 <script setup>
 import isNCMClient from "../js/ClientCheck.js"
 import packageJson from "../../../package.json"
-import { darkTheme, NConfigProvider } from 'naive-ui'
+import { zhCN, darkTheme, NConfigProvider } from 'naive-ui'
 import PlayerStyle from "./template/PlayerStyle.vue"
 import PlayerSongName from "./template/PlayerSongName.vue"
+import CustomColor from "./template/CustomColor.vue"
 
 const openUrl = (url) => {
   if (isNCMClient()) {
