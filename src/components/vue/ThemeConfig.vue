@@ -8,9 +8,13 @@
     <div class="config-info">
       <h3>插件信息</h3>
       <p>版本: <span>{{ packageJson.version }}</span></p>
+      <p>作者: <span>{{ packageJson.ncm.author }}</span></p>
       <div class="elaina-btn-group">
-        <div class="elaina-btn" @click="toGitHub">
-          <a>前往 GitHub</a>
+        <div class="elaina-btn" @click="openUrl('https://github.com/keiko233/elaina-theme-netease')">
+          <a>GitHub Repo</a>
+        </div>
+        <div class="elaina-btn" @click="openUrl('https://github.com/keiko233/elaina-theme-netease/actions')">
+          <a>Actions 编译版本</a>
         </div>
       </div>
     </div>
@@ -24,8 +28,7 @@ import { NConfigProvider } from 'naive-ui'
 import PlayerStyle from "./template/PlayerStyle.vue"
 import PlayerSongName from "./template/PlayerSongName.vue"
 
-const toGitHub = () => {
-  const url = 'https://github.com/keiko233/elaina-theme-netease';
+const openUrl = (url) => {
   if (isNCMClient()) {
     betterncm.ncm.openUrl(url);
   } else {
@@ -73,11 +76,14 @@ const toGitHub = () => {
 
   p {
     margin: 0;
-    padding-bottom: 6px;
 
     span {
       font-weight: 500;
     }
+  }
+
+  .elaina-btn-group {
+    padding-top: 12px;
   }
 }
 </style>
