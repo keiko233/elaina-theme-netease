@@ -31,5 +31,7 @@ switch (process.argv[2]) {
   default:
     touchManifest();
     copyFile("preview.png", "dist");
+    deleteFile("dist/index.html");
+    deleteFile("dist/favicon.ico");
     break;
 }
