@@ -57,6 +57,7 @@ const bocchiOverlayStatus = ref(JSON.parse(localStorage.getItem('enableBocchiOve
 const bocchiOverlayLoadingStatus = ref(false);
 
 const bocchiOverlaySwitch = (value) => {
+  localStorage.setItem('enableBocchiOverlay', value);
   if (value && !localStorage.getItem('bocchiOverlayImageData')) {
     bocchiOverlayLoadingStatus.value = true;
     fetch('https://gist.githubusercontent.com/keiko233/a61d922c32a9b05b3ff2623305dd3faf/raw/3a0892747b5feabeda841687416ee5a5cb437beb/base64image_bocchi')
@@ -64,11 +65,11 @@ const bocchiOverlaySwitch = (value) => {
       .then((json) => {
         localStorage.setItem('bocchiOverlayImageData', json.response[0].content);
         bocchiOverlayLoadingStatus.value = false;
-
+        setBocchiOverlay(value);
       });
+  } else {
+    setBocchiOverlay(value);
   }
-  localStorage.setItem('enableBocchiOverlay', value);
-  setBocchiOverlay(value);
 }
 
 const updateBocchiImage = (id) => {
