@@ -33,6 +33,7 @@ const setBocchiOverlay = (value) => {
     }`;
     document.head.appendChild(style);
   } else {
+    document.head.removeChild(document.getElementById('bocchi-overlay-image'));
     header.classList.remove('bocchi-overlay');
   }
 }
