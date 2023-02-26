@@ -1,21 +1,23 @@
 <template>
   <div class="config-card">
-    <h3>整只波奇酱</h3>
-    <p>给朋友做的彩蛋功能，没啥用，纯粹好玩。</p>
-    <n-switch v-model:value="bocchiOverlayStatus" @update:value="bocchiOverlaySwitch" size="large">
-      <template #checked>
-        召唤波奇
-      </template>
-      <template #unchecked>
-        影藏波奇
-      </template>
-    </n-switch>
+    <n-spin :show="bocchiOverlayLoadingStatus">
+      <h3>波奇酱小挂件</h3>
+      <p>启用需要网络连接，用于下载图片。给朋友做的彩蛋功能，没啥用，纯粹好玩。</p>
+      <n-switch v-model:value="bocchiOverlayStatus" @update:value="bocchiOverlaySwitch" size="large">
+        <template #checked>
+          启用
+        </template>
+        <template #unchecked>
+          关闭
+        </template>
+      </n-switch>
+    </n-spin>
   </div>
 </template>
 
 <script setup>
 import { ref, onMounted } from "vue"
-import { NSwitch } from 'naive-ui'
+import { NSwitch, NSpin } from 'naive-ui'
 import isNCMClient from "../../js/ClientCheck.js"
 
 const setBocchiOverlay = (value) => {
@@ -23,6 +25,13 @@ const setBocchiOverlay = (value) => {
 
   if (value) {
     header.classList.add('bocchi-overlay');
+    const style = document.createElement("style");
+    style.id = 'bocchi-overlay-image'
+    style.innerHTML = `
+      body#music-163-com.bocchi-overlay::before {
+        background-image: url(${localStorage.getItem('bocchiOverlayImageData')})
+    }`;
+    document.head.appendChild(style);
   } else {
     header.classList.remove('bocchi-overlay');
   }
@@ -33,8 +42,19 @@ if (!localStorage.getItem('enableBocchiOverlay')) {
 }
 
 const bocchiOverlayStatus = ref(JSON.parse(localStorage.getItem('enableBocchiOverlay')));
+const bocchiOverlayLoadingStatus = ref(false);
 
 const bocchiOverlaySwitch = (value) => {
+  if (value && !localStorage.getItem('bocchiOverlayImageData')) {
+    bocchiOverlayLoadingStatus.value = true;
+    fetch('https://gist.githubusercontent.com/keiko233/a61d922c32a9b05b3ff2623305dd3faf/raw/3a0892747b5feabeda841687416ee5a5cb437beb/base64image_bocchi')
+      .then((response) => response.json())
+      .then((json) => {
+        localStorage.setItem('bocchiOverlayImageData', json.response[0].content);
+        bocchiOverlayLoadingStatus.value = false;
+
+      });
+  }
   localStorage.setItem('enableBocchiOverlay', value);
   setBocchiOverlay(value);
 }
