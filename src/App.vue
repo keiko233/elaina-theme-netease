@@ -27,8 +27,13 @@ import ThemeConfig from './components/vue/ThemeConfig.vue'
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-image: url(https://pic.majokeiko.com);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
   .loadcard {
+    backdrop-filter: var(--theme-blur-home);
     width: 600px;
     padding: 24px 36px;
     margin: 10px 0;
