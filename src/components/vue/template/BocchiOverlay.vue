@@ -12,6 +12,17 @@
         </template>
       </n-switch>
     </n-spin>
+
+    <p>或者你也可以自定义图片。</p>
+    <div class="elaina-btn-group">
+      <div class="elaina-input">
+        <input type="file" id="imagefile" />
+        <a>选择图片</a>
+      </div>
+      <div class="elaina-btn" @click="updateBocchiImage('imagefile')">
+        <a>应用</a>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -58,6 +69,21 @@ const bocchiOverlaySwitch = (value) => {
   }
   localStorage.setItem('enableBocchiOverlay', value);
   setBocchiOverlay(value);
+}
+
+const updateBocchiImage = (id) => {
+  const file = document.getElementById(id).files[0];
+  if (!/image\/\w+/.test(file.type)) {
+    alert("请确保文件为图像文件");
+    return false;
+  }
+  const reader = new FileReader();
+  reader.readAsDataURL(file);
+  reader.onload = function () {
+    localStorage.setItem('bocchiOverlayImageData', this.result);
+    setBocchiOverlay(false);
+    setBocchiOverlay(true);
+  }
 }
 
 onMounted(() => {
