@@ -8,6 +8,7 @@
     <CustomColor />
     <CustomBlur />
     <BocchiOverlay />
+    <CustomLogo />
 
     <div class="config-info">
       <h3>插件信息</h3>
@@ -34,6 +35,7 @@ import PlayerSongName from "./template/PlayerSongName.vue"
 import CustomColor from "./template/CustomColor.vue"
 import CustomBlur from "./template/CustomBlur.vue"
 import BocchiOverlay from "./template/BocchiOverlay.vue"
+import CustomLogo from "./template/CustomLogo.vue"
 
 const openUrl = (url) => {
   if (isNCMClient()) {
