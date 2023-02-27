@@ -7,6 +7,7 @@
     <PlayerSongName />
     <CustomColor />
     <CustomBlur />
+    <CustomBackground />
     <BocchiOverlay />
     <CustomLogo />
 
@@ -34,6 +35,7 @@ import PlayerStyle from "./template/PlayerStyle.vue"
 import PlayerSongName from "./template/PlayerSongName.vue"
 import CustomColor from "./template/CustomColor.vue"
 import CustomBlur from "./template/CustomBlur.vue"
+import CustomBackground from "./template/CustomBackground.vue"
 import BocchiOverlay from "./template/BocchiOverlay.vue"
 import CustomLogo from "./template/CustomLogo.vue"
 

@@ -1,5 +1,7 @@
 # BetterNCM Elaina Theme
 
+![Preview](preview.png)
+
 ### 简介
 
 一款简单粗暴的主题插件，目的是自用与分享，主要使用CSS编写，并减少JavaScript的使用量。
@@ -8,7 +10,7 @@
 
 布局优化，精简无用组件（直播、推荐等），卡片组件圆角化；全局的随机依蕾娜背景（图库Api: https://pic.majokeiko.com ）；后续更新自定义背景图功能。
 
-![首页](preview.png)
+![首页](assets/preview00.png)
 
 我觉得更好看的播放界面，优化了动画，删掉了没必要的组件。
 
