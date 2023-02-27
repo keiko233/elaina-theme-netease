@@ -55,7 +55,7 @@ if (!localStorage.getItem('bocchiOverlaySelectValue')) {
   localStorage.setItem('bocchiOverlaySelectValue', -1)
 }
 
-const bocchiOverlaySelect = ref(localStorage.getItem('bocchiOverlaySelectValue'));
+const bocchiOverlaySelect = ref(JSON.parse(localStorage.getItem('bocchiOverlaySelectValue')));
 const bocchiOverlayLoadingStatus = ref(false);
 
 const bocchiLists = reactive([
