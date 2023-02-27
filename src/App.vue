@@ -14,7 +14,7 @@ import ThemeConfig from './components/vue/ThemeConfig.vue'
 
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 * {
   margin: 0;
   padding: 0;
@@ -27,7 +27,7 @@ import ThemeConfig from './components/vue/ThemeConfig.vue'
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-image: url(https://pic.majokeiko.com);
+  background-image: var(--background-image);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

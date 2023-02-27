@@ -3,34 +3,40 @@
     <n-spin :show="bocchiOverlayLoadingStatus">
       <h3>波奇酱小挂件</h3>
       <p>启用需要网络连接，用于请求Gist和下载图片。给朋友做的彩蛋功能，没啥用，纯粹好玩。</p>
-      <n-radio-group v-model:value="bocchiOverlaySelect" @update:value="bocchiOverlaySwitch">
-        <n-radio-button value=-1 label='禁用' />
-        <n-radio-button v-for="bocchiList in bocchiLists" :key="bocchiList.id" :value="bocchiList.id"
-          :label="bocchiList.name" :disabled="bocchiList.id == null" />
-        <n-radio-button value=-2 label='自定义' />
-      </n-radio-group>
+
+      <n-space vertical>
+        <n-radio-group v-model:value="bocchiOverlayStatus" @update:value="bocchiOverlayStatusSwitch">
+          <n-radio-button value=-1 label='禁用' />
+          <n-radio-button value=0 label='使用预设' />
+          <n-radio-button value=-2 label='自定义' />
+        </n-radio-group>
+
+        <n-select v-if="bocchiOverlayStatus == 0" v-model:value="bocchiOverlaySelect" @update:value="bocchiOverlaySwitch"
+          label-field="name" value-field="id" :options="bocchiLists" />
+
+        <div class="content">
+          <div v-if="bocchiOverlayStatus == -2" class="elaina-btn-group">
+            <div class="elaina-input">
+              <input type="file" id="imagefile" />
+              <a>选择图片</a>
+            </div>
+            <div class="elaina-btn" @click="updateBocchiImage('imagefile')">
+              <a>应用</a>
+            </div>
+          </div>
+        </div>
+      </n-space>
+
       <template #description>
         请求Gist中
       </template>
     </n-spin>
-
-    <div class="content">
-      <div v-if="bocchiOverlaySelect == -2" class="elaina-btn-group">
-        <div class="elaina-input">
-          <input type="file" id="imagefile" />
-          <a>选择图片</a>
-        </div>
-        <div class="elaina-btn" @click="updateBocchiImage('imagefile')">
-          <a>应用</a>
-        </div>
-      </div>
-    </div>
   </div>
 </template>
 
 <script setup>
 import { ref, onMounted } from "vue"
-import { NSwitch, NSpin, NRadioGroup, NRadioButton } from 'naive-ui'
+import { NSwitch, NSpin, NRadioGroup, NRadioButton, NSelect, NSpace } from 'naive-ui'
 import isNCMClient from "../../js/ClientCheck.js"
 
 const setBocchiOverlay = (value) => {
@@ -55,10 +61,15 @@ const setBocchiOverlay = (value) => {
 }
 
 if (!localStorage.getItem('bocchiOverlaySelectValue')) {
-  localStorage.setItem('bocchiOverlaySelectValue', -1)
+  localStorage.setItem('bocchiOverlaySelectValue', null)
+}
+
+if (!localStorage.getItem('bocchiOverlayStatusValue')) {
+  localStorage.setItem('bocchiOverlayStatusValue', -1)
 }
 
 const bocchiOverlaySelect = ref(JSON.parse(localStorage.getItem('bocchiOverlaySelectValue')));
+const bocchiOverlayStatus = ref(localStorage.getItem('bocchiOverlayStatusValue'));
 const bocchiOverlayLoadingStatus = ref(false);
 
 const bocchiLists = ref([
@@ -71,20 +82,20 @@ const bocchiLists = ref([
 
 const bocchiOverlaySwitch = (value) => {
   localStorage.setItem('bocchiOverlaySelectValue', value);
-  if (value == -1) {
-    setBocchiOverlay(false);
-  } else if (value == -2) {
+  bocchiOverlayLoadingStatus.value = true;
+  fetch(bocchiLists.value[value].url)
+    .then((response) => response.json())
+    .then((json) => {
+      localStorage.setItem('bocchiOverlayImageData', json.response[0].content);
+      bocchiOverlayLoadingStatus.value = false;
+      setBocchiOverlay(true);
+    });
 
-  } else {
-    bocchiOverlayLoadingStatus.value = true;
-    fetch(bocchiLists.value[value].url)
-      .then((response) => response.json())
-      .then((json) => {
-        localStorage.setItem('bocchiOverlayImageData', json.response[0].content);
-        bocchiOverlayLoadingStatus.value = false;
-        setBocchiOverlay(true);
-      });
-  }
+}
+
+const bocchiOverlayStatusSwitch = (value) => {
+  console.log(value);
+  localStorage.setItem('bocchiOverlayStatusValue', value);
 }
 
 const updateBocchiImage = (id) => {
@@ -112,7 +123,7 @@ const getBocchiLists = () => {
 }
 
 onMounted(() => {
-  if (bocchiOverlaySelect.value >= 0 && isNCMClient()) {
+  if (isNCMClient() && !(bocchiOverlayStatus.value == -1) && !(bocchiOverlaySelect.value == null)) {
     setBocchiOverlay(true);
   }
   getBocchiLists();

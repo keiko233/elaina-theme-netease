@@ -42,12 +42,14 @@ section.g-sd {
   bottom: 72px;
 }
 
-section.g-sd::before {
+section.better-ncm-manager.g-mn::before,
+section.g-mn.one::before {
   .common-section-g-sd();
   background: radial-gradient(calc(var(--border-raduis) * 2) at right bottom, transparent 50%, var(--background-overlay)50%);
 }
 
-section.g-sd::after {
+section.better-ncm-manager.g-mn::after,
+section.g-mn.one::after {
   .common-section-g-sd();
   background: radial-gradient(calc(var(--border-raduis) * 2) at right top, transparent 50%, var(--background-overlay)50%);
   top: calc(100% - var(--border-raduis));
