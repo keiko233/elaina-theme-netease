@@ -29,7 +29,7 @@
 </template>
 
 <script setup>
-import { ref, reactive, onMounted } from "vue"
+import { ref, onMounted } from "vue"
 import { NSwitch, NSpin, NRadioGroup, NRadioButton } from 'naive-ui'
 import isNCMClient from "../../js/ClientCheck.js"
 
