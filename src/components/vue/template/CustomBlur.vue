@@ -2,22 +2,46 @@
   <div class="config-card">
     <h3>毛玻璃效果调整</h3>
     <p>如题，开启后对GPU性能会有一定开销，设定为0可以禁用。</p>
-    <div class="config-blur-card">
-      <div class="config-blur-perview">
-        <p>主页</p>
-        <n-input-number v-model:value="blurHome" @update:value="updateBlurValue(blurHome, 'customBlurHomeValue')" :min="0" />
+
+    <div class="config-list-card">
+      <div class="config-list-preview">
+        <div class="input-box">
+          <p>主页</p>
+          <div class="input-content">
+            <n-input-number v-model:value="blurHome" :min="0"
+              @update:value="updateBlurValue(blurHome, 'customBlurHomeValue')" />
+          </div>
+        </div>
       </div>
-      <div class="config-blur-perview">
-        <p>播放页</p>
-        <n-input-number v-model:value="blurPlay" @update:value="updateBlurValue(blurPlay, 'customBlurPlayValue')" :min="0" />
+
+      <div class="config-list-preview">
+        <div class="input-box">
+          <p>播放页</p>
+          <div class="input-content">
+            <n-input-number v-model:value="blurPlay" :min="0"
+              @update:value="updateBlurValue(blurPlay, 'customBlurPlayValue')" />
+          </div>
+        </div>
       </div>
-      <div class="config-blur-perview">
-        <p>播放页Dock栏</p>
-        <n-input-number v-model:value="blurDock" @update:value="updateBlurValue(blurDock, 'customBlurDockValue')" :min="0" />
+
+      <div class="config-list-preview">
+        <div class="input-box">
+          <p>播放页底栏</p>
+          <div class="input-content">
+            <n-input-number v-model:value="blurDock" :min="0"
+              @update:value="updateBlurValue(blurDock, 'customBlurDockValue')" />
+          </div>
+        </div>
       </div>
-      <div class="config-blur-perview">
-        <p>播放页评论区卡片</p>
-        <n-input-number v-model:value="blurComment" @update:value="updateBlurValue(blurComment, 'customBlurCommentValue')" :min="0" />
+
+      <div class="config-list-preview">
+        <div class="input-box">
+          <p>评论区卡片</p>
+          <div class="input-content">
+            <n-input-number v-model:value="blurComment" :min="0"
+              @update:value="updateBlurValue(blurComment, 'customBlurCommentValue')" />
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -25,7 +49,7 @@
 
 <script setup>
 import { ref, onMounted } from "vue"
-import { NInputNumber } from 'naive-ui'
+import { NInputNumber, NSpace } from 'naive-ui'
 import { initLS } from "../../js/LocalStorage"
 import { insertStyle } from "../../js/StyleInsert"
 
@@ -55,18 +79,5 @@ onMounted(() => {
 </script>
 
 <style lang="less" scoped>
-.config-blur-card {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-
-  p {
-    width: 100%;
-  }
-
-  .config-blur-perview {
-    width: 260px;
-    margin: 0 10px 10px 0;
-  }
-}
+@import "../../../assets/style/custom/configCommon.less";
 </style>

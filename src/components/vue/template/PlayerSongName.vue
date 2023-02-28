@@ -18,6 +18,12 @@ import { ref, onMounted } from "vue"
 import { NSwitch } from 'naive-ui'
 import isNCMClient from "../../js/ClientCheck.js"
 
+const insertSongInfo = () => {
+  const createSongInfo = document.querySelector('.cd.j-flag').appendChild(document.createElement('div'));
+  createSongInfo.className = 'elaina-song-info';
+  createSongInfo.appendChild(document.querySelector('.head.j-fflag'))
+}
+
 const songNameOnTopStatus = ref(JSON.parse(localStorage.getItem('enableSongNameOnTop')))
 
 const songNameOnTop = (value) => {
@@ -39,5 +45,16 @@ onMounted(() => {
   if (songNameOnTopStatus.value == true && isNCMClient()) {
     songNameOnTop(true);
   }
+  if (isNCMClient()) {
+    document.querySelector('.info.j-flag.info-new').onclick = function () {
+      if (!document.querySelector('.elaina-song-info')) {
+        insertSongInfo();
+      }
+    }
+  }
 })
 </script>
+
+<style lang="less" scoped>
+@import "../../../assets/style/custom/configCommon.less";
+</style>

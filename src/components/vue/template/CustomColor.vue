@@ -59,6 +59,8 @@ onMounted(() => {
 </script>
 
 <style lang="less" scoped>
+@import "../../../assets/style/custom/configCommon.less";
+
 .config-color-card {
   display: flex;
   flex-wrap: wrap;
@@ -72,7 +74,7 @@ onMounted(() => {
     width: 260px;
     padding: 10px;
     margin: 0 10px 10px 0;
-    border-radius: var(--border-raduis);
+    border-radius: var(--border-radius);
     background-color: var(--background-overlay);
   }
 }

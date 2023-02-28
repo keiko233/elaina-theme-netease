@@ -38,7 +38,7 @@ import ThemeConfig from './components/vue/ThemeConfig.vue'
     padding: 24px 36px;
     margin: 10px 0;
     background-color: var(--background-overlay);
-    border-radius: var(--border-raduis);
+    border-radius: var(--border-radius);
   }
 }
 </style>
