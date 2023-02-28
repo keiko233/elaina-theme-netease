@@ -7,6 +7,10 @@ export function getLS (variablName) {
   return JSON.parse(localStorage.getItem(variablName));
 }
 
+export function delLS (variablName) {
+  return localStorage.removeItem(variablName);
+}
+
 export function initLS (variablName, defaultValue) {
   if (!getLS(variablName)) {
     updateLS (variablName, defaultValue);

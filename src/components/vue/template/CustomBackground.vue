@@ -31,23 +31,18 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { onMounted } from 'vue'
+import { updateLS, getLS, delLS } from "../../js/LocalStorage"
+import { insertStyle } from "../../js/StyleInsert"
 
 const setBackgroundImage = (value) => {
-
   function addStyle (data) {
-    if (document.getElementById('background-iamge')) document.head.removeChild(document.getElementById('background-iamge'));
-    const style = document.createElement('style');
-    style.id = 'background-iamge';
-    style.innerHTML = `
-    :root  {
-      --background-image: url(${data});
-    }`;
-    document.head.appendChild(style);
+    const style = `:root{ --background-image: url(${data}); }`;
+    insertStyle('background-iamge', style)
   }
 
   if (value) {
-    addStyle(localStorage.getItem('customBackgroundImageData'));
+    addStyle(getLS('customBackgroundImageData'));
   } else {
     addStyle('https://pic.majokeiko.com');
   }
@@ -58,12 +53,13 @@ if (!localStorage.getItem('enableRandomBackgroundValue')) {
 }
 
 const resetCustomBackgronud = () => {
-  localStorage.setItem('enableRandomBackgroundValue', true);
+  updateLS('enableRandomBackgroundValue', true);
+  delLS('customBackgroundImageData');
   setBackgroundImage(false);
 }
 
 const updateCustomBackgronud = (id) => {
-  localStorage.setItem('enableRandomBackgroundValue', false);
+  updateLS('enableRandomBackgroundValue', false);
   const file = document.getElementById(id).files[0];
   if (!/image\/\w+/.test(file.type)) {
     alert("请确保文件为图像文件");
@@ -72,13 +68,13 @@ const updateCustomBackgronud = (id) => {
   const reader = new FileReader();
   reader.readAsDataURL(file);
   reader.onload = function () {
-    localStorage.setItem('customBackgroundImageData', this.result);
+    updateLS('customBackgroundImageData', this.result);
     setBackgroundImage(true);
   }
 }
 
 onMounted(() => {
-  if (JSON.parse(localStorage.getItem('enableRandomBackgroundValue'))) {
+  if (getLS('enableRandomBackgroundValue')) {
     setBackgroundImage(false);
   } else {
     setBackgroundImage(true);
