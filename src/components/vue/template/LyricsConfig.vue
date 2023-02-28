@@ -69,45 +69,21 @@
 <script setup>
 import { ref, onMounted } from "vue"
 import { NInputNumber, NSpace, NSlider } from "naive-ui"
+import { initLS } from "../../js/LocalStorage"
+import { insertStyle, removeStyle } from "../../js/StyleInsert"
 
-if (!localStorage.getItem('customLyricsNonSizeValue')) {
-  localStorage.setItem('customLyricsNonSizeValue', 14);
-}
-
-if (!localStorage.getItem('customLyricsNonWidthValue')) {
-  localStorage.setItem('customLyricsNonWidthValue', 700);
-}
-
-if (!localStorage.getItem('customLyricsNonLineHeightValue')) {
-  localStorage.setItem('customLyricsNonLineHeightValue', 14);
-}
-
-if (!localStorage.getItem('customLyricsSelectSizeValue')) {
-  localStorage.setItem('customLyricsSelectSizeValue', 24);
-}
-
-if (!localStorage.getItem('customLyricsSelectWidthValue')) {
-  localStorage.setItem('customLyricsSelectWidthValue', 900);
-}
-
-if (!localStorage.getItem('customLyricsSelectLineHeightValue')) {
-  localStorage.setItem('customLyricsSelectLineHeightValue', 26);
-}
-
-const lyricsNonSize = ref(localStorage.getItem('customLyricsNonSizeValue'));
-const lyricsNonWidth = ref(localStorage.getItem('customLyricsNonWidthValue'));
-const lyricsNonLineHeight = ref(localStorage.getItem('customLyricsNonLineHeightValue'));
-const lyricsSelectSize = ref(localStorage.getItem('customLyricsSelectSizeValue'));
-const lyricsSelectWidth = ref(localStorage.getItem('customLyricsSelectWidthValue'));
-const lyricsSelectLineHeight = ref(localStorage.getItem('customLyricsSelectLineHeightValue'));
+const lyricsNonSize = ref(initLS('customLyricsNonSizeValue', 14));
+const lyricsNonWidth = ref(initLS('customLyricsNonWidthValue', 700));
+const lyricsNonLineHeight = ref(initLS('customLyricsNonLineHeightValue', 14));
+const lyricsSelectSize = ref(initLS('customLyricsSelectSizeValue', 24));
+const lyricsSelectWidth = ref(initLS('customLyricsSelectWidthValue', 900));
+const lyricsSelectLineHeight = ref(initLS('customLyricsSelectLineHeightValue', 26));
 
 const setLyricsStyle = (value) => {
+  const id = 'custom-lyrics';
+
   if (value) {
-    if (document.getElementById('custom-lyrics')) document.head.removeChild(document.getElementById('custom-lyrics'));
-    const style = document.createElement('style');
-    style.id = 'custom-lyrics';
-    style.innerHTML = `
-    :root {
+    const style = `:root {
       --lyrics-selected-font-size: ${lyricsSelectSize.value}px;
       --lyrics-selected-font-width: ${lyricsSelectWidth.value};
       --lyrics-selected-line-height: ${lyricsSelectLineHeight.value}px;
@@ -115,14 +91,13 @@ const setLyricsStyle = (value) => {
       --lyrics-non-select-font-width: ${lyricsNonWidth.value};
       --lyrics-non-select-line-height: ${lyricsNonLineHeight.value}px;
     }`;
-    document.head.appendChild(style);
+    insertStyle(id, style);
   } else {
-    document.head.removeChild(document.getElementById('custom-lyrics'));
+    removeStyle(id);
   }
 }
 
 const updateLyricsValue = (value, module) => {
-  console.log(value, module);
   localStorage.setItem(module, value);
   setLyricsStyle(true);
 }
@@ -133,11 +108,6 @@ onMounted(() => {
 </script>
 
 <style lang="less" scoped>
-* {
-  padding: 0;
-  margin: 0;
-}
-
 .config-lyrics-card {
   display: flex;
   flex-wrap: wrap;
