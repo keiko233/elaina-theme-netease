@@ -38,38 +38,26 @@
 import { ref, onMounted } from "vue"
 import { NSwitch, NSpin, NRadioGroup, NRadioButton, NSelect, NSpace } from 'naive-ui'
 import isNCMClient from "../../js/ClientCheck.js"
+import { initLS, updateLS, getLS } from "../../js/LocalStorage"
+import { insertStyle, removeStyle } from "../../js/StyleInsert"
 
 const setBocchiOverlay = (value) => {
   const header = document.getElementById('music-163-com');
 
   if (value) {
     if (isNCMClient()) header.classList.add('bocchi-overlay');
-    if (document.getElementById('bocchi-overlay-image')) {
-      document.head.removeChild(document.getElementById('bocchi-overlay-image'));
-    }
-    const style = document.createElement("style");
-    style.id = 'bocchi-overlay-image'
-    style.innerHTML = `
-      body#music-163-com.bocchi-overlay::before {
-        background-image: url(${localStorage.getItem('bocchiOverlayImageData')})
+    const style = `body#music-163-com.bocchi-overlay::before{ 
+      background-image: url(${getLS('bocchiOverlayImageData')})
     }`;
-    document.head.appendChild(style);
+    insertStyle('bocchi-overlay-image', style);
   } else {
-    document.head.removeChild(document.getElementById('bocchi-overlay-image'));
+    removeStyle('bocchi-overlay-image');
     if (isNCMClient()) header.classList.remove('bocchi-overlay');
   }
 }
 
-if (!localStorage.getItem('bocchiOverlaySelectValue')) {
-  localStorage.setItem('bocchiOverlaySelectValue', null)
-}
-
-if (!localStorage.getItem('bocchiOverlayStatusValue')) {
-  localStorage.setItem('bocchiOverlayStatusValue', -1)
-}
-
-const bocchiOverlaySelect = ref(JSON.parse(localStorage.getItem('bocchiOverlaySelectValue')));
-const bocchiOverlayStatus = ref(localStorage.getItem('bocchiOverlayStatusValue'));
+const bocchiOverlaySelect = ref(initLS('bocchiOverlaySelectValue', null));
+const bocchiOverlayStatus = ref(initLS('bocchiOverlayStatusValue', -1));
 const bocchiOverlayLoadingStatus = ref(false);
 
 const bocchiLists = ref([
@@ -81,21 +69,20 @@ const bocchiLists = ref([
 ])
 
 const bocchiOverlaySwitch = (value) => {
-  localStorage.setItem('bocchiOverlaySelectValue', value);
+  updateLS('bocchiOverlaySelectValue', value);
   bocchiOverlayLoadingStatus.value = true;
   fetch(bocchiLists.value[value].url)
     .then((response) => response.json())
     .then((json) => {
-      localStorage.setItem('bocchiOverlayImageData', json.response[0].content);
+      updateLS('bocchiOverlayImageData', json.response[0].content);
       bocchiOverlayLoadingStatus.value = false;
       setBocchiOverlay(true);
     });
-
 }
 
 const bocchiOverlayStatusSwitch = (value) => {
-  console.log(value);
-  localStorage.setItem('bocchiOverlayStatusValue', value);
+  if (value == -1) setBocchiOverlay(false);
+  updateLS('bocchiOverlayStatusValue', value);
 }
 
 const updateBocchiImage = (id) => {
@@ -107,7 +94,7 @@ const updateBocchiImage = (id) => {
   const reader = new FileReader();
   reader.readAsDataURL(file);
   reader.onload = function () {
-    localStorage.setItem('bocchiOverlayImageData', this.result);
+    updateLS('bocchiOverlayImageData', this.result);
     setBocchiOverlay(true);
   }
 }
