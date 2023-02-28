@@ -5,19 +5,19 @@
     <div class="config-blur-card">
       <div class="config-blur-perview">
         <p>主页</p>
-        <n-input-number v-model:value="bulrHome" @update:value="updateBlurValue(bulrHome, 'customBulrHomeValue')" :min="0" />
+        <n-input-number v-model:value="blurHome" @update:value="updateBlurValue(blurHome, 'customBlurHomeValue')" :min="0" />
       </div>
       <div class="config-blur-perview">
         <p>播放页</p>
-        <n-input-number v-model:value="bulrPlay" @update:value="updateBlurValue(bulrPlay, 'customBulrPlayValue')" :min="0" />
+        <n-input-number v-model:value="blurPlay" @update:value="updateBlurValue(blurPlay, 'customBlurPlayValue')" :min="0" />
       </div>
       <div class="config-blur-perview">
         <p>播放页Dock栏</p>
-        <n-input-number v-model:value="bulrDock" @update:value="updateBlurValue(bulrDock, 'customBulrDockValue')" :min="0" />
+        <n-input-number v-model:value="blurDock" @update:value="updateBlurValue(blurDock, 'customBlurDockValue')" :min="0" />
       </div>
       <div class="config-blur-perview">
         <p>播放页评论区卡片</p>
-        <n-input-number v-model:value="bulrComment" @update:value="updateBlurValue(bulrComment, 'customBulrCommentValue')" :min="0" />
+        <n-input-number v-model:value="blurComment" @update:value="updateBlurValue(blurComment, 'customBlurCommentValue')" :min="0" />
       </div>
     </div>
   </div>
@@ -26,49 +26,31 @@
 <script setup>
 import { ref, onMounted } from "vue"
 import { NInputNumber } from 'naive-ui'
+import { initLS } from "../../js/LocalStorage"
+import { insertStyle } from "../../js/StyleInsert"
 
-if (!localStorage.getItem('customBulrHomeValue')) {
-  localStorage.setItem('customBulrHomeValue', 5);
-}
-
-if (!localStorage.getItem('customBulrPlayValue')) {
-  localStorage.setItem('customBulrPlayValue', 5);
-}
-
-if (!localStorage.getItem('customBulrDockValue')) {
-  localStorage.setItem('customBulrDockValue', 32);
-}
-
-if (!localStorage.getItem('customBulrCommentValue')) {
-  localStorage.setItem('customBulrCommentValue', 32);
-}
-
-const bulrHome = ref(localStorage.getItem('customBulrHomeValue'));
-const bulrPlay = ref(localStorage.getItem('customBulrPlayValue'));
-const bulrDock = ref(localStorage.getItem('customBulrDockValue'));
-const bulrComment = ref(localStorage.getItem('customBulrCommentValue'));
+const blurHome = ref(initLS('customBlurHomeValue', 5));
+const blurPlay = ref(initLS('customBlurPlayValue', 5));
+const blurDock = ref(initLS('customBlurDockValue', 32));
+const blurComment = ref(initLS('customBlurCommentValue', 32));
 
 const customBlurStyle = (home, play, dock, comment) => {
-  const style = document.createElement("style");
-  style.id = 'custom-blur'
-  style.innerHTML = `
-  :root {
+  const style = `:root {
     --theme-blur-home: blur(${home}px);
     --theme-blur-play: blur(${play}px);
     --theme-blur-dock: blur(${dock}px);
     --theme-blur-comment: blur(${comment}px);
   }`;
-  document.head.appendChild(style);
+  insertStyle('custom-blur', style);
 }
 
 const updateBlurValue = (value, model) => {
   localStorage.setItem(model, value);
-  document.head.removeChild(document.getElementById('custom-blur'));
-  customBlurStyle(bulrHome.value, bulrPlay.value, bulrDock.value, bulrComment.value);
+  customBlurStyle(blurHome.value, blurPlay.value, blurDock.value, blurComment.value);
 }
 
 onMounted(() => {
-  customBlurStyle(bulrHome.value, bulrPlay.value, bulrDock.value, bulrComment.value);
+  customBlurStyle(blurHome.value, blurPlay.value, blurDock.value, blurComment.value);
 })
 </script>
 
