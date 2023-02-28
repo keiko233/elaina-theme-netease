@@ -24,12 +24,6 @@ const insertSongInfo = () => {
   createSongInfo.appendChild(document.querySelector('.head.j-fflag'))
 }
 
-document.querySelector('.info.j-flag.info-new').onclick = function () {
-  if (!document.querySelector('.elaina-song-info')) {
-    insertSongInfo();
-  }
-}
-
 const songNameOnTopStatus = ref(JSON.parse(localStorage.getItem('enableSongNameOnTop')))
 
 const songNameOnTop = (value) => {
@@ -51,7 +45,13 @@ onMounted(() => {
   if (songNameOnTopStatus.value == true && isNCMClient()) {
     songNameOnTop(true);
   }
-
+  if (isNCMClient()) {
+    document.querySelector('.info.j-flag.info-new').onclick = function () {
+      if (!document.querySelector('.elaina-song-info')) {
+        insertSongInfo();
+      }
+    }
+  }
 })
 </script>
 
