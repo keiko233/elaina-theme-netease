@@ -157,6 +157,9 @@ body.theme-player {
               filter: blur(1px);
               opacity: 0.5;
               transition: all 0.3s;
+              font-size: var(--lyrics-non-select-font-size);
+              font-weight: var(--lyrics-non-select-font-width);
+              line-height: var(--lyrics-non-select-line-height);
             }
           }
 
@@ -169,8 +172,9 @@ body.theme-player {
             p:nth-child(2) {
               filter: drop-shadow(2px 4px 6px black);
               opacity: 1;
-              font-size: 24px;
-              font-weight: 900;
+              font-size: var(--lyrics-selected-font-size);
+              font-weight: var(--lyrics-selected-font-width);
+              line-height: var(--lyrics-selected-line-height);
             }
           }
 

@@ -5,6 +5,7 @@
 
     <PlayerStyle />
     <PlayerSongName />
+    <LyricsConfig />
     <CustomColor />
     <CustomBlur />
     <CustomBackground />
@@ -33,6 +34,7 @@ import packageJson from "../../../package.json"
 import { zhCN, darkTheme, NConfigProvider } from 'naive-ui'
 import PlayerStyle from "./template/PlayerStyle.vue"
 import PlayerSongName from "./template/PlayerSongName.vue"
+import LyricsConfig from "./template/LyricsConfig.vue"
 import CustomColor from "./template/CustomColor.vue"
 import CustomBlur from "./template/CustomBlur.vue"
 import CustomBackground from "./template/CustomBackground.vue"
