@@ -81,6 +81,7 @@ const bocchiOverlaySwitch = (value) => {
 }
 
 const bocchiOverlayStatusSwitch = (value) => {
+  if (value == -1) setBocchiOverlay(false);
   updateLS('bocchiOverlayStatusValue', value);
 }
 
