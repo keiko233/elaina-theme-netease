@@ -48,3 +48,7 @@ onMounted(() => {
 })
 
 </script>
+
+<style lang="less" scoped>
+@import "../../../assets/style/custom/configCommon.less";
+</style>

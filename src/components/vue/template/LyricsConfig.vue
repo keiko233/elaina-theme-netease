@@ -3,8 +3,8 @@
     <h3>播放页歌词设置</h3>
     <p>我的建议，默认别调（</p>
 
-    <div class="config-lyrics-card">
-      <div class="config-lyrics-preview">
+    <div class="config-list-card">
+      <div class="config-list-preview">
         <p>待选歌词</p>
         <n-space vertical>
           <div class="input-box">
@@ -33,7 +33,7 @@
         </n-space>
 
       </div>
-      <div class="config-lyrics-preview">
+      <div class="config-list-preview">
         <p>选中歌词</p>
         <n-space vertical>
           <div class="input-box">
@@ -108,36 +108,5 @@ onMounted(() => {
 </script>
 
 <style lang="less" scoped>
-.config-lyrics-card {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-
-  p {
-    width: 100%;
-  }
-
-  .config-lyrics-preview {
-    width: 260px;
-    margin: 0 10px 10px 0;
-
-    .input-box {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      justify-content: space-between;
-      align-items: center;
-
-      p {
-        width: auto;
-      }
-
-      .input-content {
-        width: 180px;
-      }
-    }
-
-
-  }
-}
+@import "../../../assets/style/custom/configCommon.less";
 </style>

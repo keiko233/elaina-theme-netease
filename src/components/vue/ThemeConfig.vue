@@ -51,7 +51,7 @@ const openUrl = (url) => {
 
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 .config-title {
   font-size: 36px;
   padding-bottom: 12px;
@@ -60,21 +60,6 @@ const openUrl = (url) => {
 .config-menu-title {
   font-size: 24px;
   padding: 12px 0;
-}
-
-.config-card {
-  padding: 12px 0;
-
-  h3 {
-    font-size: 18px;
-    font-weight: 700;
-    padding-bottom: 12px;
-    margin: 0;
-  }
-
-  p {
-    padding-bottom: 6px;
-  }
 }
 
 .config-info {

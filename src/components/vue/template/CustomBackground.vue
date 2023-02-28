@@ -84,6 +84,8 @@ onMounted(() => {
 </script>
 
 <style lang="less" scoped>
+@import "../../../assets/style/custom/configCommon.less";
+
 .preview {
   height: 160px;
   width: 100%;

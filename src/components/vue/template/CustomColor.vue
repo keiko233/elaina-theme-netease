@@ -59,6 +59,8 @@ onMounted(() => {
 </script>
 
 <style lang="less" scoped>
+@import "../../../assets/style/custom/configCommon.less";
+
 .config-color-card {
   display: flex;
   flex-wrap: wrap;

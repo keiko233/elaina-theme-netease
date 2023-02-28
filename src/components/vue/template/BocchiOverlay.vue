@@ -118,6 +118,7 @@ onMounted(() => {
 </script>
 
 <style lang="less" scoped>
+@import "../../../assets/style/custom/configCommon.less";
 .config-card {
   .content {
     padding-top: 10px;
