@@ -99,6 +99,8 @@ onMounted(() => {
     background-image: var(--background-image);
     background-size: contain;
     background-repeat: no-repeat;
+    border: solid 1px #ffffff;
+    margin-right: 10px;
   }
 
   .right {
@@ -108,6 +110,7 @@ onMounted(() => {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    border: solid 1px #ffffff;
   }
 
   p {
