@@ -19,6 +19,12 @@
         theme-primary-font-shadow
       </div>
     </div>
+
+    <div class="elaina-btn-group">
+      <div class="elaina-btn" @click="resetCustomColor">
+        <a>恢复默认</a>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -50,6 +56,11 @@ const updateCustomColor = (value) => {
   localStorage.setItem('customColorValue', value);
   document.head.removeChild(document.getElementById('custom-color'));
   customColorStyle(value);
+}
+
+const resetCustomColor = () => {
+  localStorage.setItem('customColorValue', '#FF1958');
+  customColorStyle('#FF1958');
 }
 
 onMounted(() => {
