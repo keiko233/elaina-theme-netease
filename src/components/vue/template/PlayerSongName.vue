@@ -1,7 +1,7 @@
 <template>
   <div class="config-card">
     <h3>播放界面歌曲名显示</h3>
-    <p>启用需要使用内置的播放界面，用其他的插件可能会出现不兼容问题，所以默认不开启。</p>
+    <p>启用需要使用内置的播放界面，建议开启，但是用其他的插件可能会出现不兼容问题，所以默认不开启。</p>
     <n-switch v-model:value="songNameOnTopStatus" @update:value="songNameOnTopSwitch" size="large">
       <template #checked>
         歌名显示在顶部栏

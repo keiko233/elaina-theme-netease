@@ -1,7 +1,10 @@
 <template>
   <div class="config-card">
     <h3>自定义Logo</h3>
-    <p>首次加载需要网络请求，这会自动完成。如果你没有看到Logo的话，大概是连不上GitHub。当然你也可以自定义。</p>
+    <p>
+      首次加载需要网络请求，这会自动完成。如果你没有看到Logo的话，大概是连不上GitHub，或者是我又写出了Bug（<br>
+      当然你也可以自定义，不建议尺寸太大。
+    </p>
 
     <n-spin :show="logoPreviewLoadingStatus">
       <div class="preview" />
