@@ -8,6 +8,7 @@
     <LyricsConfig />
     <CustomColor />
     <CustomBlur />
+    <BackgroundOverlay />
     <CustomBackground />
     <BocchiOverlay />
     <CustomLogo />
@@ -37,6 +38,7 @@ import PlayerSongName from "./template/PlayerSongName.vue"
 import LyricsConfig from "./template/LyricsConfig.vue"
 import CustomColor from "./template/CustomColor.vue"
 import CustomBlur from "./template/CustomBlur.vue"
+import BackgroundOverlay from "./template/BackgroundOverlay.vue"
 import CustomBackground from "./template/CustomBackground.vue"
 import BocchiOverlay from "./template/BocchiOverlay.vue"
 import CustomLogo from "./template/CustomLogo.vue"

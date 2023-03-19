@@ -12,7 +12,7 @@ export function delLS (variablName) {
 }
 
 export function initLS (variablName, defaultValue) {
-  if (!getLS(variablName)) {
+  if (getLS(variablName) == null) {
     updateLS (variablName, defaultValue);
     return defaultValue;
   } else {
