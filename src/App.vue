@@ -34,7 +34,7 @@ import ThemeConfig from './components/vue/ThemeConfig.vue'
 
   .loadcard {
     backdrop-filter: var(--theme-blur-home);
-    width: 600px;
+    max-width: 600px;
     padding: 24px 36px;
     margin: 10px 0;
     background-color: var(--background-overlay);
