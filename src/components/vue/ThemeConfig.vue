@@ -3,6 +3,7 @@
     <div class="config-title">Elaina Theme Config</div>
     <p>注意：建议不要用其他的主题插件，本主题不会修复与其他主题冲突的问题。</p>
 
+    <Notice />
     <PlayerStyle />
     <PlayerSongName />
     <LyricsConfig />
@@ -33,6 +34,7 @@
 import isNCMClient from "../js/ClientCheck.js"
 import packageJson from "../../../package.json"
 import { zhCN, darkTheme, NConfigProvider } from 'naive-ui'
+import Notice from "./template/Notice.vue"
 import PlayerStyle from "./template/PlayerStyle.vue"
 import PlayerSongName from "./template/PlayerSongName.vue"
 import LyricsConfig from "./template/LyricsConfig.vue"
