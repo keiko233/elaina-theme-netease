@@ -36,15 +36,20 @@ import { updateLS, getLS, delLS } from "../../js/LocalStorage"
 import { insertStyle } from "../../js/StyleInsert"
 
 const setBackgroundImage = (value) => {
-  function addStyle (data) {
-    const style = `:root{ --background-image: url(${data}); }`;
+  function addStyle(data) {
+    const style = `:root{ --background-image: url('${data}'); }`;
     insertStyle('background-iamge', style)
   }
 
   if (value) {
     addStyle(getLS('customBackgroundImageData'));
   } else {
-    addStyle('https://pic.majokeiko.com');
+    fetch('https://pic.majokeiko.com/?m=json')
+      .then((response) => response.json())
+      .then((json) => {
+        console.log(json.response[0].url);
+        addStyle(json.response[0].url);
+      });
   }
 }
 
