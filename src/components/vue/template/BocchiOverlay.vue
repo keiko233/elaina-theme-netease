@@ -27,6 +27,14 @@
         </div>
       </n-space>
 
+      <div class="input-box" v-if="bocchiOverlayStatus != -1">
+        <p>图片缩放大小</p>
+        <div class="input-content">
+          <n-slider v-model:value="bocchiOverlayBackgroundSize" :step="1" :min="0" :max="100"
+            @update:value="setBocchiOverlay('true', bocchiOverlayBackgroundSize)" />
+        </div>
+      </div>
+
       <template #description>
         请求Gist中
       </template>
@@ -36,18 +44,19 @@
 
 <script setup>
 import { ref, onMounted } from "vue"
-import { NSwitch, NSpin, NRadioGroup, NRadioButton, NSelect, NSpace } from 'naive-ui'
+import { NSpin, NRadioGroup, NRadioButton, NSelect, NSpace, NSlider } from 'naive-ui'
 import isNCMClient from "../../js/ClientCheck.js"
 import { initLS, updateLS, getLS } from "../../js/LocalStorage"
 import { insertStyle, removeStyle } from "../../js/StyleInsert"
 
-const setBocchiOverlay = (value) => {
+const setBocchiOverlay = (value, size) => {
   const header = document.getElementById('music-163-com');
 
   if (value) {
     if (isNCMClient()) header.classList.add('bocchi-overlay');
     const style = `body#music-163-com.bocchi-overlay::before{ 
-      background-image: url(${getLS('bocchiOverlayImageData')})
+      background-image: url(${getLS('bocchiOverlayImageData')});
+      background-size: ${size}%
     }`;
     insertStyle('bocchi-overlay-image', style);
   } else {
@@ -58,6 +67,7 @@ const setBocchiOverlay = (value) => {
 
 const bocchiOverlaySelect = ref(initLS('bocchiOverlaySelectValue', null));
 const bocchiOverlayStatus = ref(initLS('bocchiOverlayStatusValue', -1));
+const bocchiOverlayBackgroundSize = ref(initLS('bocchiOverlayBackgroundSizeValue', 20));
 const bocchiOverlayLoadingStatus = ref(false);
 
 const bocchiLists = ref([
@@ -111,7 +121,7 @@ const getBocchiLists = () => {
 
 onMounted(() => {
   if (isNCMClient() && !(bocchiOverlayStatus.value == -1) && !(bocchiOverlaySelect.value == null)) {
-    setBocchiOverlay(true);
+    setBocchiOverlay(true, getLS(bocchiOverlayBackgroundSizeValue));
   }
   getBocchiLists();
 })
@@ -119,9 +129,14 @@ onMounted(() => {
 
 <style lang="less" scoped>
 @import "../../../assets/style/custom/configCommon.less";
+
 .config-card {
   .content {
-    padding-top: 10px;
+    padding: 10px 0;
+  }
+
+  .input-box {
+    padding-bottom: 12px;
   }
 }
 </style>
