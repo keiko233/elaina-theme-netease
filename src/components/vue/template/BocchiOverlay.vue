@@ -31,7 +31,7 @@
         <p>图片缩放大小</p>
         <div class="input-content">
           <n-slider v-model:value="bocchiOverlayBackgroundSize" :step="1" :min="0" :max="100"
-            @update:value="setBocchiOverlay('true', bocchiOverlayBackgroundSize)" />
+            @update:value="updateBocchiOverlaySize" />
         </div>
       </div>
 
@@ -49,20 +49,25 @@ import isNCMClient from "../../js/ClientCheck.js"
 import { initLS, updateLS, getLS } from "../../js/LocalStorage"
 import { insertStyle, removeStyle } from "../../js/StyleInsert"
 
-const setBocchiOverlay = (value, size) => {
+const setBocchiOverlay = (value) => {
   const header = document.getElementById('music-163-com');
 
   if (value) {
     if (isNCMClient()) header.classList.add('bocchi-overlay');
     const style = `body#music-163-com.bocchi-overlay::before{ 
-      background-image: url(${getLS('bocchiOverlayImageData')});
-      background-size: ${size}%
+      background-image: url('${getLS('bocchiOverlayImageData')}');
+      background-size: ${bocchiOverlayBackgroundSize.value}%;
     }`;
     insertStyle('bocchi-overlay-image', style);
   } else {
     removeStyle('bocchi-overlay-image');
     if (isNCMClient()) header.classList.remove('bocchi-overlay');
   }
+}
+
+const updateBocchiOverlaySize = (size) => {
+  updateLS('bocchiOverlayBackgroundSizeValue', size);
+  setBocchiOverlay(true);
 }
 
 const bocchiOverlaySelect = ref(initLS('bocchiOverlaySelectValue', null));
@@ -121,7 +126,7 @@ const getBocchiLists = () => {
 
 onMounted(() => {
   if (isNCMClient() && !(bocchiOverlayStatus.value == -1) && !(bocchiOverlaySelect.value == null)) {
-    setBocchiOverlay(true, getLS(bocchiOverlayBackgroundSizeValue));
+    setBocchiOverlay(true);
   }
   getBocchiLists();
 })
