@@ -49,7 +49,7 @@ import isNCMClient from "../../js/ClientCheck.js"
 import { initLS, updateLS, getLS } from "../../js/LocalStorage"
 import { insertStyle, removeStyle } from "../../js/StyleInsert"
 
-const setBocchiOverlay = (value) => {
+const setBocchiOverlay = (value, size) => {
   const header = document.getElementById('music-163-com');
 
   if (value) {
@@ -126,7 +126,7 @@ const getBocchiLists = () => {
 
 onMounted(() => {
   if (isNCMClient() && !(bocchiOverlayStatus.value == -1) && !(bocchiOverlaySelect.value == null)) {
-    setBocchiOverlay(true);
+    setBocchiOverlay(true, getLS(bocchiOverlayBackgroundSizeValue));
   }
   getBocchiLists();
 })
