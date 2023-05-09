@@ -39,7 +39,7 @@ const setCustomLogo = (value) => {
     style.id = 'custom-logo';
     style.innerHTML = `
     :root {
-      --custom-logo: url(${localStorage.getItem('customLogoImageData')})
+      --custom-logo: url('${localStorage.getItem('customLogoImageData')}')
     }`;
     document.head.appendChild(style);
 
@@ -53,13 +53,14 @@ const setCustomLogo = (value) => {
 
 const logoPreviewLoadingStatus = ref(false);
 
-const getLogoData = () => {
+const defaultLogo = () => {
   logoPreviewLoadingStatus.value = true;
   fetch('https://gist.githubusercontent.com/keiko233/a61d922c32a9b05b3ff2623305dd3faf/raw/11ab2f92f5c6e077237b92a7012d6cef7bc0a962/base64image_majonotabitabi_logo')
     .then((response) => response.json())
     .then((json) => {
       logoPreviewLoadingStatus.value = false;
       localStorage.setItem('customLogoImageData', json.response[0].content);
+      setCustomLogo(true);
     });
 }
 
@@ -78,13 +79,13 @@ const updateCustomLogo = (id) => {
 }
 
 const resetCustomLogo = () => {
-  getLogoData();
-  setCustomLogo(true);
+  setCustomLogo(false);
+  defaultLogo();
 }
 
 onMounted(() => {
   if (localStorage.getItem('customLogoImageData') == null) {
-    getLogoData();
+    defaultLogo();
   }
   setCustomLogo(true);
 })
