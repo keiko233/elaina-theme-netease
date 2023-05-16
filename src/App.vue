@@ -26,7 +26,6 @@ h1 {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: #222222;
 
   .preview-card {
     width: 600px;
