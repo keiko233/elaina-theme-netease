@@ -3,9 +3,10 @@
   "private": true,
   "version": "0.3.0",
   "type": "module",
+  "author": "keiko233",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc && vite build",
+    "build": "vite build && node build.js",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -19,5 +20,22 @@
     "unplugin-vue-components": "^0.24.1",
     "vite": "^4.3.2",
     "vue-tsc": "^1.4.2"
+  },
+  "ncm": {
+    "manifest_version": 1,
+    "name": "ElainaTheme",
+    "slug": "elaina-theme",
+    "betterncm_version": ">=1.0.0",
+    "author_link": "https://majokeiko.com",
+    "description": "可爱的UI，伊蕾娜元素，还有一点自定义。",
+    "preview": "preview.png",
+    "type": "theme",
+    "injects": {
+      "Main": [
+        {
+          "file": "index.js"
+        }
+      ]
+    }
   }
 }
