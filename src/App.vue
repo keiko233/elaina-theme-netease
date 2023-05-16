@@ -4,12 +4,13 @@
       <h1>仅供开发预览，只有在NCM客户端才能生效</h1>
     </div>
     <div class="preview-card">
-      <!-- insert -->
+      <PluginView />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import PluginView from './views/PluginView.vue';
 </script>
 
 <style scoped lang="less">
