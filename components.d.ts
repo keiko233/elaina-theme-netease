@@ -12,5 +12,8 @@ declare module '@vue/runtime-core' {
     AButton: typeof import('ant-design-vue/es')['Button']
     ACard: typeof import('ant-design-vue/es')['Card']
     ASpace: typeof import('ant-design-vue/es')['Space']
+    Footer: typeof import('./src/components/Footer.vue')['default']
+    Header: typeof import('./src/components/Header.vue')['default']
+    NSpace: typeof import('naive-ui')['NSpace']
   }
 }

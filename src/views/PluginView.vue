@@ -1,8 +1,8 @@
 <template>
-  <a-space direction="vertical">
+  <n-space vertical>
     <Header />
     <Footer />
-  </a-space>
+  </n-space>
 </template>
 
 <script setup lang="ts">
