@@ -1,22 +1,38 @@
 <template>
-  <a-space>
-    <a-button type="primary">Primary Button</a-button>
-    <a-button>Default Button</a-button>
-    <a-button type="dashed">Dashed Button</a-button>
-    <a-button type="text">Text Button</a-button>
-    <a-button type="link">Link Button</a-button>
-  </a-space>
-
-  <a-card title="Default size card" style="width: 300px">
-    <template #extra><a href="#">more</a></template>
-    <p>card content</p>
-    <p>card content</p>
-    <p>card content</p>
-  </a-card>
+  <div class="container">
+    <div class="preview-card">
+      <h1>仅供开发预览，只有在NCM客户端才能生效</h1>
+    </div>
+    <div class="preview-card">
+      <!-- insert -->
+    </div>
+  </div>
 </template>
 
 <script setup lang="ts">
 </script>
 
 <style scoped lang="less">
+h1 {
+  margin: 0;
+  font-size: 26px;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #222222;
+
+  .preview-card {
+    width: 600px;
+    padding: 24px 36px;
+    margin: 10px 0;
+    background-color: var(--background-overlay);
+    border-radius: var(--border-radius);
+  }
+}
 </style>
