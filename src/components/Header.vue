@@ -1,14 +1,9 @@
 <template>
   <div class="header">
-    <h3>Elaina Theme Config</h3>
+    <n-gradient-text :size="28" :gradient="{deg: 90,from: '#ff1958',to: '#ff1010'}">
+      Elaina Theme Config
+    </n-gradient-text>
   </div>
 </template>
 
-<style scoped lang="less">
-.header {
-  h3 {
-    font-size: 28px;
-    font-weight: 700;
-  }
-}
-</style>
+<style scoped lang="less"></style>
