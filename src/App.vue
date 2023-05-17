@@ -26,6 +26,10 @@ h1 {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-image: var(--background-image);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
   .preview-card {
     width: 600px;

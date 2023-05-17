@@ -3,6 +3,7 @@
     <Header />
     <CustomColor />
     <ClientHome />
+    <BackgroundConfig />
     <SetupWizard />
     <Footer />
   </n-space>
@@ -12,6 +13,7 @@
 import Header from '../components/Header.vue';
 import CustomColor from '../components/CustomColor/CustomColor.vue';
 import ClientHome from '../components/ClientHome.vue';
+import BackgroundConfig from '../components/BackgroundConfig.vue';
 import SetupWizard from '../components/SetupWizard/Setting.vue';
 import Footer from '../components/Footer.vue';
 </script>
