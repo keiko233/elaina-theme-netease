@@ -9,11 +9,10 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    AButton: typeof import('ant-design-vue/es')['Button']
-    ACard: typeof import('ant-design-vue/es')['Card']
-    ASpace: typeof import('ant-design-vue/es')['Space']
     Footer: typeof import('./src/components/Footer.vue')['default']
     Header: typeof import('./src/components/Header.vue')['default']
+    NGradientText: typeof import('naive-ui')['NGradientText']
     NSpace: typeof import('naive-ui')['NSpace']
+    SetupWizard: typeof import('./src/components/SetupWizard.vue')['default']
   }
 }
