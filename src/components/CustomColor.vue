@@ -34,10 +34,9 @@
 import ConfigCard from "./ConfigCard.vue"
 import { getDarkColor, getLightColor } from "../utils/colorMapping.ts";
 import { checkClassOnBody, insertClassOnBody, insertStyle, removeClassOnBody, removeStyle } from "../utils/styleInsert";
+import { customColorStyleStatus } from "./CustomColor";
 
 const customColor = ref('#ff1958');
-
-const customColorStyleStatus = ref(false);
 
 const customColorStyleSwitch = (value: boolean) => {
   if (value == true) insertComponentStyle(customColor.value);

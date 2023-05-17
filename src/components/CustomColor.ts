@@ -1,0 +1,1 @@
+export const customColorStyleStatus = ref(false);

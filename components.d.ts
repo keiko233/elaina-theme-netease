@@ -9,6 +9,8 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    Chip: typeof import('./src/components/Chip.vue')['default']
+    ClientHome: typeof import('./src/components/ClientHome.vue')['default']
     ConfigCard: typeof import('./src/components/ConfigCard.vue')['default']
     CustomColor: typeof import('./src/components/CustomColor.vue')['default']
     Footer: typeof import('./src/components/Footer.vue')['default']
@@ -17,6 +19,7 @@ declare module '@vue/runtime-core' {
     NGradientText: typeof import('naive-ui')['NGradientText']
     NSpace: typeof import('naive-ui')['NSpace']
     NSwitch: typeof import('naive-ui')['NSwitch']
+    NTooltip: typeof import('naive-ui')['NTooltip']
     Setting: typeof import('./src/components/SetupWizard/Setting.vue')['default']
     SetupHome: typeof import('./src/components/SetupWizard/SetupHome.vue')['default']
   }

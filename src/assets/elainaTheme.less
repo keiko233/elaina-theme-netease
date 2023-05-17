@@ -25,3 +25,108 @@
     display: none;
   }
 }
+
+.client-elaina-theme.client-fillet-elaina-theme {
+  // 上面的内圆角
+  div.u-resize2::before {
+    .common-section-g-sd();
+    background: radial-gradient(calc(var(--border-radius) * 2) at right bottom, transparent 50%, var(--background-overlay)50%);
+  }
+
+  // 下面的内圆角
+  div.u-resize2::after {
+    .common-section-g-sd();
+    background: radial-gradient(calc(var(--border-radius) * 2) at right top, transparent 50%, var(--background-overlay)50%);
+    top: calc(100% - var(--border-radius));
+  }
+}
+
+.client-elaina-theme.client-translucent-elaina-theme {
+  // 修改菜单栏样式
+  section.g-sd {
+    width: 200px;
+    bottom: 72px;
+
+    nav.m-nav {
+      
+      // 扬了喜欢的心动模式
+      span.heartbeat.f-cp {
+        display: none !important;
+      }
+
+      li.gd.j-flyg,
+      li.j-flxg,
+      li.j-flag {
+        a {
+          margin-top: 2px;
+          margin-bottom: 2px;
+        }
+
+        .common-tab-li();
+      }
+
+      li.gd.j-flyg.z-sel a,
+      li.j-flxg.z-sel a,
+      li.j-flag.z-sel a {
+        .common-tab-li-selected();
+
+        svg {
+          fill: #fff;
+        }
+      }
+
+      li.fsection a {
+        padding: 0px 10px 0px 30px;
+      }
+    }
+  }
+
+  // 设置界面样式
+  div.j-flag.u-tab2.u-settab {
+    background-color: var(--background-overlay);
+    height: 54px;
+    padding: 0px 12px;
+    border-radius: 32px;
+
+    li {
+      padding: 10px 0;
+
+      a {
+        padding: 8px 12px;
+        margin: 0;
+        height: auto;
+        line-height: inherit;
+      }
+
+      .common-tab-li();
+
+      a.z-sel {
+        .common-tab-li-selected();
+      }
+
+      a.z-sel:before {
+        content: none;
+      }
+    }
+  }
+
+  // 半透明框架
+  header.g-hd.s-theme-bgc1,
+  section.g-sd,
+  div#main-player {
+    background-color: var(--background-overlay);
+    border: none;
+
+    div.brtAndEnvSoundList.j-brtlist:before,
+    .m-player .brt .brtlist:before {
+      border-color: var(--background-black) transparent transparent var(--background-black) !important;
+      background-color: var(--background-black) !important;
+    }
+
+    div.brtAndEnvSoundList.j-brtlist,
+    div.u-arrlay.m-schlist.j-flag.j-search-body,
+    .brtlist.j-brtlist {
+      background: var(--background-black) !important;
+    }
+  }
+}
