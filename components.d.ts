@@ -13,6 +13,7 @@ declare module '@vue/runtime-core' {
     Header: typeof import('./src/components/Header.vue')['default']
     NGradientText: typeof import('naive-ui')['NGradientText']
     NSpace: typeof import('naive-ui')['NSpace']
-    SetupWizard: typeof import('./src/components/SetupWizard.vue')['default']
+    Setting: typeof import('./src/components/SetupWizard/Setting.vue')['default']
+    SetupHome: typeof import('./src/components/SetupWizard/SetupHome.vue')['default']
   }
 }

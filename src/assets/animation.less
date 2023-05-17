@@ -1,0 +1,31 @@
+.translate-animation-in {
+  animation: translateAnimationIn 0.5s normal 1 forwards !important;
+
+  @keyframes translateAnimationIn {
+    0% {
+      border-radius: calc(var(--border-radius) * 4);
+      transform: scale(0);
+    }
+
+    100% {
+      border-radius: 0px;
+      transform: scale(1);
+    }
+  }
+}
+
+.translate-animation-out {
+  animation: translateAnimationOut 0.5s normal 1 forwards;
+
+  @keyframes translateAnimationOut {
+    0% {
+      border-radius: 0px;
+      transform: scale(1);
+    }
+
+    100% {
+      border-radius: calc(var(--border-radius) * 4);
+      transform: scale(0);
+    }
+  }
+}

@@ -1,13 +1,29 @@
 <template>
-  <div class="setup">
+  <div class="setup" :class="translateAnimationOut">
     <div class="center">
-      <n-gradient-text :size="28" type="info">
-        欢迎使用 Elaina Theme
-      </n-gradient-text>
-      <P>这是一个设置向导，接下来我将带你认识这一个插件</P>
+      <div class="container">
+        <SetupHome />
+
+        <div class="elaina-btn" @click="nextStep">
+          <a>下一步</a>
+        </div>
+      </div>
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+import SetupHome from '../components/SetupWizard/SetupHome.vue';
+import { unmountSetupWizardView } from '../components/SetupWizard/index';
+
+const translateAnimationOut = ref('translate-animation-in');
+
+const nextStep = () => {
+  translateAnimationOut.value = "translate-animation-out";
+  setTimeout(() => unmountSetupWizardView(), 500);
+}
+
+</script>
 
 <style scoped lang="less">
 .setup {
@@ -18,17 +34,6 @@
   height: 100vh;
   width: 100%;
   background-color: #e8f6ff;
-  animation: translateYanimation 0.5s normal 1 forwards;
-
-  @keyframes translateYanimation {
-    0% {
-      transform: translateY(100%);
-    }
-
-    100% {
-      transform: translateY(0);
-    }
-  }
 
   .center {
     height: 100vh;
@@ -36,6 +41,20 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
+    .container {
+      height: 480px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: column;
+
+      .elaina-btn a {
+        padding: 16px 36px;
+        font-size: 18px;
+        border-radius: 36px;
+      }
+    }
   }
 }
 </style>
