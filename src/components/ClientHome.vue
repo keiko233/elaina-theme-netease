@@ -34,25 +34,35 @@ import { insertClassOnBody, removeClassOnBody } from '../utils/styleInsert';
 import ConfigCard from './ConfigCard.vue';
 import Chip from './Chip.vue';
 import { customColorStyleStatus } from './CustomColor';
+import { initLS, putLS } from '../utils/localStorage';
 
-const elainaThemeStatus = ref(false);
+const elainaThemeStatus = ref(initLS('elaina-elainaThemeStatus', false));
 
 const elainaThemeSwitch = (value: boolean) => {
   if (value) insertClassOnBody('client-elaina-theme');
   else removeClassOnBody('client-elaina-theme');
+  putLS('elaina-elainaThemeStatus', value);
 };
 
-const elainaTranslucentFilletStatus = ref(false);
+const elainaTranslucentFilletStatus = ref(initLS('elaina-elainaTranslucentFilletStatus', false));
 
 const elainaTranslucentFilletSwitch = (value: boolean) => {
   if (value) insertClassOnBody('client-translucent-elaina-theme');
   else removeClassOnBody('client-translucent-elaina-theme');
+  putLS('elaina-elainaTranslucentFilletStatus', value);
 };
 
-const elainaThemeFilletStatus = ref(false);
+const elainaThemeFilletStatus = ref(initLS('elaina-elainaThemeFilletStatus', false));
 
 const elainaThemeFilletSwitch = (value: boolean) => {
   if (value) insertClassOnBody('client-fillet-elaina-theme');
   else removeClassOnBody('client-fillet-elaina-theme');
+  putLS('elaina-elainaThemeFilletStatus', value);
 };
+
+onMounted(() => {
+  if (elainaThemeStatus.value) elainaThemeSwitch(true);
+  if (elainaTranslucentFilletStatus.value) elainaTranslucentFilletSwitch(true);
+  if (elainaThemeFilletStatus.value) elainaThemeFilletSwitch(true);
+});
 </script>
