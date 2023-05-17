@@ -1,8 +1,5 @@
 <template>
-  <div class="config-card">
-    <h3>自定义主题色</h3>
-    <p>开启后会扬了网易云的自定义主题色，换成主题内置模块。设定后会全局自动计算其他颜色，类似于Material You的效果，但不完全是。</p>
-
+  <ConfigCard title="自定义主题色" illustrate="开启后会扬了网易云的自定义主题色，换成主题内置模块。设定后会全局自动计算其他颜色，类似于Material You的效果，但不完全是。">
     <n-space vertical :size="12">
       <n-switch v-model:value="customColorStyleStatus" @update:value="customColorStyleSwitch" size="large">
         <template #checked>
@@ -30,11 +27,11 @@
         </div>
       </div>
     </n-space>
-
-  </div>
+  </ConfigCard>
 </template>
 
 <script setup lang="ts">
+import ConfigCard from "./ConfigCard.vue"
 import { getDarkColor, getLightColor } from "../utils/colorMapping.ts";
 import { checkClassOnBody, insertClassOnBody, insertStyle, removeClassOnBody, removeStyle } from "../utils/styleInsert";
 

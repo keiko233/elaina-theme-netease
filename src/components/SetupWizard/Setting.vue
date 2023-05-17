@@ -1,16 +1,14 @@
 <template>
-  <div class="config-card">
-    <h3>设置向导</h3>
-    <p>重新执行一次设置向导</p>
-
+  <ConfigCard title="设置向导" illustrate="重新执行一次设置向导">
     <div class="elaina-btn-group">
       <div class="elaina-btn" @click="mountSetupWizardView">
         <a>执行设置向导</a>
       </div>
     </div>
-  </div>
+  </ConfigCard>
 </template>
 
 <script setup lang="ts">
-import { mountSetupWizardView } from './index'
+import ConfigCard from '../ConfigCard.vue';
+import { mountSetupWizardView } from './index';
 </script>
