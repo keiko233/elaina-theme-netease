@@ -1,4 +1,5 @@
 .elaina-theme {
+
   // 扬了网易云自带主题背景
   body,
   .g-hd,
@@ -21,12 +22,13 @@
   }
 
   // 扬网易云自带主题按钮
-  header.g-hd.s-theme-bgc1 div div.m-leftbox div.m-tool div.itm.itm2.skin.j-flag.z-notip  {
+  header.g-hd.s-theme-bgc1 div div.m-leftbox div.m-tool div.itm.itm2.skin.j-flag.z-notip {
     display: none;
   }
 }
 
 .client-elaina-theme.client-fillet-elaina-theme {
+
   // 上面的内圆角
   div.u-resize2::before {
     .common-section-g-sd();
@@ -42,13 +44,14 @@
 }
 
 .client-elaina-theme.client-translucent-elaina-theme {
+
   // 修改菜单栏样式
   section.g-sd {
     width: 200px;
     bottom: 72px;
 
     nav.m-nav {
-      
+
       // 扬了喜欢的心动模式
       span.heartbeat.f-cp {
         display: none !important;
@@ -82,30 +85,53 @@
   }
 
   // 设置界面样式
-  div.j-flag.u-tab2.u-settab {
-    background-color: var(--background-overlay);
-    height: 54px;
-    padding: 0px 12px;
-    border-radius: 32px;
+  div#x-g-mn {
+    section.g-mn.one {
+      section.g-setHd.j-flag.n-set {
+        div.j-flag.u-tab2.u-settab {
+          background-color: var(--background-overlay);
+          height: 54px;
+          padding: 0px 12px;
+          border-radius: 32px;
 
-    li {
-      padding: 10px 0;
+          li {
+            padding: 10px 0;
 
-      a {
-        padding: 8px 12px;
-        margin: 0;
-        height: auto;
-        line-height: inherit;
+            a {
+              padding: 8px 12px;
+              margin: 0;
+              height: auto;
+              line-height: inherit;
+            }
+
+            .common-tab-li();
+
+            a.z-sel {
+              .common-tab-li-selected();
+            }
+
+            a.z-sel:before {
+              content: none;
+            }
+          }
+        }
       }
 
-      .common-tab-li();
-
-      a.z-sel {
-        .common-tab-li-selected();
+      section.g-setHd.j-flag.n-set::after {
+        content: '';
+        position: absolute;
+        top: 113px;
+        height: 32px;
+        width: 100%;
+        background: linear-gradient(#ffffff, #ffffff00);
       }
 
-      a.z-sel:before {
-        content: none;
+      section.g-mn.g-mn-set.j-flag {
+        top: 0;
+
+        .g-wrap16.q-lrc {
+          margin-top: 144px;
+        }
       }
     }
   }
