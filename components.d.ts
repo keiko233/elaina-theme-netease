@@ -12,7 +12,7 @@ declare module '@vue/runtime-core' {
     Chip: typeof import('./src/components/Chip.vue')['default']
     ClientHome: typeof import('./src/components/ClientHome.vue')['default']
     ConfigCard: typeof import('./src/components/ConfigCard.vue')['default']
-    CustomColor: typeof import('./src/components/CustomColor.vue')['default']
+    CustomColor: typeof import('./src/components/CustomColor/CustomColor.vue')['default']
     Footer: typeof import('./src/components/Footer.vue')['default']
     Header: typeof import('./src/components/Header.vue')['default']
     NColorPicker: typeof import('naive-ui')['NColorPicker']
