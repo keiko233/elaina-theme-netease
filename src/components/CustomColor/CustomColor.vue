@@ -35,10 +35,12 @@ import ConfigCard from "../ConfigCard.vue"
 import { getDarkColor, getLightColor } from "../../utils/colorMapping.ts";
 import { checkClassOnBody, insertClassOnBody, insertStyle, removeClassOnBody, removeStyle } from "../../utils/styleInsert";
 import { customColorStyleStatus, customColor } from "./index.ts";
+import { putLS } from "../../utils/localStorage";
 
 const customColorStyleSwitch = (value: boolean) => {
   if (value == true) insertComponentStyle(customColor.value);
   else removeComponentStyle();
+  putLS('elaina-customColorStyleStatus', value);
 };
 
 const themeVarLists = ref([
@@ -71,6 +73,7 @@ const insertComponentStyle = (color: string) => {
   insertCustomColorStyle(color);
   insertClassOnBody('elaina-theme');
   insertClassOnBody('s-theme-white');
+  putLS('elaina-customColor', color);
 };
 
 const removeComponentStyle = () => {
@@ -78,6 +81,10 @@ const removeComponentStyle = () => {
   if (checkClassOnBody('s-theme-white')) removeClassOnBody('s-theme-white');
   removeStyle('custom-color-style');
 };
+
+onMounted(() => {
+  if (customColorStyleStatus.value) insertComponentStyle(customColor.value);
+});
 </script>
 
 <style lang="less" scoped>
