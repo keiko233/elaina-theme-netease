@@ -27,7 +27,7 @@ const props = defineProps({
   border: solid 1px #ffdee7d6;
   background-color: #ffeef49c;
   border-radius: var(--border-radius);
-
+  backdrop-filter: var(--theme-blur-config-card);
   h3 {
     font-size: 18px;
     font-weight: 700;
