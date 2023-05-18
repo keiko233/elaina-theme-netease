@@ -25,11 +25,13 @@ declare module '@vue/runtime-core' {
     NGrid: typeof import('naive-ui')['NGrid']
     NGridItem: typeof import('naive-ui')['NGridItem']
     NInputNumber: typeof import('naive-ui')['NInputNumber']
+    NSlider: typeof import('naive-ui')['NSlider']
     NSpace: typeof import('naive-ui')['NSpace']
     NSpin: typeof import('naive-ui')['NSpin']
     NSwitch: typeof import('naive-ui')['NSwitch']
     NTag: typeof import('naive-ui')['NTag']
     NTooltip: typeof import('naive-ui')['NTooltip']
+    PlayerConfig: typeof import('./src/components/PlayerConfig/PlayerConfig.vue')['default']
     Setting: typeof import('./src/components/SetupWizard/Setting.vue')['default']
     SetupHome: typeof import('./src/components/SetupWizard/SetupHome.vue')['default']
   }
