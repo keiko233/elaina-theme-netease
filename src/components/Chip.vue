@@ -1,7 +1,9 @@
 <template>
   <div class="chip">
-    <span v-text="props.title" />
-    <slot />
+    <span v-text="props.title" style="margin-left: 6px; margin-right: 8px;" />
+    <span style="float: right;">
+      <slot />
+    </span>
   </div>
 </template>
 
@@ -17,12 +19,11 @@ const props = defineProps({
 <style scoped lang="less">
 .chip {
   background-color: #ffd3d3a7;
-  width: fit-content;
   padding: 8px 10px;
   border-radius: 36px;
-
-  span {
-    margin-right: 8px;
-  }
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 </style>
