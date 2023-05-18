@@ -5,6 +5,7 @@
     <ClientHome />
     <BackgroundConfig />
     <BlurConfig />
+    <LogoConfig />
     <SetupWizard />
     <Footer />
   </n-space>
@@ -16,6 +17,7 @@ import CustomColor from '../components/CustomColor/CustomColor.vue';
 import ClientHome from '../components/ClientHome.vue';
 import BackgroundConfig from '../components/BackgroundConfig.vue';
 import BlurConfig from '../components/BlurConfig.vue';
+import LogoConfig from '../components/LogoConfig.vue';
 import SetupWizard from '../components/SetupWizard/Setting.vue';
 import Footer from '../components/Footer.vue';
 </script>
