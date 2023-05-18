@@ -20,7 +20,7 @@
             <n-input-number :min="0" size="large" v-model:value="elementList.value"
               @update:value="updateCustomBlur(elementList.lsKey, elementList.value)">
               <template #prefix>
-                <n-tag size="small" round :bordered="false" type="info" style="margin-right: 8px; margin-left: 0;"
+                <n-tag size="small" round :bordered="false" type="info" class="tag-input-overlay"
                   v-text="elementList.name" />
               </template>
             </n-input-number>
@@ -114,3 +114,13 @@ onMounted(() => {
   if (customBlurStatus.value) insertCustomBlurStyle();
 });
 </script>
+
+<style scoped lang="less">
+.tag-input-overlay {
+  margin-right: 8px;
+  margin-left: 0;
+  width: 76px;
+  display: flex;
+  justify-content: center;
+}
+</style>
