@@ -1,7 +1,7 @@
 {
   "name": "elaina-theme-netease-",
   "private": true,
-  "version": "0.3.0",
+  "version": "1.0.0",
   "type": "module",
   "author": "keiko233",
   "scripts": {
@@ -27,7 +27,9 @@
     "name": "ElainaTheme",
     "slug": "elaina-theme",
     "betterncm_version": ">=1.0.0",
-    "author_link": "https://majokeiko.com",
+    "author_link": [
+      "https://elaina.moe"
+    ],
     "description": "可爱的UI，伊蕾娜元素，还有一点自定义。",
     "preview": "preview.png",
     "type": "theme",

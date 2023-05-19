@@ -13,7 +13,7 @@ declare module '@vue/runtime-core' {
     BlurConfig: typeof import('./src/components/BlurConfig.vue')['default']
     Chip: typeof import('./src/components/Chip.vue')['default']
     ChipCard: typeof import('./src/components/ChipCard.vue')['default']
-    ClientHome: typeof import('./src/components/ClientHome.vue')['default']
+    ClientHome: typeof import('./src/components/ClientConfig/ClientHome.vue')['default']
     ConfigCard: typeof import('./src/components/ConfigCard.vue')['default']
     CustomColor: typeof import('./src/components/CustomColor/CustomColor.vue')['default']
     Footer: typeof import('./src/components/Footer.vue')['default']
