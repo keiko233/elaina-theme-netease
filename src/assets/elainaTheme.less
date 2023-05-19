@@ -88,6 +88,42 @@
   // 设置界面样式
   div#x-g-mn {
     section.g-mn.one {
+      div.m-tabwrap {
+        background: none;
+        padding: 24px 30px;
+
+        ul.m-tab.j-flag {
+          width: 480px;
+          height: auto;
+          padding: 8px;
+          background-color: var(--background-overlay);
+          border-radius: var(--border-radius);
+          backdrop-filter: var(--theme-blur-home-frame);
+
+          li {
+            a {
+              padding: 8px 12px;
+            }
+
+            .common-tab-li();
+          }
+
+          li.z-selected {
+            a {
+              .common-tab-li-selected();
+            }
+
+            a::after {
+              content: none !important;
+            }
+          }
+        }
+      }
+
+      div.g-recmdwrap.j-flag {
+        margin-top: 92px;
+      }
+
       section.g-setHd.j-flag.n-set {
         div.j-flag.u-tab2.u-settab {
           background-color: var(--background-overlay);
