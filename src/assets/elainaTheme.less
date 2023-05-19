@@ -254,8 +254,10 @@ body#music-163-com.player-elaina-theme {
 
         // 移除包含这首歌的歌单
         div.g-bd2.f-cb {
+
+          div.recommend-btn.j-flag,
           div.g-sd2.recommend.j-flag {
-            display: none;
+            display: none !important;
           }
         }
 
@@ -417,6 +419,10 @@ body.mq-playing.player-elaina-theme {
   .m-leftbox {
     display: none;
   }
+
+  div#main-player {
+    backdrop-filter: var(--theme-blur-play-dock);
+  }
 }
 
 // 顶部显示歌曲名
@@ -471,7 +477,7 @@ body#music-163-com.song-info-elaina-theme {
         .title {
           h1.f-ff2.f-ust.f-ust-1 {
             .name.j-flag {
-              color: rgba(0, 0, 0, 0.6);
+              color: #fffc;
               font-weight: 700;
               font-size: 20px;
             }
@@ -494,6 +500,7 @@ body#music-163-com.song-info-elaina-theme {
                 font-size: 18px;
                 font-weight: 700;
                 transition: all 0.3s;
+                color: #fffc;
               }
 
               a:hover {
@@ -517,7 +524,7 @@ body#music-163-com.song-info-elaina-theme {
             font-size: 18px;
 
             b {
-              color: rgba(0, 0, 0, 0.3) !important;
+              color: #fffc !important;
               font-weight: 900 !important;
             }
           }
@@ -527,6 +534,7 @@ body#music-163-com.song-info-elaina-theme {
   }
 
   div.g-singlec {
+
     // 左侧高度对齐调整
     .sd.j-flag {
       margin: 76px 0 !important;
