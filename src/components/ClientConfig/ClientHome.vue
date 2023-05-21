@@ -42,6 +42,8 @@ import {
   elainaThemeSwitch,
   elainaTranslucentFilletStatus,
   elainaTranslucentFilletSwitch,
+  elainaFontHighContrastStatus,
+  elainaFontHighContrastSwitch,
   removeNavVideoStatus,
   removeNavVideoSwitch,
   removeNavLookStatus,
@@ -60,6 +62,12 @@ const elementLists = ref([
     title: "启用内圆角",
     valueModel: elainaThemeFilletStatus.value,
     update: elainaThemeFilletSwitch
+  },
+  {
+    title: "文字高对比度",
+    tip: "增强部分场景下文字的对比度，防止看不清。",
+    valueModel: elainaFontHighContrastStatus.value,
+    update: elainaFontHighContrastSwitch
   },
   {
     title: "移除侧边栏视频",

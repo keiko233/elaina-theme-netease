@@ -25,6 +25,14 @@ export const elainaThemeFilletSwitch = (value: boolean) => {
   putLS('elaina-elainaThemeFilletStatus', value);
 };
 
+export const elainaFontHighContrastStatus = ref(initLS('elaina-elainaFontHighContrast', false));
+
+export const elainaFontHighContrastSwitch = (value: boolean) => {
+  if (value) insertClassOnBody('client-font-high-contrast');
+  else removeClassOnBody('client-font-high-contrast');
+  putLS('elaina-elainaFontHighContrastStatus', value);
+};
+
 export const removeNavVideoStatus = ref(initLS('elaina-removeNavVideoStatus', false));
 
 export const removeNavVideoSwitch = (value: boolean) => {
