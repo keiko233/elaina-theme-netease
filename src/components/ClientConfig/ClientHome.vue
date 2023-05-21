@@ -16,15 +16,20 @@
       启用需要先开启自定义主题色，不然颜色无法正常显示
     </n-tooltip>
 
-      <n-grid :x-gap="12" :y-gap="8" cols="2 300:3 600:4 800:6" style="margin-top: 12px;" v-if="elainaThemeStatus">
+    <n-grid :x-gap="12" :y-gap="8" cols="2 300:3 600:4 800:6" style="margin-top: 12px;" v-if="elainaThemeStatus">
 
-        <n-grid-item v-for="elementList in elementLists">
-          <Chip :title="elementList.title">
-            <n-switch v-model:value="elementList.valueModel" @update:value="elementList.update" />
-          </Chip>
-        </n-grid-item>
+      <n-grid-item v-for="elementList in elementLists">
+        <n-tooltip trigger="hover" :disabled="!elementList.tip">
+          <template #trigger>
+            <Chip :title="elementList.title">
+              <n-switch v-model:value="elementList.valueModel" @update:value="elementList.update" />
+            </Chip>
+          </template>
+          {{ elementList.tip }}
+        </n-tooltip>
+      </n-grid-item>
 
-      </n-grid>
+    </n-grid>
 
   </ConfigCard>
 </template>
@@ -70,7 +75,8 @@ const elementLists = ref([
 
 onMounted(() => {
   if (elainaThemeStatus.value) elainaThemeSwitch(true);
-  if (elainaTranslucentFilletStatus.value) elainaTranslucentFilletSwitch(true);
-  if (elainaThemeFilletStatus.value) elainaThemeFilletSwitch(true);
+  for (let i = 0; i < elementLists.value.length; i++) {
+    if (elementLists.value[i].valueModel) elementLists.value[i].update(true);
+  }
 });
 </script>
