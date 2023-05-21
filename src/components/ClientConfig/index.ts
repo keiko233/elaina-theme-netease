@@ -15,3 +15,4 @@ export const elainaFontHighContrast = new ToggleClass('client-font-high-contrast
 export const elainaBetterPlaylist = new ToggleClass('better-playlist', 'elaina-elainaBetterPlaylistStatus');
 export const removeNavVideo = new ToggleClass('client-remove-nav-video', 'elaina-removeNavVideoStatus');
 export const removeNavLook = new ToggleClass('client-remove-nav-look', 'elaina-removeNavLookStatus');
+export const removeRecmdBanner = new ToggleClass('client-remove-recmd-banner', 'elaina-removeRecmdBannerStatus');
