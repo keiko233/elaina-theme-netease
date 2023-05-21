@@ -18,3 +18,4 @@ export const removeNavLook = new ToggleClass('client-remove-nav-look', 'elaina-r
 export const removeRecmdBanner = new ToggleClass('client-remove-recmd-banner', 'elaina-removeRecmdBannerStatus');
 export const removeRecmdPodcast = new ToggleClass('client-remove-recmd-podcast', 'elaina-removeRecmdPodcastStatus');
 export const removeRecmdAudioBook = new ToggleClass('client-remove-recmd-audiobook', 'elaina-removeRecmdAudioBook');
+export const removeRecmdExcmv = new ToggleClass('client-remove-recmd-excmv', 'elaina-removeRecmdExcmv');
