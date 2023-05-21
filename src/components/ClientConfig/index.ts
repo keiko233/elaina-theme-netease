@@ -20,3 +20,4 @@ export const removeRecmdPodcast = new ToggleClass('client-remove-recmd-podcast',
 export const removeRecmdAudioBook = new ToggleClass('client-remove-recmd-audiobook', 'elaina-removeRecmdAudioBook');
 export const removeRecmdExcmv = new ToggleClass('client-remove-recmd-excmv', 'elaina-removeRecmdExcmv');
 export const removeRecmdNewsong = new ToggleClass('client-remove-recmd-newsong', 'elaina-removeRecmdNewsong');
+export const removeRecmdThemepodcast = new ToggleClass('client-remove-recmd-themepodcast', 'elaina-removeRecmdThemepodcast');
