@@ -88,6 +88,45 @@
   // 设置界面样式
   div#x-g-mn {
     section.g-mn.one {
+
+      // 修复关注页背景
+      div.z-noscr {
+        div.g-bd.f-cb.f-oys {
+          div.g-bdm {
+            div.g-bdmc {
+              div.g-wrap.q-lrc.rhom-g-wrap {
+                div.m-timeline {
+                  div.m-dtool {
+                    background: none;
+                  }
+                }
+              }
+            }
+          }
+
+          div.g-bds.j-flag.g-wrap1.q-lrc {
+            div:nth-child(1) {
+              div.j-flag {
+                div.m-uinfo {
+                  background: none;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      // 修复FM背景
+      div#page_pc_userfm_songplay {
+        section.g-play.f-cb {
+          div.fmplay {
+            div.covers.f-pr.j-flag::after {
+              display: none;
+            }
+          }
+        }
+      }
+
       div.m-tabwrap {
         background: none;
         padding: 24px 30px;
@@ -196,35 +235,35 @@
 
   // 喜欢tab栏
   section.g-mn.one {
-    div#page_mine_like_music{
+    div#page_mine_like_music {
       nav.u-tab2.f-cb.f-ff2.j-flag {
         ul.j-flag {
           background-color: var(--background-overlay);
           height: 54px;
           padding: 0px 12px;
           border-radius: 32px;
-      
+
           li {
             padding: 10px 0;
-      
+
             a {
               padding: 8px 12px;
               margin: 0;
               height: auto;
               line-height: inherit;
             }
-      
+
             .common-tab-li();
-      
+
             a.z-sel {
               .common-tab-li-selected();
-      
+
               span.j-flag {
                 color: #fff;
                 font-size: 12px !important;
               }
             }
-      
+
             a.z-sel:before {
               content: none;
             }
@@ -622,6 +661,7 @@ body#music-163-com.song-info-elaina-theme {
 body#music-163-com.mq-playing-scroll.song-info-elaina-theme {
   section.g-single {
     div.g-singlec {
+
       // 滚动显示评论按钮
       .g-singlec-comment-detail.j-flag.z-show {
         bottom: 96px;
