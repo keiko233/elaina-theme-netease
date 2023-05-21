@@ -1,8 +1,8 @@
 <template>
   <div class="config-card">
     <div>
-      <h3 v-text="props.title" />
-      <p v-text="props.illustrate" />
+      <h3 v-if="props.title" v-text="props.title" />
+      <p v-if="props.illustrate" v-text="props.illustrate" />
       <slot />
     </div>
   </div>
@@ -28,6 +28,7 @@ const props = defineProps({
   background-color: #ffeef49c;
   border-radius: var(--border-radius);
   backdrop-filter: var(--theme-blur-config-card);
+  
   h3 {
     font-size: 18px;
     font-weight: 700;

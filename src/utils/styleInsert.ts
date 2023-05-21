@@ -1,4 +1,5 @@
 import { isNCMClient } from "./clientCheck";
+import { initLS, putLS } from "./localStorage";
 
 export function insertStyle(id: string, style: string) {
   removeStyle(id);
@@ -33,3 +34,33 @@ export function checkClassOnBody(styleClass: string) {
   if (isNCMClient()) return ncmApp.classList.contains(styleClass);
   else console.log('Unknown client.');
 }
+
+export class ToggleClass {
+  private status: Ref<boolean>;
+  private className: string;
+  private lsKey: string;
+
+  constructor(className: string, lsKey: string, initialValue = false) {
+    this.status = ref(initLS(lsKey, initialValue));
+    this.className = className;
+    this.lsKey = lsKey;
+  }
+
+  private toggleClassOnBody(value: boolean) {
+    if (value) {
+      insertClassOnBody(this.className);
+    } else {
+      removeClassOnBody(this.className);
+    }
+    putLS(this.lsKey, value);
+  }
+
+  public toggle(value: boolean) {
+    this.status.value = value;
+    this.toggleClassOnBody(value);
+  }
+
+  public get value() {
+    return this.status.value;
+  }
+};

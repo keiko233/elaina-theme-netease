@@ -49,19 +49,19 @@ const elementLists = ref([
   },
   { 
     name: '主页边框', 
-    value: initLS('elaina-blurHomeFrameValue', 0), 
+    value: initLS('elaina-blurHomeFrameValue', 4), 
     lsKey: 'elaina-blurHomeFrameValue', 
     style: '--theme-blur-home-frame' 
   },
   { 
     name: '播放页', 
-    value: initLS('elaina-blurPlayValue', 0), 
+    value: initLS('elaina-blurPlayValue', 8), 
     lsKey: 'elaina-blurPlayValue', 
     style: '--theme-blur-play' 
   },
   { 
     name: '播放页底栏', 
-    value: initLS('elaina-blurPlayDockValue', 0), 
+    value: initLS('elaina-blurPlayDockValue', 32), 
     lsKey: 'elaina-blurPlayDockValue', 
     style: '--theme-blur-play-dock' 
   },

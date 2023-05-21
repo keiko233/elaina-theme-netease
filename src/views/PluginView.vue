@@ -5,6 +5,7 @@
     <ClientHome />
     <BackgroundConfig />
     <BlurConfig />
+    <BocchiOverlay />
     <LogoConfig />
     <PlayerConfig />
     <SetupWizard />
@@ -15,9 +16,10 @@
 <script setup lang="ts">
 import Header from '../components/Header.vue';
 import CustomColor from '../components/CustomColor/CustomColor.vue';
-import ClientHome from '../components/ClientHome.vue';
+import ClientHome from '../components/ClientConfig/ClientHome.vue';
 import BackgroundConfig from '../components/BackgroundConfig.vue';
 import BlurConfig from '../components/BlurConfig.vue';
+import BocchiOverlay from '../components/BocchiOverlay.vue';
 import LogoConfig from '../components/LogoConfig.vue';
 import PlayerConfig from '../components/PlayerConfig/PlayerConfig.vue';
 import SetupWizard from '../components/SetupWizard/Setting.vue';

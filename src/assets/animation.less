@@ -29,3 +29,39 @@
     }
   }
 }
+
+.translate-animation-gradient-in {
+  animation: translateAnimationGradientIn 1.2s normal 1 forwards;
+
+  @keyframes translateAnimationGradientIn {
+    0% {
+      transform: translateX(30%);
+      opacity: 0;
+      filter: blur(12px);
+    }
+
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+      filter: blur(0);
+    }
+  }
+}
+
+.translate-animation-gradient-out {
+  animation: translateAnimationGradientOut 1.2s normal 1 forwards;
+
+  @keyframes translateAnimationGradientOut {
+    0% {
+      transform: translateX(0);
+      opacity: 1;
+      filter: blur(0);
+    }
+
+    100% {
+      transform: translateX(-30%);
+      opacity: 0;
+      filter: blur(12px);
+    }
+  }
+}

@@ -88,6 +88,81 @@
   // 设置界面样式
   div#x-g-mn {
     section.g-mn.one {
+
+      // 修复关注页背景
+      div.z-noscr {
+        div.g-bd.f-cb.f-oys {
+          div.g-bdm {
+            div.g-bdmc {
+              div.g-wrap.q-lrc.rhom-g-wrap {
+                div.m-timeline {
+                  div.m-dtool {
+                    background: none;
+                  }
+                }
+              }
+            }
+          }
+
+          div.g-bds.j-flag.g-wrap1.q-lrc {
+            div:nth-child(1) {
+              div.j-flag {
+                div.m-uinfo {
+                  background: none;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      // 修复FM背景
+      div#page_pc_userfm_songplay {
+        section.g-play.f-cb {
+          div.fmplay {
+            div.covers.f-pr.j-flag::after {
+              display: none;
+            }
+          }
+        }
+      }
+
+      div.m-tabwrap {
+        background: none;
+        padding: 24px 30px;
+
+        ul.m-tab.j-flag {
+          width: 480px;
+          height: auto;
+          padding: 8px;
+          background-color: var(--background-overlay);
+          border-radius: var(--border-radius);
+          backdrop-filter: var(--theme-blur-home-frame);
+
+          li {
+            a {
+              padding: 8px 12px;
+            }
+
+            .common-tab-li();
+          }
+
+          li.z-selected {
+            a {
+              .common-tab-li-selected();
+            }
+
+            a::after {
+              content: none !important;
+            }
+          }
+        }
+      }
+
+      div.g-recmdwrap.j-flag {
+        margin-top: 92px;
+      }
+
       section.g-setHd.j-flag.n-set {
         div.j-flag.u-tab2.u-settab {
           background-color: var(--background-overlay);
@@ -140,6 +215,7 @@
   // 半透明框架
   header.g-hd.s-theme-bgc1,
   section.g-sd,
+  div.m-player,
   div#main-player {
     background-color: var(--background-overlay);
     border: none;
@@ -155,6 +231,46 @@
     div.u-arrlay.m-schlist.j-flag.j-search-body,
     .brtlist.j-brtlist {
       background: var(--background-black) !important;
+    }
+  }
+
+  // 喜欢tab栏
+  section.g-mn.one {
+    div#page_mine_like_music {
+      nav.u-tab2.f-cb.f-ff2.j-flag {
+        ul.j-flag {
+          background-color: var(--background-overlay);
+          height: 54px;
+          padding: 0px 12px;
+          border-radius: 32px;
+
+          li {
+            padding: 10px 0;
+
+            a {
+              padding: 8px 12px;
+              margin: 0;
+              height: auto;
+              line-height: inherit;
+            }
+
+            .common-tab-li();
+
+            a.z-sel {
+              .common-tab-li-selected();
+
+              span.j-flag {
+                color: #fff;
+                font-size: 12px !important;
+              }
+            }
+
+            a.z-sel:before {
+              content: none;
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -254,8 +370,10 @@ body#music-163-com.player-elaina-theme {
 
         // 移除包含这首歌的歌单
         div.g-bd2.f-cb {
+
+          div.recommend-btn.j-flag,
           div.g-sd2.recommend.j-flag {
-            display: none;
+            display: none !important;
           }
         }
 
@@ -396,11 +514,11 @@ body#music-163-com.player-elaina-theme {
       }
 
       .g-singlec-comment-detail.j-flag.z-show {
-        bottom: 96px;
+        bottom: -56px;
       }
 
       .g-singlec-comment-top.j-flag.z-show {
-        bottom: 84px;
+        bottom: 88px;
       }
     }
   }
@@ -416,6 +534,10 @@ body.mq-playing.player-elaina-theme {
 
   .m-leftbox {
     display: none;
+  }
+
+  div#main-player {
+    backdrop-filter: var(--theme-blur-play-dock);
   }
 }
 
@@ -471,7 +593,7 @@ body#music-163-com.song-info-elaina-theme {
         .title {
           h1.f-ff2.f-ust.f-ust-1 {
             .name.j-flag {
-              color: rgba(0, 0, 0, 0.6);
+              color: #fffc;
               font-weight: 700;
               font-size: 20px;
             }
@@ -494,6 +616,7 @@ body#music-163-com.song-info-elaina-theme {
                 font-size: 18px;
                 font-weight: 700;
                 transition: all 0.3s;
+                color: #fffc;
               }
 
               a:hover {
@@ -517,7 +640,7 @@ body#music-163-com.song-info-elaina-theme {
             font-size: 18px;
 
             b {
-              color: rgba(0, 0, 0, 0.3) !important;
+              color: #fffc !important;
               font-weight: 900 !important;
             }
           }
@@ -527,9 +650,34 @@ body#music-163-com.song-info-elaina-theme {
   }
 
   div.g-singlec {
+
     // 左侧高度对齐调整
     .sd.j-flag {
       margin: 76px 0 !important;
     }
   }
+}
+
+// 播放页滚动后显示内容
+body#music-163-com.mq-playing-scroll.song-info-elaina-theme {
+  section.g-single {
+    div.g-singlec {
+
+      // 滚动显示评论按钮
+      .g-singlec-comment-detail.j-flag.z-show {
+        bottom: 96px;
+      }
+    }
+  }
+}
+
+// 波奇小挂件
+body#music-163-com.bocchi-overlay::before {
+  content: '';
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-position-y: bottom;
 }

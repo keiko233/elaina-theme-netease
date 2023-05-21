@@ -1,0 +1,237 @@
+// 扬了侧边栏MV
+body#music-163-com.client-elaina-theme.client-remove-nav-video {
+  nav.m-nav.m-nav-s div.nav {
+    ul.sys.firstlist {
+      li.mv {
+        display: none;
+      }
+    }
+  }
+}
+
+// 扬了侧边栏直播
+body#music-163-com.client-elaina-theme.client-remove-nav-look {
+  nav.m-nav.m-nav-s div.nav {
+    ul.sys.firstlist {
+      li.look {
+        display: none;
+      }
+    }
+  }
+}
+
+// 高对比度文字
+body#music-163-com.client-elaina-theme.client-font-high-contrast {
+  // 全部文字元素加上阴影
+  div#x-g-mn * {
+    text-shadow: #00000096 0 0 1px;
+  }
+}
+
+// 更好的歌曲列表
+body#music-163-com.client-elaina-theme.better-playlist {
+
+  .better-playlist() {
+    background-color: #ffeef49c;
+    border: solid 1px #ffdee7d6;
+    border-radius: var(--border-radius);
+
+    .head.sort.f-cb.j-flag {
+      text-shadow: var(--theme-primary-font-shadow);
+      font-weight: 700;
+
+      * {
+        color: var(--theme-primary);
+      }
+    }
+  }
+  
+  // 全部文字元素加上阴影
+  div#x-g-mn {
+    section.g-mn.one {
+      border-radius: var(--border-radius) 0 0 var(--border-radius);
+
+      // 喜欢的音乐
+      div#page_mine_like_music {
+        div#page_pc_songlist_songflow {
+          padding: var(--border-radius);
+
+          div.m-plylist {
+            .better-playlist();
+          }
+        }
+      }
+
+      // 历史播放
+      div.m-history {
+        div.container.j-flag {
+          div.n-history {
+            padding: var(--border-radius);
+
+            div.m-plylist {
+              .better-playlist();
+            }
+          }
+        }
+      }
+
+      // 搜索页
+      div.m-search {
+        div.container.j-flag {
+          padding: var(--border-radius);
+
+          div.j-flag:nth-child(3) {
+            .better-playlist();
+
+            .container-searchtrack {
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// 扬了主页轮播图
+body#music-163-com.client-elaina-theme.client-remove-recmd-banner {
+  div#x-g-mn {
+    section.g-mn.one {
+      div#page_pc_home {
+        div.g-recmdwrap.j-flag {
+          div#page_pc_home_rcmd {
+            div.m-banner {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// 扬了主页热门博客
+body#music-163-com.client-elaina-theme.client-remove-recmd-podcast {
+  div#x-g-mn {
+    section.g-mn.one {
+      div#page_pc_home {
+        div.g-recmdwrap.j-flag {
+          div#page_pc_home_rcmd {
+            a#dis-podcast,
+            ul.discover-podcast {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// 扬了主页听见好书
+body#music-163-com.client-elaina-theme.client-remove-recmd-audiobook {
+  div#x-g-mn {
+    section.g-mn.one {
+      div#page_pc_home {
+        div.g-recmdwrap.j-flag {
+          div#page_pc_home_rcmd {
+            a.discover-audioBook-titleBox,
+            ul.discover-audioBook {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// 扬了主页独家放送
+body#music-163-com.client-elaina-theme.client-remove-recmd-excmv {
+  div#x-g-mn {
+    section.g-mn.one {
+      div#page_pc_home {
+        div.g-recmdwrap.j-flag {
+          div#page_pc_home_rcmd {
+            a.u-headtit[data-da-event="c324"],
+            ul.m-list.m-list-excmv.m-list-flow {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// 扬了主页最新音乐
+body#music-163-com.client-elaina-theme.client-remove-recmd-newsong {
+  div#x-g-mn {
+    section.g-mn.one {
+      div#page_pc_home {
+        div.g-recmdwrap.j-flag {
+          div#page_pc_home_rcmd {
+            a.u-headtit[data-da-event="c326"],
+            div[data-nej-selector="__nNewSongBox"] {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// 扬了主页主题博客
+body#music-163-com.client-elaina-theme.client-remove-recmd-themepodcast {
+  div#x-g-mn {
+    section.g-mn.one {
+      div#page_pc_home {
+        div.g-recmdwrap.j-flag {
+          div#page_pc_home_rcmd {
+            div[data-nej-selector="__nThemePodcastContainer"] {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// 扬了主页推荐MV
+body#music-163-com.client-elaina-theme.client-remove-recmd-mvbox {
+  div#x-g-mn {
+    section.g-mn.one {
+      div#page_pc_home {
+        div.g-recmdwrap.j-flag {
+          div#page_pc_home_rcmd {
+            ul[data-nej-selector="__nLiveBox"],
+            a[data-nej-selector="__nLiveTit"],
+            ul[data-nej-selector="__nRecMVBox"],
+            a.u-headtit[data-da-event="c328"] {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// 扬了主页调整栏目顺序
+body#music-163-com.client-elaina-theme.client-remove-recmd-adjustbar {
+  div#x-g-mn {
+    section.g-mn.one {
+      div#page_pc_home {
+        div.g-recmdwrap.j-flag {
+          div#page_pc_home_rcmd {
+            div.m-adjustbar[data-nej-selector="__nOrderButton"] {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
