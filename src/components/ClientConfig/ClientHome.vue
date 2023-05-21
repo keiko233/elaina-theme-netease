@@ -44,7 +44,8 @@ import {
   elainaBetterPlaylist,
   removeNavVideo,
   removeNavLook,
-  removeRecmdBanner
+  removeRecmdBanner,
+  removeRecmdPodcast
 } from '.';
 import ConfigCard from './../ConfigCard.vue';
 import { customColorStyleStatus } from './../CustomColor';
@@ -85,6 +86,11 @@ const elementLists = ref([
     title: "移除主页轮播图",
     valueModel: removeRecmdBanner.value,
     update: removeRecmdBanner.toggle.bind(removeRecmdBanner)
+  },
+  {
+    title: "移除主页热门博客",
+    valueModel: removeRecmdPodcast.value,
+    update: removeRecmdPodcast.toggle.bind(removeRecmdPodcast)
   }
 ]);
 
