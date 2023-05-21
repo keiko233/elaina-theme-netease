@@ -16,7 +16,7 @@
       启用需要先开启自定义主题色，不然颜色无法正常显示
     </n-tooltip>
 
-    <n-grid :x-gap="12" :y-gap="8" cols="2 300:3 600:4 800:6" style="margin-top: 12px;" v-if="elainaThemeStatus">
+    <n-grid :x-gap="12" :y-gap="8" cols="2 900:3 1200:4" style="margin-top: 12px;" v-if="elainaThemeStatus">
 
       <n-grid-item v-for="elementList in elementLists">
         <n-tooltip trigger="hover" :disabled="!elementList.tip">
