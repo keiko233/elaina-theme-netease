@@ -27,3 +27,68 @@ body#music-163-com.client-elaina-theme.client-font-high-contrast {
     text-shadow: #00000096 0 0 1px;
   }
 }
+
+// 更好的歌曲列表
+body#music-163-com.client-elaina-theme.better-playlist {
+
+  .better-playlist() {
+    background-color: #ffeef49c;
+    border: solid 1px #ffdee7d6;
+    border-radius: var(--border-radius);
+
+    .head.sort.f-cb.j-flag {
+      text-shadow: var(--theme-primary-font-shadow);
+      font-weight: 700;
+
+      * {
+        color: var(--theme-primary);
+      }
+    }
+  }
+  
+  // 全部文字元素加上阴影
+  div#x-g-mn {
+    section.g-mn.one {
+      border-radius: var(--border-radius) 0 0 var(--border-radius);
+
+      // 喜欢的音乐
+      div#page_mine_like_music {
+        div#page_pc_songlist_songflow {
+          padding: var(--border-radius);
+
+          div.m-plylist {
+            .better-playlist();
+          }
+        }
+      }
+
+      // 历史播放
+      div.m-history {
+        div.container.j-flag {
+          div.n-history {
+            padding: var(--border-radius);
+
+            div.m-plylist {
+              .better-playlist();
+            }
+          }
+        }
+      }
+
+      // 搜索页
+      div.m-search {
+        div.container.j-flag {
+          padding: var(--border-radius);
+
+          div.j-flag:nth-child(3) {
+            .better-playlist();
+
+            .container-searchtrack {
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

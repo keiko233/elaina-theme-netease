@@ -44,6 +44,8 @@ import {
   elainaTranslucentFilletSwitch,
   elainaFontHighContrastStatus,
   elainaFontHighContrastSwitch,
+  elainaBetterPlaylistStatus,
+  elainaBetterPlaylistSwitch,
   removeNavVideoStatus,
   removeNavVideoSwitch,
   removeNavLookStatus,
@@ -68,6 +70,11 @@ const elementLists = ref([
     tip: "增强部分场景下文字的对比度，防止看不清。",
     valueModel: elainaFontHighContrastStatus.value,
     update: elainaFontHighContrastSwitch
+  },
+  {
+    title: "更好的歌曲列表",
+    valueModel: elainaBetterPlaylistStatus.value,
+    update: elainaBetterPlaylistSwitch
   },
   {
     title: "移除侧边栏视频",

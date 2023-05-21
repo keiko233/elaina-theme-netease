@@ -33,6 +33,14 @@ export const elainaFontHighContrastSwitch = (value: boolean) => {
   putLS('elaina-elainaFontHighContrastStatus', value);
 };
 
+export const elainaBetterPlaylistStatus = ref(initLS('elaina-elainaBetterPlaylistStatus', false));
+
+export const elainaBetterPlaylistSwitch = (value: boolean) => {
+  if (value) insertClassOnBody('better-playlist');
+  else removeClassOnBody('better-playlist');
+  putLS('elaina-elainaBetterPlaylistStatus', value);
+};
+
 export const removeNavVideoStatus = ref(initLS('elaina-removeNavVideoStatus', false));
 
 export const removeNavVideoSwitch = (value: boolean) => {
