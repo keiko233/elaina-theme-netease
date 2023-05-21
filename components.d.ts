@@ -11,6 +11,7 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     BackgroundConfig: typeof import('./src/components/BackgroundConfig.vue')['default']
     BlurConfig: typeof import('./src/components/BlurConfig.vue')['default']
+    BocchiOverlay: typeof import('./src/components/BocchiOverlay.vue')['default']
     Chip: typeof import('./src/components/Chip.vue')['default']
     ChipCard: typeof import('./src/components/ChipCard.vue')['default']
     ClientHome: typeof import('./src/components/ClientConfig/ClientHome.vue')['default']
@@ -25,6 +26,7 @@ declare module '@vue/runtime-core' {
     NGrid: typeof import('naive-ui')['NGrid']
     NGridItem: typeof import('naive-ui')['NGridItem']
     NInputNumber: typeof import('naive-ui')['NInputNumber']
+    NSelect: typeof import('naive-ui')['NSelect']
     NSlider: typeof import('naive-ui')['NSlider']
     NSpace: typeof import('naive-ui')['NSpace']
     NSpin: typeof import('naive-ui')['NSpin']
