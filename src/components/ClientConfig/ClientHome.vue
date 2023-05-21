@@ -36,55 +36,49 @@
 
 <script setup lang="ts">
 import {
-  elainaThemeFilletStatus,
-  elainaThemeFilletSwitch,
   elainaThemeStatus,
   elainaThemeSwitch,
-  elainaTranslucentFilletStatus,
-  elainaTranslucentFilletSwitch,
-  elainaFontHighContrastStatus,
-  elainaFontHighContrastSwitch,
-  elainaBetterPlaylistStatus,
-  elainaBetterPlaylistSwitch,
-  removeNavVideoStatus,
-  removeNavVideoSwitch,
-  removeNavLookStatus,
-  removeNavLookSwitch
+  elainaThemeFillet,
+  elainaTranslucentFillet,
+  elainaFontHighContrast,
+  elainaBetterPlaylist,
+  removeNavVideo,
+  removeNavLook
 } from '.';
 import ConfigCard from './../ConfigCard.vue';
 import { customColorStyleStatus } from './../CustomColor';
 
 const elementLists = ref([
-  {
+{
     title: "启用半透明框架",
-    valueModel: elainaTranslucentFilletStatus.value,
-    update: elainaTranslucentFilletSwitch
+    valueModel: elainaTranslucentFillet.value,
+    update: elainaTranslucentFillet.toggle.bind(elainaTranslucentFillet)
   },
   {
     title: "启用内圆角",
-    valueModel: elainaThemeFilletStatus.value,
-    update: elainaThemeFilletSwitch
+    valueModel: elainaThemeFillet.value,
+    update: elainaThemeFillet.toggle.bind(elainaThemeFillet)
   },
   {
     title: "文字高对比度",
     tip: "增强部分场景下文字的对比度，防止看不清。",
-    valueModel: elainaFontHighContrastStatus.value,
-    update: elainaFontHighContrastSwitch
+    valueModel: elainaFontHighContrast.value,
+    update: elainaFontHighContrast.toggle.bind(elainaFontHighContrast)
   },
   {
     title: "更好的歌曲列表",
-    valueModel: elainaBetterPlaylistStatus.value,
-    update: elainaBetterPlaylistSwitch
+    valueModel: elainaBetterPlaylist.value,
+    update: elainaBetterPlaylist.toggle.bind(elainaBetterPlaylist)
   },
   {
     title: "移除侧边栏视频",
-    valueModel: removeNavVideoStatus.value,
-    update: removeNavVideoSwitch
+    valueModel: removeNavVideo.value,
+    update: removeNavVideo.toggle.bind(removeNavVideo)
   },
   {
     title: "移除侧边栏直播",
-    valueModel: removeNavLookStatus.value,
-    update: removeNavLookSwitch
+    valueModel: removeNavLook.value,
+    update: removeNavLook.toggle.bind(removeNavLook)
   }
 ]);
 
