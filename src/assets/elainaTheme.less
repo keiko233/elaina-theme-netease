@@ -193,6 +193,46 @@
       background: var(--background-black) !important;
     }
   }
+
+  // 喜欢tab栏
+  section.g-mn.one {
+    div#page_mine_like_music{
+      nav.u-tab2.f-cb.f-ff2.j-flag {
+        ul.j-flag {
+          background-color: var(--background-overlay);
+          height: 54px;
+          padding: 0px 12px;
+          border-radius: 32px;
+      
+          li {
+            padding: 10px 0;
+      
+            a {
+              padding: 8px 12px;
+              margin: 0;
+              height: auto;
+              line-height: inherit;
+            }
+      
+            .common-tab-li();
+      
+            a.z-sel {
+              .common-tab-li-selected();
+      
+              span.j-flag {
+                color: #fff;
+                font-size: 12px !important;
+              }
+            }
+      
+            a.z-sel:before {
+              content: none;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 body#music-163-com.background-elaina-theme {
