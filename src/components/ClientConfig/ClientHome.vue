@@ -50,7 +50,8 @@ import {
   removeRecmdExcmv,
   removeRecmdNewsong,
   removeRecmdThemepodcast,
-  removeRecmdMvbox
+  removeRecmdMvbox,
+  removeRecmdAdjustbar
 } from '.';
 import ConfigCard from './../ConfigCard.vue';
 import { customColorStyleStatus } from './../CustomColor';
@@ -121,6 +122,11 @@ const elementLists = ref([
     title: "移除主页推荐MV",
     valueModel: removeRecmdMvbox.value,
     update: removeRecmdMvbox.toggle.bind(removeRecmdMvbox)
+  },
+  {
+    title: "移除主页调整栏目顺序",
+    valueModel: removeRecmdAdjustbar.value,
+    update: removeRecmdAdjustbar.toggle.bind(removeRecmdAdjustbar)
   }
 ]);
 

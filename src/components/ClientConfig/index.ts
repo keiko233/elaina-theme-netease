@@ -22,3 +22,4 @@ export const removeRecmdExcmv = new ToggleClass('client-remove-recmd-excmv', 'el
 export const removeRecmdNewsong = new ToggleClass('client-remove-recmd-newsong', 'elaina-removeRecmdNewsong');
 export const removeRecmdThemepodcast = new ToggleClass('client-remove-recmd-themepodcast', 'elaina-removeRecmdThemepodcast');
 export const removeRecmdMvbox = new ToggleClass('client-remove-recmd-mvbox', 'elaina-removeRecmdMvbox');
+export const removeRecmdAdjustbar = new ToggleClass('client-remove-recmd-adjustbar', 'elaina-removeRecmdAdjustbar');
