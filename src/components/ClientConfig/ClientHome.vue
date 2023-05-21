@@ -47,7 +47,8 @@ import {
   removeRecmdBanner,
   removeRecmdPodcast,
   removeRecmdAudioBook,
-  removeRecmdExcmv
+  removeRecmdExcmv,
+  removeRecmdNewsong
 } from '.';
 import ConfigCard from './../ConfigCard.vue';
 import { customColorStyleStatus } from './../CustomColor';
@@ -103,6 +104,11 @@ const elementLists = ref([
     title: "移除主页独家放送",
     valueModel: removeRecmdExcmv.value,
     update: removeRecmdExcmv.toggle.bind(removeRecmdExcmv)
+  },
+  {
+    title: "移除主页最新音乐",
+    valueModel: removeRecmdNewsong.value,
+    update: removeRecmdNewsong.toggle.bind(removeRecmdNewsong)
   }
 ]);
 
