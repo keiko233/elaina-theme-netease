@@ -9,7 +9,7 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    BackgroundConfig: typeof import('./src/components/BackgroundConfig.vue')['default']
+    BackgroundConfig: typeof import('./src/components/BackgroundConfig/BackgroundConfig.vue')['default']
     BlurConfig: typeof import('./src/components/BlurConfig.vue')['default']
     BocchiOverlay: typeof import('./src/components/BocchiOverlay.vue')['default']
     Chip: typeof import('./src/components/Chip.vue')['default']

@@ -25,7 +25,7 @@ import SetupRender from '../components/SetupWizard/SetupRender.vue';
 import SetupHome from '../components/SetupWizard/SetupHome.vue';
 import CustomColor from '../components/CustomColor/CustomColor.vue';
 import ClientHome from '../components/ClientConfig/ClientHome.vue';
-import BackgroundConfig from '../components/BackgroundConfig.vue';
+import BackgroundConfig from '../components/BackgroundConfig/BackgroundConfig.vue';
 import BlurConfig from '../components/BlurConfig.vue';
 import BocchiOverlay from '../components/BocchiOverlay.vue';
 import LogoConfig from '../components/LogoConfig.vue';

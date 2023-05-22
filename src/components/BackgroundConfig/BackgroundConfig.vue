@@ -33,7 +33,7 @@
           <a>恢复默认</a>
         </div>
       </div>
-      
+
       <template #description>
         少女祈祷中...
       </template>
@@ -42,15 +42,17 @@
 </template>
 
 <script setup lang="ts">
-import { initLS, putLS } from '../utils/localStorage';
-import { insertClassOnBody, insertStyle, removeClassOnBody, removeStyle } from '../utils/styleInsert';
-import ConfigCard from './ConfigCard.vue';
+import {
+  customBackgroundImageData,
+  backgroundStatus,
+  insertBackground,
+  removeBackground,
+  updateCustomBackgronud
+} from '.';
+import { putLS } from '../../utils/localStorage';
+import ConfigCard from './../ConfigCard.vue';
 
 const loading = ref(false);
-
-const backgroundStatus = ref(initLS('elaina-backgroundStatus', false));
-
-const customBackgroundImageData = ref(initLS('elaina-customBackgroundImageData', null));
 
 const backgroundSwitch = (value: boolean) => {
   putLS('elaina-backgroundStatus', value);
@@ -67,34 +69,6 @@ const backgroundSwitch = (value: boolean) => {
     else insertBackground(customBackgroundImageData.value);
   }
   else removeBackground();
-};
-
-const insertBackground = (data: string) => {
-  removeBackground();
-  const background = `:root{--background-image: url('${data}');}`;
-  insertStyle('custom-background', background);
-  insertClassOnBody('background-elaina-theme');
-};
-
-const removeBackground = () => {
-  removeStyle('custom-background');
-  removeClassOnBody('background-elaina-theme');
-};
-
-const updateCustomBackgronud = (id: string) => {
-  // @ts-ignore
-  const file = document.getElementById(id).files[0];
-  if (!/image\/\w+/.test(file.type)) {
-    alert("请确保文件为图像文件");
-    return false;
-  }
-  const reader = new FileReader();
-  reader.readAsDataURL(file);
-  reader.onload = function () {
-    putLS('elaina-customBackgroundImageData', this.result);
-    customBackgroundImageData.value = this.result;
-    insertBackground(customBackgroundImageData.value);
-  }
 };
 
 const resetBackgronud = () => {
