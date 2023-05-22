@@ -153,28 +153,6 @@ onMounted(() => {
 </script>
 
 <style scoped lang="less">
-.elaina-input {
-  padding-right: 8px;
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: row;
-
-  a {
-    color: #ffffff;
-    font-size: 16px;
-    padding: 6px 16px;
-    border-radius: var(--border-radius);
-    background: #1d1d1d70;
-  }
-
-  input {
-    opacity: 0;
-    position: absolute;
-    padding: 6px 0;
-    width: 96px;
-  }
-}
-
 .chip-slider {
   background-color: rgba(255, 255, 255, 0.1);
   padding: 8px 10px;
