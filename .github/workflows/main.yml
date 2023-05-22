@@ -1,9 +1,9 @@
-name: Build package
+name: Build package [releases]
 
 on:
-  push:
-    branches:
-      - dev
+  pull_request:
+    types:
+      - closed
 
 permissions:
   contents: write
@@ -41,3 +41,9 @@ jobs:
         with:
           name: dist_${{ github.sha }}
           path: ./dist/
+
+      - name: Deploy dist
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: dist
+          folder: dist
