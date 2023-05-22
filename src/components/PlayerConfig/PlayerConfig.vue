@@ -85,14 +85,14 @@
         </n-grid-item>
 
         <n-grid-item>
-          <Chip title="播放页歌曲信息显示">
-            <n-tooltip trigger="hover" :disabled="!songInfoOnPlayerStatus">
-              <template #trigger>
+          <n-tooltip trigger="hover" :disabled="!songInfoOnPlayerStatus">
+            <template #trigger>
+              <Chip title="播放页歌曲信息显示">
                 <n-switch v-model:value="songInfoOnPlayerStatus" @update:value="songInfoOnPlayerSwitch" />
-              </template>
-              关闭将重载网易云以生效。
-            </n-tooltip>
-          </Chip>
+              </Chip>
+            </template>
+            关闭将重载网易云以生效。
+          </n-tooltip>
         </n-grid-item>
 
       </n-grid>
