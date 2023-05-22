@@ -18,18 +18,7 @@
 
       <div class="preview" v-if="customLogoStatus" />
 
-      <div class="elaina-btn-group" v-if="customLogoStatus">
-        <div class="elaina-input">
-          <input type="file" id="logo-imagefile" />
-          <a>选择图片</a>
-        </div>
-        <div class="elaina-btn" @click="updateCustomLogo('logo-imagefile')">
-          <a>应用</a>
-        </div>
-        <div class="elaina-btn" @click="resetLogo">
-          <a>恢复默认</a>
-        </div>
-      </div>
+      <ImageInput v-if="customLogoStatus" :id="'logo-imagefile'" :useFunc="() => updateCustomLogo('logo-imagefile')" :resetFunc="resetLogo" />
 
       <template #description>
         少女祈祷中...
@@ -104,7 +93,7 @@ const updateCustomLogo = (id: string) => {
     putLS('elaina-customLogoImageData', this.result);
     customLogoImageData.value = this.result;
     insertLogo();
-  }
+  };
 };
 
 onMounted(() => {

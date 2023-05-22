@@ -21,18 +21,8 @@
         </div>
       </div>
 
-      <div class="elaina-btn-group" v-if="backgroundStatus">
-        <div class="elaina-input">
-          <input type="file" id="bg-imagefile" />
-          <a>选择图片</a>
-        </div>
-        <div class="elaina-btn" @click="updateCustomBackgronud('bg-imagefile')">
-          <a>应用</a>
-        </div>
-        <div class="elaina-btn" @click="resetBackgronud">
-          <a>恢复默认</a>
-        </div>
-      </div>
+      <ImageInput v-if="backgroundStatus" :id="'bg-imagefile'" :useFunc="() => updateCustomBackgronud('bg-imagefile')"
+        :resetFunc="resetBackgronud" />
 
       <template #description>
         少女祈祷中...

@@ -25,15 +25,8 @@
             @update:value="bocchiOverlaySizeUpdate" :step="1" :min="0" :max="100" />
         </div>
 
-        <div class="elaina-btn-group" v-if="overlayOptionsSelectValue == 'custom' && bocchiOverlayStatus">
-          <div class="elaina-input">
-            <input type="file" id="bocchi-imagefile" />
-            <a>选择图片</a>
-          </div>
-          <div class="elaina-btn" @click="updateCustomOverlay('bocchi-imagefile')">
-            <a>应用</a>
-          </div>
-        </div>
+        <ImageInput v-if="overlayOptionsSelectValue == 'custom' && bocchiOverlayStatus" :id="'bocchi-imagefile'"
+          :useFunc="() => updateCustomOverlay('bocchi-imagefile')" />
 
       </n-space>
     </ConfigCard>
