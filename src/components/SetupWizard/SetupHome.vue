@@ -1,19 +1,14 @@
 <template>
-  <div class="center">
-    <n-gradient-text :size="36" type="info">
-      欢迎使用 Elaina Theme
-    </n-gradient-text>
-    <P>这是一个设置向导，接下来我将带你认识这一个插件</P>
+  <div style="padding-left: 14%;">
+    <n-h1 prefix="bar" align-text type="info">
+      <n-text type="info">
+        这是一个设置向导 <br>
+        接下来我将带你认识这一个插件
+      </n-text>
+    </n-h1>
+
+    <n-tag round :bordered="false">
+      当然你也可以右上角跳过
+    </n-tag>
   </div>
 </template>
-
-<style scoped lang="less">
-.center {
-  text-align: center;
-
-  p {
-    font-size: 16px;
-    margin-top: 56px;
-  }
-}
-</style>

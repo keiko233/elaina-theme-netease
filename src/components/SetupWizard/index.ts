@@ -1,3 +1,4 @@
+import { initLS, putLS } from '../../utils/localStorage';
 import SetupWizardView from '../../views/SetupWizardView.vue';
 
 let setupApp: any = null;
@@ -13,3 +14,9 @@ export const unmountSetupWizardView = () => {
   setupApp.unmount();
   document.body.removeChild(vElement);
 };
+
+export const version = ref(initLS('elaina-version', null));
+
+export const updateVersion = (version: string) => {
+  return putLS('elaina-version', version)
+}
