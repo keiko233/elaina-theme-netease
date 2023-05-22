@@ -37,6 +37,7 @@
 </template>
 
 <script setup lang="ts">
+import { getImageData } from '../utils/imageUtils';
 import { initLS, putLS } from '../utils/localStorage';
 import { insertClassOnBody, insertStyle, removeClassOnBody, removeStyle } from '../utils/styleInsert';
 
@@ -117,19 +118,11 @@ const bocchiOverlaySizeUpdate = (value: number) => {
 };
 
 const updateCustomOverlay = (id: string) => {
-  // @ts-ignore
-  const file = document.getElementById(id).files[0];
-  if (!/image\/\w+/.test(file.type)) {
-    alert("请确保文件为图像文件");
-    return false;
-  }
-  const reader = new FileReader();
-  reader.readAsDataURL(file);
-  reader.onload = function () {
-    putLS('elaina-bocchiOverlayImageData', this.result);
-    bocchiOverlayImageData.value = this.result;
+  getImageData(id, (result) => {
+    putLS('elaina-bocchiOverlayImageData', result);
+    bocchiOverlayImageData.value = result;
     insertBocchiOverlay();
-  }
+  });
 };
 
 const themeOverrides = {

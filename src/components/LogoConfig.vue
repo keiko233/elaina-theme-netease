@@ -29,6 +29,7 @@
 
 <script setup lang="ts">
 import { isNCMClient } from '../utils/clientCheck';
+import { getImageData } from '../utils/imageUtils';
 import { initLS, putLS } from '../utils/localStorage';
 import { insertStyle, removeStyle } from '../utils/styleInsert';
 import ConfigCard from './ConfigCard.vue';
@@ -81,19 +82,11 @@ const resetLogo = () => {
 };
 
 const updateCustomLogo = (id: string) => {
-  // @ts-ignore
-  const file = document.getElementById(id).files[0];
-  if (!/image\/\w+/.test(file.type)) {
-    alert("请确保文件为图像文件");
-    return false;
-  }
-  const reader = new FileReader();
-  reader.readAsDataURL(file);
-  reader.onload = function () {
-    putLS('elaina-customLogoImageData', this.result);
-    customLogoImageData.value = this.result;
+  getImageData(id, (result) => {
+    putLS('elaina-customLogoImageData', result);
+    customLogoImageData.value = result;
     insertLogo();
-  };
+  });
 };
 
 onMounted(() => {
