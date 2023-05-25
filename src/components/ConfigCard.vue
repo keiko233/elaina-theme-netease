@@ -24,8 +24,8 @@ const props = defineProps({
 <style scoped lang="less">
 .config-card {
   padding: calc(var(--border-radius) /2);
-  border: solid 1px #ffdee7d6;
-  background-color: #ffeef49c;
+  border: var(--theme-config-card-border);
+  background-color: var(--theme-config-card-background);
   border-radius: var(--border-radius);
   backdrop-filter: var(--theme-blur-config-card);
   

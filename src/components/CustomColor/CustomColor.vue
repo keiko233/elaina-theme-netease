@@ -47,7 +47,9 @@ const themeVarLists = ref([
   { name: 'theme-primary', style: 'background-color' },
   { name: 'theme-primary-notransparency', style: 'background-color' },
   { name: 'theme-primary-shadow', style: 'box-shadow' },
-  { name: 'theme-primary-font-shadow', style: 'text-shadow' }
+  { name: 'theme-primary-font-shadow', style: 'text-shadow' },
+  { name: 'theme-config-card-background', style: 'background-color' },
+  { name: 'theme-config-card-border', style: 'border' }
 ]);
 
 const insertCustomColorStyle = (value: string) => {
@@ -55,6 +57,9 @@ const insertCustomColorStyle = (value: string) => {
     --theme-primary-notransparency: ${getLightColor(value, 0.2)};
     --theme-primary-shadow: 0 0 3px ${getDarkColor(getLightColor(value, 0.8), 0.2)};
     --theme-primary-font-shadow: 0 0 1px ${getDarkColor(getLightColor(value, 0.1), 0.1)};
+    --theme-config-card-background: ${getLightColor(value, 0.8)}9c;
+    --theme-config-card-light: ${getLightColor(value, 0.6)}9c;
+    --theme-config-card-border: solid 1px ${getLightColor(getDarkColor(value, 0.1), 0.7)};
     --themeC1: ${value};
     --themeC1-header: ${getLightColor(value, 0.2)};
     --themeSearch: rgba(0, 0, 0, 0.15);

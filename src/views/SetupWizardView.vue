@@ -25,7 +25,7 @@ import SetupRender from '../components/SetupWizard/SetupRender.vue';
 import SetupHome from '../components/SetupWizard/SetupHome.vue';
 import CustomColor from '../components/CustomColor/CustomColor.vue';
 import ClientHome from '../components/ClientConfig/ClientHome.vue';
-import BackgroundConfig from '../components/BackgroundConfig.vue';
+import BackgroundConfig from '../components/BackgroundConfig/BackgroundConfig.vue';
 import BlurConfig from '../components/BlurConfig.vue';
 import BocchiOverlay from '../components/BocchiOverlay.vue';
 import LogoConfig from '../components/LogoConfig.vue';
@@ -47,7 +47,6 @@ const closeSetup = () => {
 
 const setupViewLists = ref([
   {
-    title: "欢迎使用<br>Elaina Theme",
     component: SetupHome
   },
   {
@@ -91,7 +90,7 @@ const nextStep = () => {
     componentAnimation.value = 'translate-animation-gradient-in'
     if (step.value >= setupViewLists.value.length - 1) closeSetup();
     else step.value++;
-  }, 600);
+  }, 1200);
 };
 </script>
 

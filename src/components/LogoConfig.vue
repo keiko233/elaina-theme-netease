@@ -18,18 +18,7 @@
 
       <div class="preview" v-if="customLogoStatus" />
 
-      <div class="elaina-btn-group" v-if="customLogoStatus">
-        <div class="elaina-input">
-          <input type="file" id="logo-imagefile" />
-          <a>选择图片</a>
-        </div>
-        <div class="elaina-btn" @click="updateCustomLogo('logo-imagefile')">
-          <a>应用</a>
-        </div>
-        <div class="elaina-btn" @click="resetLogo">
-          <a>恢复默认</a>
-        </div>
-      </div>
+      <ImageInput v-if="customLogoStatus" :id="'logo-imagefile'" :useFunc="() => updateCustomLogo('logo-imagefile')" :resetFunc="resetLogo" />
 
       <template #description>
         少女祈祷中...
@@ -40,6 +29,7 @@
 
 <script setup lang="ts">
 import { isNCMClient } from '../utils/clientCheck';
+import { getImageData } from '../utils/imageUtils';
 import { initLS, putLS } from '../utils/localStorage';
 import { insertStyle, removeStyle } from '../utils/styleInsert';
 import ConfigCard from './ConfigCard.vue';
@@ -92,19 +82,11 @@ const resetLogo = () => {
 };
 
 const updateCustomLogo = (id: string) => {
-  // @ts-ignore
-  const file = document.getElementById(id).files[0];
-  if (!/image\/\w+/.test(file.type)) {
-    alert("请确保文件为图像文件");
-    return false;
-  }
-  const reader = new FileReader();
-  reader.readAsDataURL(file);
-  reader.onload = function () {
-    putLS('elaina-customLogoImageData', this.result);
-    customLogoImageData.value = this.result;
+  getImageData(id, (result) => {
+    putLS('elaina-customLogoImageData', result);
+    customLogoImageData.value = result;
     insertLogo();
-  }
+  });
 };
 
 onMounted(() => {
@@ -113,28 +95,6 @@ onMounted(() => {
 </script>
 
 <style scoped lang="less">
-.elaina-input {
-  padding-right: 8px;
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: row;
-
-  a {
-    color: #ffffff;
-    font-size: 16px;
-    padding: 6px 16px;
-    border-radius: var(--border-radius);
-    background: #1d1d1d70;
-  }
-
-  input {
-    opacity: 0;
-    position: absolute;
-    padding: 6px 0;
-    width: 96px;
-  }
-}
-
 .preview {
   height: 100px;
   width: 100%;

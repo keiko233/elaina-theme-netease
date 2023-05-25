@@ -21,19 +21,9 @@
         </div>
       </div>
 
-      <div class="elaina-btn-group" v-if="backgroundStatus">
-        <div class="elaina-input">
-          <input type="file" id="bg-imagefile" />
-          <a>选择图片</a>
-        </div>
-        <div class="elaina-btn" @click="updateCustomBackgronud('bg-imagefile')">
-          <a>应用</a>
-        </div>
-        <div class="elaina-btn" @click="resetBackgronud">
-          <a>恢复默认</a>
-        </div>
-      </div>
-      
+      <ImageInput v-if="backgroundStatus" :id="'bg-imagefile'" :useFunc="() => updateCustomBackgronud('bg-imagefile')"
+        :resetFunc="resetBackgronud" />
+
       <template #description>
         少女祈祷中...
       </template>
@@ -42,15 +32,17 @@
 </template>
 
 <script setup lang="ts">
-import { initLS, putLS } from '../utils/localStorage';
-import { insertClassOnBody, insertStyle, removeClassOnBody, removeStyle } from '../utils/styleInsert';
-import ConfigCard from './ConfigCard.vue';
+import {
+  customBackgroundImageData,
+  backgroundStatus,
+  insertBackground,
+  removeBackground,
+  updateCustomBackgronud
+} from '.';
+import { putLS } from '../../utils/localStorage';
+import ConfigCard from './../ConfigCard.vue';
 
 const loading = ref(false);
-
-const backgroundStatus = ref(initLS('elaina-backgroundStatus', false));
-
-const customBackgroundImageData = ref(initLS('elaina-customBackgroundImageData', null));
 
 const backgroundSwitch = (value: boolean) => {
   putLS('elaina-backgroundStatus', value);
@@ -69,34 +61,6 @@ const backgroundSwitch = (value: boolean) => {
   else removeBackground();
 };
 
-const insertBackground = (data: string) => {
-  removeBackground();
-  const background = `:root{--background-image: url('${data}');}`;
-  insertStyle('custom-background', background);
-  insertClassOnBody('background-elaina-theme');
-};
-
-const removeBackground = () => {
-  removeStyle('custom-background');
-  removeClassOnBody('background-elaina-theme');
-};
-
-const updateCustomBackgronud = (id: string) => {
-  // @ts-ignore
-  const file = document.getElementById(id).files[0];
-  if (!/image\/\w+/.test(file.type)) {
-    alert("请确保文件为图像文件");
-    return false;
-  }
-  const reader = new FileReader();
-  reader.readAsDataURL(file);
-  reader.onload = function () {
-    putLS('elaina-customBackgroundImageData', this.result);
-    customBackgroundImageData.value = this.result;
-    insertBackground(customBackgroundImageData.value);
-  }
-};
-
 const resetBackgronud = () => {
   putLS('elaina-customBackgroundImageData', null);
   customBackgroundImageData.value = null;
@@ -109,28 +73,6 @@ onMounted(() => {
 </script>
 
 <style scoped lang="less">
-.elaina-input {
-  padding-right: 8px;
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: row;
-
-  a {
-    color: #ffffff;
-    font-size: 16px;
-    padding: 6px 16px;
-    border-radius: var(--border-radius);
-    background: #1d1d1d70;
-  }
-
-  input {
-    opacity: 0;
-    position: absolute;
-    padding: 6px 0;
-    width: 96px;
-  }
-}
-
 .preview {
   height: 160px;
   width: 100%;

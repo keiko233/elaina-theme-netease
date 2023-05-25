@@ -25,15 +25,8 @@
             @update:value="bocchiOverlaySizeUpdate" :step="1" :min="0" :max="100" />
         </div>
 
-        <div class="elaina-btn-group" v-if="overlayOptionsSelectValue == 'custom' && bocchiOverlayStatus">
-          <div class="elaina-input">
-            <input type="file" id="bocchi-imagefile" />
-            <a>选择图片</a>
-          </div>
-          <div class="elaina-btn" @click="updateCustomOverlay('bocchi-imagefile')">
-            <a>应用</a>
-          </div>
-        </div>
+        <ImageInput v-if="overlayOptionsSelectValue == 'custom' && bocchiOverlayStatus" :id="'bocchi-imagefile'"
+          :useFunc="() => updateCustomOverlay('bocchi-imagefile')" />
 
       </n-space>
     </ConfigCard>
@@ -44,6 +37,7 @@
 </template>
 
 <script setup lang="ts">
+import { getImageData } from '../utils/imageUtils';
 import { initLS, putLS } from '../utils/localStorage';
 import { insertClassOnBody, insertStyle, removeClassOnBody, removeStyle } from '../utils/styleInsert';
 
@@ -124,19 +118,11 @@ const bocchiOverlaySizeUpdate = (value: number) => {
 };
 
 const updateCustomOverlay = (id: string) => {
-  // @ts-ignore
-  const file = document.getElementById(id).files[0];
-  if (!/image\/\w+/.test(file.type)) {
-    alert("请确保文件为图像文件");
-    return false;
-  }
-  const reader = new FileReader();
-  reader.readAsDataURL(file);
-  reader.onload = function () {
-    putLS('elaina-bocchiOverlayImageData', this.result);
-    bocchiOverlayImageData.value = this.result;
+  getImageData(id, (result) => {
+    putLS('elaina-bocchiOverlayImageData', result);
+    bocchiOverlayImageData.value = result;
     insertBocchiOverlay();
-  }
+  });
 };
 
 const themeOverrides = {
@@ -153,28 +139,6 @@ onMounted(() => {
 </script>
 
 <style scoped lang="less">
-.elaina-input {
-  padding-right: 8px;
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: row;
-
-  a {
-    color: #ffffff;
-    font-size: 16px;
-    padding: 6px 16px;
-    border-radius: var(--border-radius);
-    background: #1d1d1d70;
-  }
-
-  input {
-    opacity: 0;
-    position: absolute;
-    padding: 6px 0;
-    width: 96px;
-  }
-}
-
 .chip-slider {
   background-color: rgba(255, 255, 255, 0.1);
   padding: 8px 10px;
