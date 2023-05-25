@@ -13,8 +13,8 @@ import packageJson from '../../package.json';
 
 const title = ref({
   deg: 45,
-  from: '#FF487A',
-  to: '#FF8FBA'
+  from: '#198CFF',
+  to: '#47a3ff'
 });
 
 const context = ref([
@@ -57,12 +57,12 @@ const click = async () => {
 .config-card {
   padding: 0;
   background: linear-gradient(45deg,
-      #ffdee7ac 25%,
-      #ffeef4e1 0,
-      #ffeef4e1 50%,
-      #ffdee7ac 0,
-      #ffdee7ac 75%,
-      #ffeef4e1 0);
+      var(--theme-config-card-light) 25%,
+      var(--theme-config-card-background) 0,
+      var(--theme-config-card-background) 50%,
+      var(--theme-config-card-light) 0,
+      var(--theme-config-card-light) 75%,
+      var(--theme-config-card-background) 0);
   background-size: 48px 48px;
   animation: backgroundAnimation 0.8s infinite linear;
 

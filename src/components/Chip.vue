@@ -18,7 +18,7 @@ const props = defineProps({
 
 <style scoped lang="less">
 .chip {
-  background-color: #ffd3d3a7;
+  background-color: var(--theme-config-card-background);
   padding: 8px 10px;
   border-radius: 36px;
   font-size: 14px;
