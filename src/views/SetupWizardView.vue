@@ -47,7 +47,6 @@ const closeSetup = () => {
 
 const setupViewLists = ref([
   {
-    title: "欢迎使用<br>Elaina Theme",
     component: SetupHome
   },
   {
