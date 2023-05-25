@@ -537,6 +537,16 @@ body.mq-playing.player-elaina-theme {
 
   div#main-player {
     backdrop-filter: var(--theme-blur-play-dock);
+
+    // 移除歌词动效
+    div.le-toggle.f-vc {
+      display: none;
+    }
+
+    // 移除动效后调整位置
+    div.brt.f-vc {
+      right: 186px;
+    }
   }
 }
 
