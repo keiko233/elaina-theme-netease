@@ -91,7 +91,7 @@ const nextStep = () => {
     componentAnimation.value = 'translate-animation-gradient-in'
     if (step.value >= setupViewLists.value.length - 1) closeSetup();
     else step.value++;
-  }, 600);
+  }, 1200);
 };
 </script>
 

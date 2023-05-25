@@ -1,5 +1,5 @@
 <template>
-  <ConfigCard title="客户端首页样式" illustrate="全局修改网易云客户端样式，开启后有少量微调选项。">
+  <ConfigCard title="客户端首页样式" illustrate="全局修改网易云客户端样式，开启后有少量微调选项。包括但不限于精简、美化、布局优化等功能。">
 
     <n-tooltip trigger="hover" :disabled="customColorStyleStatus">
       <template #trigger>
@@ -59,6 +59,7 @@ import { customColorStyleStatus } from './../CustomColor';
 const elementLists = ref([
 {
     title: "启用半透明框架",
+    tip: "启用同时也会修复部分场景下网易的背景颜色问题。",
     valueModel: elainaTranslucentFillet.value,
     update: elainaTranslucentFillet.toggle.bind(elainaTranslucentFillet)
   },
