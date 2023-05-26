@@ -51,7 +51,8 @@ import {
   removeRecmdNewsong,
   removeRecmdThemepodcast,
   removeRecmdMvbox,
-  removeRecmdAdjustbar
+  removeRecmdAdjustbar,
+elainaBetterRecommendList
 } from '.';
 import ConfigCard from './../ConfigCard.vue';
 import { customColorStyleStatus } from './../CustomColor';
@@ -78,6 +79,12 @@ const elementLists = ref([
     title: "更好的歌曲列表",
     valueModel: elainaBetterPlaylist.value,
     update: elainaBetterPlaylist.toggle.bind(elainaBetterPlaylist)
+  },
+  {
+    title: "更好的推荐卡片列表",
+    tip: "旧版功能移植，重新设计并优化，试试就知道了。",
+    valueModel: elainaBetterRecommendList.value,
+    update: elainaBetterRecommendList.toggle.bind(elainaBetterRecommendList)
   },
   {
     title: "移除侧边栏视频",

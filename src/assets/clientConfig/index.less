@@ -22,6 +22,7 @@ body#music-163-com.client-elaina-theme.client-remove-nav-look {
 
 // 高对比度文字
 body#music-163-com.client-elaina-theme.client-font-high-contrast {
+
   // 全部文字元素加上阴影
   div#x-g-mn * {
     text-shadow: #00000096 0 0 1px;
@@ -45,7 +46,7 @@ body#music-163-com.client-elaina-theme.better-playlist {
       }
     }
   }
-  
+
   // 全部文字元素加上阴影
   div#x-g-mn {
     section.g-mn.one {
@@ -93,6 +94,44 @@ body#music-163-com.client-elaina-theme.better-playlist {
   }
 }
 
+// 更好的推荐卡片列表
+body#music-163-com.client-elaina-theme.better-recommend-list {
+  div#x-g-mn {
+    section.g-mn.one {
+      div.g-recmdwrap.j-flag {
+        div#page_pc_home_rcmd {
+          ul[data-nej-selector="__nPlaylistBox"] {
+            li {
+              border: var(--theme-config-card-border);
+              background-color: var(--theme-config-card-background);
+              border-radius: var(--border-radius);
+              padding: calc(var(--border-radius) / 2);
+              backdrop-filter: var(--theme-blur-config-card);
+              margin: 1%;
+              width: 23%;
+              height: min-content;
+              transition: max-height 0.3s linear;
+
+              div.cvr.u-cover {
+                border-radius: calc(var(--border-radius) / 2);
+              }
+
+              div.desc {
+                padding: 0;
+
+                * {
+                  font-weight: 700;
+                  text-align: center;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 // 扬了主页轮播图
 body#music-163-com.client-elaina-theme.client-remove-recmd-banner {
   div#x-g-mn {
@@ -117,6 +156,7 @@ body#music-163-com.client-elaina-theme.client-remove-recmd-podcast {
       div#page_pc_home {
         div.g-recmdwrap.j-flag {
           div#page_pc_home_rcmd {
+
             a#dis-podcast,
             ul.discover-podcast {
               display: none;
@@ -135,6 +175,7 @@ body#music-163-com.client-elaina-theme.client-remove-recmd-audiobook {
       div#page_pc_home {
         div.g-recmdwrap.j-flag {
           div#page_pc_home_rcmd {
+
             a.discover-audioBook-titleBox,
             ul.discover-audioBook {
               display: none;
@@ -153,6 +194,7 @@ body#music-163-com.client-elaina-theme.client-remove-recmd-excmv {
       div#page_pc_home {
         div.g-recmdwrap.j-flag {
           div#page_pc_home_rcmd {
+
             a.u-headtit[data-da-event="c324"],
             ul.m-list.m-list-excmv.m-list-flow {
               display: none;
@@ -171,6 +213,7 @@ body#music-163-com.client-elaina-theme.client-remove-recmd-newsong {
       div#page_pc_home {
         div.g-recmdwrap.j-flag {
           div#page_pc_home_rcmd {
+
             a.u-headtit[data-da-event="c326"],
             div[data-nej-selector="__nNewSongBox"] {
               display: none;
@@ -206,6 +249,7 @@ body#music-163-com.client-elaina-theme.client-remove-recmd-mvbox {
       div#page_pc_home {
         div.g-recmdwrap.j-flag {
           div#page_pc_home_rcmd {
+
             ul[data-nej-selector="__nLiveBox"],
             a[data-nej-selector="__nLiveTit"],
             ul[data-nej-selector="__nRecMVBox"],

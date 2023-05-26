@@ -13,6 +13,7 @@ export const elainaTranslucentFillet = new ToggleClass('client-translucent-elain
 export const elainaThemeFillet = new ToggleClass('client-fillet-elaina-theme', 'elaina-elainaThemeFilletStatus');
 export const elainaFontHighContrast = new ToggleClass('client-font-high-contrast', 'elaina-elainaFontHighContrastStatus');
 export const elainaBetterPlaylist = new ToggleClass('better-playlist', 'elaina-elainaBetterPlaylistStatus');
+export const elainaBetterRecommendList = new ToggleClass('better-recommend-list', 'elaina-elainaBetterRecommendList');
 export const removeNavVideo = new ToggleClass('client-remove-nav-video', 'elaina-removeNavVideoStatus');
 export const removeNavLook = new ToggleClass('client-remove-nav-look', 'elaina-removeNavLookStatus');
 export const removeRecmdBanner = new ToggleClass('client-remove-recmd-banner', 'elaina-removeRecmdBannerStatus');
