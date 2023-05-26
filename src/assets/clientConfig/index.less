@@ -90,6 +90,36 @@ body#music-163-com.client-elaina-theme.better-playlist {
           }
         }
       }
+
+      // 日推
+      div#page_pc_daily_recommend {
+        div.lst {
+          padding: calc(var(--border-radius) / 2);
+
+          div.m-plylist {
+            .better-playlist();
+
+            div.hd.g-wrap5 {
+              padding: calc(var(--border-radius) / 2);
+            }
+          }
+        }
+      }
+
+      // 普通歌单
+      div#page_pc_songlist {
+        div#page_pc_songlist_songflow {
+          padding: calc(var(--border-radius) / 2);
+
+          div.m-plylist {
+            .better-playlist();
+
+            div.hd.g-wrap5 {
+              padding: calc(var(--border-radius) / 2);
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -109,7 +139,6 @@ body#music-163-com.client-elaina-theme.better-recommend-list {
               backdrop-filter: var(--theme-blur-config-card);
               margin: 1%;
               width: 23%;
-              height: min-content;
               transition: max-height 0.3s linear;
 
               div.cvr.u-cover {
