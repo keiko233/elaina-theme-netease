@@ -25,8 +25,6 @@ import { version } from './';
 import packageJson from '../../../package.json';
 
 const context = () => {
-  console.log(version.value);
-  console.log(packageJson.version);
   if (version.value != packageJson.version.toString() && version.value != null) {
     return `看上去你升级了新版本呢<br>每次升级都会弹出来带你过一遍新功能哦`
   } else {

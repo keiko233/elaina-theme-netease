@@ -369,6 +369,22 @@ body#music-163-com.player-elaina-theme {
 
         // 移除包含这首歌的歌单
         div.g-bd2.f-cb {
+          margin-top: 0;
+          position: absolute;
+          top: 100vh;
+          width: 100%;
+          max-width: none;
+
+          div.g-mn2.j-flag {
+            margin-top: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            div.g-mn2c {
+              width: 900px;
+            }
+          }
 
           div.recommend-btn.j-flag,
           div.g-sd2.recommend.j-flag {
@@ -378,9 +394,25 @@ body#music-163-com.player-elaina-theme {
 
         .n-single {
           margin-top: 26px;
+          height: calc(100vh - 144px);
 
-          .mn.j-flag {
-            height: 540px;
+          div.wrap {
+            .content {
+              display: flex;
+              justify-content: space-evenly;
+              width: 100%;
+              max-width: none;
+
+              .sd.j-flag {
+                margin: auto 0 !important;
+              }
+
+    
+              .mn.j-flag {
+                height: 90vh !important;
+                margin: 0;
+              }
+            }
           }
         }
 
@@ -436,18 +468,16 @@ body#music-163-com.player-elaina-theme {
       }
 
       .mn.j-flag {
-        width: 60% !important;
-
         .head.j-fflag {
           display: none;
         }
 
         // 歌词效果
         .lyric.j-flag.m-universal-react-container-parent {
-          width: 520px;
+          width: 100%;
 
           .j-line {
-            padding-left: 36px;
+            padding-left: 6%;
             transition: all 0.3s;
             color: #fff;
 
@@ -465,7 +495,7 @@ body#music-163-com.player-elaina-theme {
 
           .j-line.z-crt {
             padding-left: 0;
-            transform: translateX(-12px);
+            transform: translateX(-12%);
 
             p,
             p:nth-child(1),
@@ -485,6 +515,8 @@ body#music-163-com.player-elaina-theme {
 
           .cnt.m-playlrc.mixin-portalified {
 
+            // 屏蔽弹幕
+            .sc-qOjXG.eQihqJ,
             .sc-fznXWL.cEvDCP,
             .sc-fzoVTD.Atfvz {
               display: none;
@@ -493,10 +525,10 @@ body#music-163-com.player-elaina-theme {
             article.word.on-track-detail {
 
               div.j-flag.text {
-                padding: 0 10px 0 30px !important;
+                padding: 0 10px 0 12% !important;
 
                 .textwrap {
-                  padding: 268px 0;
+                  padding: 40vh 0;
                 }
               }
 
@@ -565,7 +597,7 @@ body#music-163-com.player-elaina-theme.song-name-on-top {
 
         .wrap .content {
           .sd.j-flag {
-            margin: 84px 0 !important;
+            margin: auto 0 !important;
           }
 
           .elaina-song-info .head.j-fflag .inf.j-flag .title {
@@ -573,7 +605,7 @@ body#music-163-com.player-elaina-theme.song-name-on-top {
           }
 
           .mn.j-flag {
-            height: 490px !important;
+            height: 82vh !important;
           }
         }
       }
