@@ -37,9 +37,9 @@
 </template>
 
 <script setup lang="ts">
-import { getImageData } from '../utils/imageUtils';
-import { initLS, putLS } from '../utils/localStorage';
-import { insertClassOnBody, insertStyle, removeClassOnBody, removeStyle } from '../utils/styleInsert';
+import { getImageData } from '../../utils/imageUtils';
+import { initLS, putLS } from '../../utils/localStorage';
+import { insertClassOnBody, insertStyle, removeClassOnBody, removeStyle } from '../../utils/styleInsert';
 
 const loading = ref(false);
 
