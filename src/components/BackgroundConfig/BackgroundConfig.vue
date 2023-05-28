@@ -40,7 +40,6 @@ import {
   updateCustomBackgronud
 } from '.';
 import { putLS } from '../../utils/localStorage';
-import ConfigCard from './../ConfigCard.vue';
 
 const loading = ref(false);
 
