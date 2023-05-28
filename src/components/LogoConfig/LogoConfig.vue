@@ -28,11 +28,10 @@
 </template>
 
 <script setup lang="ts">
-import { isNCMClient } from '../utils/clientCheck';
-import { getImageData } from '../utils/imageUtils';
-import { initLS, putLS } from '../utils/localStorage';
-import { insertStyle, removeStyle } from '../utils/styleInsert';
-import ConfigCard from './ConfigCard.vue';
+import { isNCMClient } from '../../utils/clientCheck';
+import { getImageData } from '../../utils/imageUtils';
+import { initLS, putLS } from '../../utils/localStorage';
+import { insertStyle, removeStyle } from '../../utils/styleInsert';
 
 const laoding = ref(false);
 
