@@ -10,8 +10,8 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     BackgroundConfig: typeof import('./src/components/BackgroundConfig/BackgroundConfig.vue')['default']
-    BlurConfig: typeof import('./src/components/BlurConfig.vue')['default']
-    BocchiOverlay: typeof import('./src/components/BocchiOverlay.vue')['default']
+    BlurConfig: typeof import('./src/components/BlurConfig/BlurConfig.vue')['default']
+    BocchiOverlay: typeof import('./src/components/BocchiOverlay/BocchiOverlay.vue')['default']
     Chip: typeof import('./src/components/Chip.vue')['default']
     ChipCard: typeof import('./src/components/ChipCard.vue')['default']
     ClientHome: typeof import('./src/components/ClientConfig/ClientHome.vue')['default']
@@ -20,7 +20,7 @@ declare module '@vue/runtime-core' {
     Footer: typeof import('./src/components/Footer.vue')['default']
     Header: typeof import('./src/components/Header.vue')['default']
     ImageInput: typeof import('./src/components/ImageInput.vue')['default']
-    LogoConfig: typeof import('./src/components/LogoConfig.vue')['default']
+    LogoConfig: typeof import('./src/components/LogoConfig/LogoConfig.vue')['default']
     NColorPicker: typeof import('naive-ui')['NColorPicker']
     NConfigProvider: typeof import('naive-ui')['NConfigProvider']
     NGradientText: typeof import('naive-ui')['NGradientText']
