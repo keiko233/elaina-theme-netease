@@ -10,20 +10,25 @@
         </template>
       </n-switch>
 
-      <n-color-picker v-if="customColorStyleStatus" placement="top-start" v-model:value="customColor" :modes="['hex']"
-        :show-alpha="false" :actions="['confirm']" @confirm="insertComponentStyle" />
+      <div v-if="customColorStyleStatus">
+        <p>预设列表</p>
+        <div class="elaina-btn-group">
+          <div class="elaina-btn" v-for="colorPresetList in colorPresetLists"
+            @click="insertComponentStyle(colorPresetList.value)">
+            <a :style="'background-color:' + colorPresetList.value" v-text="colorPresetList.name" />
+          </div>
+        </div>
 
-      <div v-if="customColorStyleStatus" class="config-color-card">
-        <p>色彩列表预览</p>
-        <n-space>
-          <div class="config-color-perview" v-for="themeVarList in themeVarLists"
-            :style="`${themeVarList.style}: var(--${themeVarList.name});`" v-text="themeVarList.name" />
-        </n-space>
-      </div>
+        <p>自定义</p>
+        <n-color-picker placement="top-start" v-model:value="customColor" :modes="['hex']" :show-alpha="false"
+          :actions="['confirm']" @confirm="insertComponentStyle" />
 
-      <div v-if="customColorStyleStatus" class="elaina-btn-group">
-        <div class="elaina-btn" @click="insertComponentStyle('#ff1958')">
-          <a>恢复主题默认</a>
+        <div class="config-color-card">
+          <p>色彩列表预览</p>
+          <n-space>
+            <div class="config-color-perview" v-for="themeVarList in themeVarLists"
+              :style="`${themeVarList.style}: var(--${themeVarList.name});`" v-text="themeVarList.name" />
+          </n-space>
         </div>
       </div>
     </n-space>
@@ -31,12 +36,13 @@
 </template>
 
 <script setup lang="ts">
-import { 
-  customColorStyleStatus, 
-  customColor, 
-  insertComponentStyle, 
-  removeComponentStyle, 
-  themeVarLists 
+import {
+  customColorStyleStatus,
+  customColor,
+  insertComponentStyle,
+  removeComponentStyle,
+  themeVarLists,
+  colorPresetLists
 } from "./index.ts";
 import { putLS } from "../../utils/localStorage";
 

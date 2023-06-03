@@ -49,3 +49,18 @@ export const removeComponentStyle = () => {
   if (checkClassOnBody('s-theme-white')) removeClassOnBody('s-theme-white');
   removeStyle('custom-color-style');
 };
+
+export const colorPresetLists = ref([
+  {
+    name: '初音绿',
+    value: '#39C5BB'
+  },
+  {
+    name: '天依蓝',
+    value: '#66ccff'
+  },
+  {
+    name: '猛男粉',
+    value: '#ff1958'
+  }
+])
