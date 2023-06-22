@@ -1,6 +1,5 @@
 <template>
-  <div class="config-info">
-    <h3>插件信息</h3>
+  <ConfigCard title="插件信息">
     <p>版本: <span>{{ packageJson.version }}</span></p>
     <p>作者: <span>{{ packageJson.author }}</span></p>
     <div class="elaina-btn-group">
@@ -11,7 +10,7 @@
         <a>Actions</a>
       </div>
     </div>
-  </div>
+  </ConfigCard>
 </template>
 
 <script setup lang="ts">
@@ -26,13 +25,5 @@ const openUrl = (url: string) => {
 </script>
 
 <style scoped lang="less">
-.config-info {
-  h3 {
-    font-size: 18px;
-  }
 
-  p {
-    margin: 0;
-  }
-}
 </style>

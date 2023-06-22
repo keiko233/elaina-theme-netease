@@ -14,6 +14,7 @@ export const elainaThemeFillet = new ToggleClass('client-fillet-elaina-theme', '
 export const elainaFontHighContrast = new ToggleClass('client-font-high-contrast', 'elaina-elainaFontHighContrastStatus');
 export const elainaBetterPlaylist = new ToggleClass('better-playlist', 'elaina-elainaBetterPlaylistStatus');
 export const elainaBetterRecommendList = new ToggleClass('better-recommend-list', 'elaina-elainaBetterRecommendList');
+export const elainaWhiteFont = new ToggleClass('white-font', 'elaina-elainaWhiteFont');
 export const removeNavVideo = new ToggleClass('client-remove-nav-video', 'elaina-removeNavVideoStatus');
 export const removeNavLook = new ToggleClass('client-remove-nav-look', 'elaina-removeNavLookStatus');
 export const removeRecmdBanner = new ToggleClass('client-remove-recmd-banner', 'elaina-removeRecmdBannerStatus');
@@ -53,6 +54,12 @@ export const elementLists = ref([
     tip: "旧版功能移植，重新设计并优化，试试就知道了。",
     valueModel: elainaBetterRecommendList.value,
     update: elainaBetterRecommendList.toggle.bind(elainaBetterRecommendList)
+  },
+  {
+    title: "使用白色字体",
+    tip: "更改部分场景为白色字体，并且会加粗字体。",
+    valueModel: elainaWhiteFont.value,
+    update: elainaWhiteFont.toggle.bind(elainaWhiteFont)
   },
   {
     title: "移除侧边栏视频",
