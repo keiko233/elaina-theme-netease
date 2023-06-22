@@ -24,3 +24,10 @@ export const updateCustomBackgronud = (id: string) => {
     insertBackground(customBackgroundImageData.value);
   });
 };
+
+export const positionOverlay = (value: number) => {
+  putLS('elaina-backgroundPositionY', value);
+  const id ='background-position-overlay';
+  removeStyle(id);
+  insertStyle(id, `:root{--background-position: center ${value}%;}`);
+};
