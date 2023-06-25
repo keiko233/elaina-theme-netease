@@ -10,6 +10,7 @@
     <div class="elaina-btn" v-if="resetFunc" @click="resetFunc">
       <a>恢复默认</a>
     </div>
+    <slot />
   </div>
 </template>
 
