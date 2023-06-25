@@ -29,7 +29,15 @@
       </div>
 
       <ImageInput v-if="backgroundStatus" :id="'bg-imagefile'" :useFunc="() => updateCustomBackgronud('bg-imagefile')"
-        :resetFunc="resetBackgronud" />
+        :resetFunc="resetBackgronud">
+        <div class="elaina-btn" @click="toggleStaticBackgroundUrl()">
+          <a v-if="!staticBackgroundUrl">固定背景图片</a>
+          <a v-else>取消固定</a>
+        </div>
+        <div class="elaina-btn" @click="writeClipboard(getBackgroundUrl())">
+          <a>复制图片链接</a>
+        </div>
+      </ImageInput>
 
       <template #description>
         少女祈祷中...
@@ -45,8 +53,13 @@ import {
   insertBackground,
   removeBackground,
   updateCustomBackgronud,
-  positionOverlay
+  positionOverlay,
+  saveBackgroundUrl,
+  getBackgroundUrl,
+  staticBackgroundUrl,
+  toggleStaticBackgroundUrl
 } from '.';
+import { writeClipboard } from '../../utils/navigatorUtils';
 import { initLS, putLS } from '../../utils/localStorage';
 
 const loading = ref(false);
@@ -56,12 +69,16 @@ const positionY = ref(initLS('elaina-backgroundPositionY', 50));
 const backgroundSwitch = (value: boolean) => {
   putLS('elaina-backgroundStatus', value);
   if (value) {
-    if (customBackgroundImageData.value === null) {
+    if (staticBackgroundUrl.value) {
+      insertBackground(getBackgroundUrl());
+    }
+    else if (customBackgroundImageData.value === null) {
       loading.value = true;
       fetch('https://pic.majokeiko.com/?m=json')
         .then((response) => response.json())
         .then((json) => {
           insertBackground(json.response[0].url);
+          saveBackgroundUrl(json.response[0].url);
           loading.value = false;
         });
     }
@@ -73,6 +90,7 @@ const backgroundSwitch = (value: boolean) => {
 const resetBackgronud = () => {
   putLS('elaina-customBackgroundImageData', null);
   customBackgroundImageData.value = null;
+  toggleStaticBackgroundUrl(false);
   backgroundSwitch(true);
 };
 
