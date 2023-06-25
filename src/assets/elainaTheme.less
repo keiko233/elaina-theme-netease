@@ -274,6 +274,13 @@
   }
 }
 
+// 半透明背景兼容性修复
+body.mq-playing.client-elaina-theme.client-translucent-elaina-theme {
+  header.g-hd.s-theme-bgc1 {
+    background-color: transparent;
+  }
+}
+
 body#music-163-com.background-elaina-theme {
   .common-bg();
   backdrop-filter: var(--theme-blur-home);
@@ -516,6 +523,7 @@ body#music-163-com.player-elaina-theme {
           .cnt.m-playlrc.mixin-portalified {
 
             // 屏蔽弹幕
+            .sc-fzoCUK.kBjMiw,
             .sc-qOjXG.eQihqJ,
             .sc-fznXWL.cEvDCP,
             .sc-fzoVTD.Atfvz {
@@ -533,7 +541,8 @@ body#music-163-com.player-elaina-theme {
               }
 
               .side-operators {
-                right: 32px;
+                top: 24px;
+                height: 90%;
               }
             }
           }

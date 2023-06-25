@@ -1,5 +1,5 @@
 import { initLS, putLS } from '../../utils/localStorage';
-import SetupWizardView from '../../views/SetupWizardView.vue';
+import SetupWizardView from '../../views/SetupWizardView/SetupWizardView.vue';
 
 let setupApp: any = null;
 let vElement: any = null;

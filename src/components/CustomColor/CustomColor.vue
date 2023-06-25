@@ -10,20 +10,25 @@
         </template>
       </n-switch>
 
-      <n-color-picker v-if="customColorStyleStatus" placement="top-start" v-model:value="customColor" :modes="['hex']"
-        :show-alpha="false" :actions="['confirm']" @confirm="insertComponentStyle" />
+      <div v-if="customColorStyleStatus">
+        <p>预设列表</p>
+        <div class="elaina-btn-group">
+          <div class="elaina-btn" v-for="colorPresetList in colorPresetLists"
+            @click="insertComponentStyle(colorPresetList.value)">
+            <a :style="'background-color:' + colorPresetList.value" v-text="colorPresetList.name" />
+          </div>
+        </div>
 
-      <div v-if="customColorStyleStatus" class="config-color-card">
-        <p>色彩列表预览</p>
-        <n-space>
-          <div class="config-color-perview" v-for="themeVarList in themeVarLists"
-            :style="`${themeVarList.style}: var(--${themeVarList.name});`" v-text="themeVarList.name" />
-        </n-space>
-      </div>
+        <p>自定义</p>
+        <n-color-picker placement="top-start" v-model:value="customColor" :modes="['hex']" :show-alpha="false"
+          :actions="['confirm']" @confirm="insertComponentStyle" />
 
-      <div v-if="customColorStyleStatus" class="elaina-btn-group">
-        <div class="elaina-btn" @click="insertComponentStyle('#ff1958')">
-          <a>恢复主题默认</a>
+        <div class="config-color-card">
+          <p>色彩列表预览</p>
+          <n-space>
+            <div class="config-color-perview" v-for="themeVarList in themeVarLists"
+              :style="`${themeVarList.style}: var(--${themeVarList.name});`" v-text="themeVarList.name" />
+          </n-space>
         </div>
       </div>
     </n-space>
@@ -31,60 +36,20 @@
 </template>
 
 <script setup lang="ts">
-import ConfigCard from "../ConfigCard.vue"
-import { getDarkColor, getLightColor } from "../../utils/colorMapping.ts";
-import { checkClassOnBody, insertClassOnBody, insertStyle, removeClassOnBody, removeStyle } from "../../utils/styleInsert";
-import { customColorStyleStatus, customColor } from "./index.ts";
+import {
+  customColorStyleStatus,
+  customColor,
+  insertComponentStyle,
+  removeComponentStyle,
+  themeVarLists,
+  colorPresetLists
+} from "./index.ts";
 import { putLS } from "../../utils/localStorage";
 
 const customColorStyleSwitch = (value: boolean) => {
   if (value == true) insertComponentStyle(customColor.value);
   else removeComponentStyle();
   putLS('elaina-customColorStyleStatus', value);
-};
-
-const themeVarLists = ref([
-  { name: 'theme-primary', style: 'background-color' },
-  { name: 'theme-primary-notransparency', style: 'background-color' },
-  { name: 'theme-primary-shadow', style: 'box-shadow' },
-  { name: 'theme-primary-font-shadow', style: 'text-shadow' },
-  { name: 'theme-config-card-background', style: 'background-color' },
-  { name: 'theme-config-card-border', style: 'border' }
-]);
-
-const insertCustomColorStyle = (value: string) => {
-  const style = `:root {--theme-primary: ${value}A3;
-    --theme-primary-notransparency: ${getLightColor(value, 0.2)};
-    --theme-primary-shadow: 0 0 3px ${getDarkColor(getLightColor(value, 0.8), 0.2)};
-    --theme-primary-font-shadow: 0 0 1px ${getDarkColor(getLightColor(value, 0.1), 0.1)};
-    --theme-config-card-background: ${getLightColor(value, 0.8)}9c;
-    --theme-config-card-light: ${getLightColor(value, 0.6)}9c;
-    --theme-config-card-border: solid 1px ${getLightColor(getDarkColor(value, 0.1), 0.7)};
-    --themeC1: ${value};
-    --themeC1-header: ${getLightColor(value, 0.2)};
-    --themeSearch: rgba(0, 0, 0, 0.15);
-    --themeC1-rgb: 237,65,65;
-    --themeC1-hvr: ${getLightColor(value, 0.3)};
-    --themePlay: ${getLightColor(value, 0.2)};
-    --themePlay-hvr: ${getLightColor(value, 0.3)};
-    --icnTheme: ${getLightColor(value, 0.1)};
-    --icnTheme-hvr: ${getLightColor(value, 0.2)};
-    --icnTheme-lighten: ${value};}`;
-  insertStyle('custom-color-style', style);
-};
-
-const insertComponentStyle = (color: string) => {
-  removeComponentStyle();
-  insertCustomColorStyle(color);
-  insertClassOnBody('elaina-theme');
-  insertClassOnBody('s-theme-white');
-  putLS('elaina-customColor', color);
-};
-
-const removeComponentStyle = () => {
-  if (checkClassOnBody('elaina-theme')) removeClassOnBody('elaina-theme');
-  if (checkClassOnBody('s-theme-white')) removeClassOnBody('s-theme-white');
-  removeStyle('custom-color-style');
 };
 
 onMounted(() => {

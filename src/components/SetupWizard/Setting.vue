@@ -9,6 +9,5 @@
 </template>
 
 <script setup lang="ts">
-import ConfigCard from '../ConfigCard.vue';
 import { mountSetupWizardView } from './index';
 </script>
