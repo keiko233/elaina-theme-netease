@@ -34,7 +34,7 @@ body#music-163-com.client-elaina-theme.better-playlist {
 
   .better-playlist() {
     background-color: var(--theme-config-card-background);
-    border: solid var(--theme-config-card-border);
+    border: var(--theme-config-card-border);
     border-radius: var(--border-radius);
 
     .head.sort.f-cb.j-flag {
@@ -55,7 +55,7 @@ body#music-163-com.client-elaina-theme.better-playlist {
       // 喜欢的音乐
       div#page_mine_like_music {
         div#page_pc_songlist_songflow {
-          padding: var(--border-radius);
+          padding: calc(var(--border-radius) - 2px);
 
           div.m-plylist {
             .better-playlist();
