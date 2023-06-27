@@ -517,8 +517,31 @@ body#music-163-com.player-elaina-theme {
           }
 
           p.supplier {
-            padding-left: 36px;
+            background-color: var(--background-overlay);
+            padding: 16px 36px;
+            border-radius: var(--border-radius);
+            border: solid 1px #ffffff00;
+            width: fit-content;
+            font-weight: 900;
             opacity: 0.7;
+            transition: all 0.3s;
+
+            &:hover {
+              border: var(--theme-config-card-border);
+              background-color: var(--theme-config-card-background);
+              border-radius: var(--border-radius);
+              backdrop-filter: var(--theme-blur-config-card);
+            }
+
+            a {
+              text-decoration: none;
+              transition: all 0.3s;
+
+              &:hover{
+                color: var(--theme-primary);
+                text-shadow: var(--theme-primary-font-shadow);
+              }
+            }
           }
 
           .cnt.m-playlrc.mixin-portalified {
