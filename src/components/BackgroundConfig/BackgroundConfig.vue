@@ -12,32 +12,34 @@
         </template>
       </n-switch>
 
-      <div class="preview" v-if="backgroundStatus">
-        <div class="left">
-          <p>原始图片</p>
+      <div v-if="backgroundStatus">
+        <div class="preview">
+          <div class="left">
+            <p>原始图片</p>
+          </div>
+          <div class="right">
+            <p>缩放后</p>
+          </div>
         </div>
-        <div class="right">
-          <p>缩放后</p>
-        </div>
-      </div>
 
-      <div class="chip-slider">
-        <n-tag size="small" round :bordered="false" type="info" class="tag-input-overlay">
-          纵向显示位置调整
-        </n-tag>
-        <n-slider v-model:value="positionY" @update:value="positionOverlay" />
-      </div>
+        <div class="chip-slider">
+          <n-tag size="small" round :bordered="false" type="info" class="tag-input-overlay">
+            纵向显示位置调整
+          </n-tag>
+          <n-slider v-model:value="positionY" @update:value="positionOverlay" />
+        </div>
 
-      <ImageInput v-if="backgroundStatus" :id="'bg-imagefile'" :useFunc="() => updateCustomBackgronud('bg-imagefile')"
-        :resetFunc="resetBackgronud">
-        <div class="elaina-btn" @click="toggleStaticBackgroundUrl()">
-          <a v-if="!staticBackgroundUrl">固定背景图片</a>
-          <a v-else>取消固定</a>
-        </div>
-        <div class="elaina-btn" @click="writeClipboard(getBackgroundUrl())">
-          <a>复制图片链接</a>
-        </div>
-      </ImageInput>
+        <ImageInput :id="'bg-imagefile'" :useFunc="() => updateCustomBackgronud('bg-imagefile')"
+          :resetFunc="resetBackgronud">
+          <div class="elaina-btn" @click="toggleStaticBackgroundUrl()">
+            <a v-if="!staticBackgroundUrl">固定背景图片</a>
+            <a v-else>取消固定</a>
+          </div>
+          <div class="elaina-btn" @click="writeClipboard(getBackgroundUrl())">
+            <a>复制图片链接</a>
+          </div>
+        </ImageInput>
+      </div>
 
       <template #description>
         少女祈祷中...
