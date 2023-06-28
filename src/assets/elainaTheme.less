@@ -487,6 +487,24 @@ body#music-163-com.player-elaina-theme {
             padding-left: 6%;
             transition: all 0.3s;
             color: #fff;
+            padding: calc(var(--border-radius) / 2) !important;
+            border-radius: var(--border-radius);
+            border: solid 1px #ffffff00;
+            width: fit-content;
+            transition: all 0.3s border 0.7s;
+
+            &:hover {
+              border: var(--theme-config-card-border);
+              background-color: var(--theme-config-card-background);
+              backdrop-filter: var(--theme-blur-config-card);
+
+              p,
+              p:nth-child(1),
+              p:nth-child(2) {
+                filter: blur(0px);
+                opacity: 1;
+              }
+            }
 
             p,
             p:nth-child(1),
@@ -501,8 +519,9 @@ body#music-163-com.player-elaina-theme {
           }
 
           .j-line.z-crt {
-            padding-left: 0;
+            padding-left: var(--border-radius) / 2;
             transform: translateX(-12%);
+            width: 100%;
 
             p,
             p:nth-child(1),
@@ -557,7 +576,8 @@ body#music-163-com.player-elaina-theme {
             article.word.on-track-detail {
 
               div.j-flag.text {
-                padding: 0 10px 0 12% !important;
+                padding: 0 10px 0 calc(12% + 4px) !important;
+                margin-right: -32px;
 
                 .textwrap {
                   padding: 40vh 0;
