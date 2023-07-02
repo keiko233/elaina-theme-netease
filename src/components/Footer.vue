@@ -10,7 +10,7 @@
           </div>
         </template>
         <p>{{ btn.tip }}</p>
-        <img v-if="btn.images" style="margin-top: 6px;" width="128" src="https://pic.majokeiko.com/saifu.jpg">
+        <img v-if="btn.images" style="margin-top: 6px;" width="128" :src="btn.images">
       </n-popover>
     </div>
   </ConfigCard>
