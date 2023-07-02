@@ -64,6 +64,8 @@ export const elainaPlayerSwitch = (value: boolean) => {
   else {
     removeClassOnBody('player-elaina-theme');
     removePlayerConfigStyle();
+    songNameOnTopSwitch(false);
+    songInfoOnPlayerSwitch(false);
   }
 };
 
