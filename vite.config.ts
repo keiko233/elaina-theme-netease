@@ -35,6 +35,7 @@ export default defineConfig({
         format: 'umd'
       }
     },
-    assetsInlineLimit: 1024000
+    assetsInlineLimit: 1024000,
+    chunkSizeWarningLimit: 1024
   }
 })
