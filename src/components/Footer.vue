@@ -19,6 +19,7 @@
 <script setup lang="ts">
 import packageJson from "../../package.json";
 import { isNCMClient } from "../utils/clientCheck";
+import saifuImage from "../assets/images/saifu.jpg";
 
 const openUrl = (url: string) => {
   // @ts-ignore
@@ -29,7 +30,7 @@ const openUrl = (url: string) => {
 const btns = ref([
   { name: 'GitHub', tip: '查看 Repo', url: 'https://github.com/keiko233/elaina-theme-netease' },
   { name: 'Actions', tip: '开发版下载', url: 'https://github.com/keiko233/elaina-theme-netease/actions' },
-  { name: '打赏(爱发电)', tip: '真的吗！感谢支持！', url: 'https://afdian.net/a/keiko233', images: 'https://pic.majokeiko.com/saifu.jpg' }
+  { name: '打赏(爱发电)', tip: '真的吗！感谢支持！', url: 'https://afdian.net/a/keiko233', images: saifuImage }
 ]);
 </script>
 
