@@ -765,6 +765,54 @@ body#music-163-com.mq-playing-scroll.song-info-elaina-theme {
   }
 }
 
+// 主题进度条
+body#music-163-com.player-elaina-theme.elaina-progress-bar {
+  #main-player {
+    .prg.prg-ply.jj-flag {
+      padding: 2px 0 !important;
+      top: 49px !important;
+  
+      span.has,
+      span.download.j-flag,
+      span.track.j-flag {
+        height: 10px !important;
+        border-radius: 5px !important;
+      }
+  
+      span.download.j-flag {
+        top: 2px !important;
+      }
+  
+      span.track.j-flag {
+        padding: 0 !important;
+        top: 2px !important;
+        background: rgba(0, 0, 0, 0.1) !important;
+      }
+  
+      span.has {
+        background: var(--theme-primary-notransparency) !important;
+        min-width: 10px;
+        transition: width 1s ease;
+  
+        .ctrl.j-flag::before {
+          content: none !important;
+        }
+
+        &:focus,
+        &:active,
+        &:hover {
+          transition: none;
+        }
+      }
+  
+      span.has:hover {
+        height: 10px !important;
+        border-radius: 5px !important;
+      }
+    }
+  }
+}
+
 // 波奇小挂件
 body#music-163-com.bocchi-overlay::before {
   content: '';
