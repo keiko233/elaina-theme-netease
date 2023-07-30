@@ -34,6 +34,8 @@ export default defineConfig({
         assetFileNames: `[name].[ext]`,
         format: 'umd'
       }
-    }
+    },
+    assetsInlineLimit: 1024000,
+    chunkSizeWarningLimit: 1024
   }
 })

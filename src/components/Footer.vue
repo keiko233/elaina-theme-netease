@@ -3,14 +3,15 @@
     <p>版本: <span>{{ packageJson.version }}</span></p>
     <p>作者: <span>{{ packageJson.author }}</span></p>
     <div class="elaina-btn-group">
-      <n-tooltip v-for="btn in btns" trigger="hover" :disabled="!btn.tip">
+      <n-popover trigger="hover" v-for="btn in btns">
         <template #trigger>
           <div class="elaina-btn" @click="openUrl(btn.url)">
             <a v-text="btn.name" />
           </div>
         </template>
-        {{ btn.tip }}
-      </n-tooltip>
+        <p>{{ btn.tip }}</p>
+        <img v-if="btn.images" style="margin-top: 6px;" width="128" :src="btn.images">
+      </n-popover>
     </div>
   </ConfigCard>
 </template>
@@ -18,6 +19,7 @@
 <script setup lang="ts">
 import packageJson from "../../package.json";
 import { isNCMClient } from "../utils/clientCheck";
+import saifuImage from "../assets/images/saifu.jpg";
 
 const openUrl = (url: string) => {
   // @ts-ignore
@@ -28,7 +30,7 @@ const openUrl = (url: string) => {
 const btns = ref([
   { name: 'GitHub', tip: '查看 Repo', url: 'https://github.com/keiko233/elaina-theme-netease' },
   { name: 'Actions', tip: '开发版下载', url: 'https://github.com/keiko233/elaina-theme-netease/actions' },
-  { name: '打赏(爱发电)', tip: '真的吗！感谢支持！', url: 'https://afdian.net/a/keiko233' }
+  { name: '打赏(爱发电)', tip: '真的吗！感谢支持！', url: 'https://afdian.net/a/keiko233', images: saifuImage }
 ]);
 </script>
 

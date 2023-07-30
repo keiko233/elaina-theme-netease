@@ -95,6 +95,17 @@
           </n-tooltip>
         </n-grid-item>
 
+        <n-grid-item>
+          <n-tooltip trigger="hover">
+            <template #trigger>
+              <Chip title="重新设计的进度条">
+                <n-switch v-model:value="elainaProgressBarStatus" @update:value="elainaProgressBarSwitch" />
+              </Chip>
+            </template>
+            非常丝滑~
+          </n-tooltip>
+        </n-grid-item>
+
       </n-grid>
     </n-config-provider>
   </ConfigCard>
@@ -108,6 +119,8 @@ import {
   songInfoOnPlayerSwitch,
   songNameOnTopStatus,
   songNameOnTopSwitch,
+  elainaProgressBarStatus,
+  elainaProgressBarSwitch,
   nonSelectFontSize,
   nonSelectLineHeight,
   nonSelectFontWidth,
@@ -128,6 +141,7 @@ onMounted(() => {
   if (elainaPlayerStatus.value) elainaPlayerSwitch(true);
   if (songNameOnTopStatus.value) songNameOnTopSwitch(true);
   if (songInfoOnPlayerStatus.value) songInfoOnPlayerSwitch(true);
+  if (elainaProgressBarStatus.value) elainaProgressBarSwitch(true);
 });
 </script>
 

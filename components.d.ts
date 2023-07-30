@@ -28,6 +28,7 @@ declare module '@vue/runtime-core' {
     NGridItem: typeof import('naive-ui')['NGridItem']
     NInputNumber: typeof import('naive-ui')['NInputNumber']
     Notice: typeof import('./src/components/Notice.vue')['default']
+    NPopover: typeof import('naive-ui')['NPopover']
     NSelect: typeof import('naive-ui')['NSelect']
     NSlider: typeof import('naive-ui')['NSlider']
     NSpace: typeof import('naive-ui')['NSpace']

@@ -28,6 +28,7 @@ const props = defineProps({
   background-color: var(--theme-config-card-background);
   border-radius: var(--border-radius);
   backdrop-filter: var(--theme-blur-config-card);
+  max-width: 600px;
   
   h3 {
     font-size: 18px;
