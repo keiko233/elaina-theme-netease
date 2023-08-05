@@ -25,10 +25,10 @@
 
         <div class="config-color-card">
           <p>色彩列表预览</p>
-          <n-space>
+          <div class="grid">
             <div class="config-color-perview" v-for="themeVarList in themeVarLists"
               :style="`${themeVarList.style}: var(--${themeVarList.name});`" v-text="themeVarList.name" />
-          </n-space>
+          </div>
         </div>
       </div>
     </n-space>
@@ -59,19 +59,24 @@ onMounted(() => {
 
 <style lang="less" scoped>
 .config-color-card {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-
   p {
     width: 100%;
   }
 
-  .config-color-perview {
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    display: grid;
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+
+    .config-color-perview {
     width: 260px;
     padding: 10px;
     border-radius: var(--border-radius);
     background-color: var(--background-overlay);
+  }
   }
 }
 </style>
