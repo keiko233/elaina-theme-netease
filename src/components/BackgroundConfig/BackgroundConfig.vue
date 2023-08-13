@@ -76,7 +76,7 @@ const backgroundSwitch = (value: boolean) => {
     }
     else if (customBackgroundImageData.value === null) {
       loading.value = true;
-      fetch('https://pic.majokeiko.com/?m=json')
+      fetch('https://pic.majokeiko.com/?m=json&p=elaina')
         .then((response) => response.json())
         .then((json) => {
           insertBackground(json.response[0].url);
