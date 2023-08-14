@@ -29,6 +29,11 @@
           <n-slider v-model:value="positionY" @update:value="positionOverlay" />
         </div>
 
+        <n-config-provider :theme-overrides="themeOverrides">
+          <n-select v-model:value="pathOptionsSelectValue" :options="pathOptions" @update:value="pathOptionsSelect"
+            :disabled="!pathOptions[0]" style="padding-bottom: 10px;" />
+        </n-config-provider>
+
         <ImageInput :id="'bg-imagefile'" :useFunc="() => updateCustomBackgronud('bg-imagefile')"
           :resetFunc="resetBackgronud">
           <div class="elaina-btn" @click="toggleStaticBackgroundUrl()">
@@ -59,7 +64,9 @@ import {
   saveBackgroundUrl,
   getBackgroundUrl,
   staticBackgroundUrl,
-  toggleStaticBackgroundUrl
+  toggleStaticBackgroundUrl,
+  pathOptions,
+  pathOptionsSelectValue
 } from '.';
 import { writeClipboard } from '../../utils/navigatorUtils';
 import { initLS, putLS } from '../../utils/localStorage';
@@ -76,7 +83,7 @@ const backgroundSwitch = (value: boolean) => {
     }
     else if (customBackgroundImageData.value === null) {
       loading.value = true;
-      fetch('https://pic.majokeiko.com/?m=json&p=elaina')
+      fetch('https://pic.majokeiko.com/?m=json&p=' + pathOptionsSelectValue.value)
         .then((response) => response.json())
         .then((json) => {
           insertBackground(json.response[0].url);
@@ -89,6 +96,27 @@ const backgroundSwitch = (value: boolean) => {
   else removeBackground();
 };
 
+const getPathOptions = () => {
+  loading.value = true;
+  fetch('https://pic.majokeiko.com/path')
+    .then(response => response.json())
+    .then(response => {
+      response.forEach((item: any) => {
+        // @ts-ignore
+        pathOptions.value.push({
+          label: item.name,
+          value: item.path
+        });
+      });
+      loading.value = false;
+    });
+};
+
+const pathOptionsSelect = (value: string) => {
+  putLS('elaina-pathOptionsSelectValue', value);
+  backgroundSwitch(true);
+};
+
 const resetBackgronud = () => {
   putLS('elaina-customBackgroundImageData', null);
   customBackgroundImageData.value = null;
@@ -96,7 +124,16 @@ const resetBackgronud = () => {
   backgroundSwitch(true);
 };
 
+const themeOverrides = {
+  common: {
+    inputColorDisabled: 'rgba(255, 255, 255, 0.1)',
+    inputColor: 'rgba(255, 255, 255, 0.8)',
+    borderRadius: '24px'
+  }
+};
+
 onMounted(() => {
+  getPathOptions();
   if (backgroundStatus.value) backgroundSwitch(true);
   positionOverlay(positionY.value);
 });
