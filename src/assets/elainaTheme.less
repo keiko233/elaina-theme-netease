@@ -21,9 +21,17 @@
     color: rgba(0, 0, 0, 0.8) !important;
   }
 
-  // 扬网易云自带主题按钮
-  header.g-hd.s-theme-bgc1 div div.m-leftbox div.m-tool div.itm.itm2.skin.j-flag.z-notip {
-    display: none;
+  header.g-hd.s-theme-bgc1 div div.m-leftbox div.m-tool {
+
+    // 扬网易云自带主题按钮
+    div.itm.itm2.skin.j-flag.z-notip {
+      display: none;
+    }
+
+    // 修复覆盖后私信高度错误
+    div#page_pc_my_message.withNewSongTip {
+      height: 80vh;
+    }
   }
 }
 

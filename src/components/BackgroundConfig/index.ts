@@ -29,7 +29,7 @@ export const updateCustomBackgronud = (id: string) => {
 
 export const positionOverlay = (value: number) => {
   putLS('elaina-backgroundPositionY', value);
-  const id ='background-position-overlay';
+  const id = 'background-position-overlay';
   removeStyle(id);
   insertStyle(id, `:root{--background-position: center ${value}%;}`);
 };
@@ -51,3 +51,7 @@ export const toggleStaticBackgroundUrl = (value?: boolean) => {
     putLS('elaina-staticBackgroundUrl', staticBackgroundUrl.value);
   }
 };
+
+export const pathOptions = ref([]);
+
+export const pathOptionsSelectValue = ref(initLS('elaina-pathOptionsSelectValue', 'elaina'));
