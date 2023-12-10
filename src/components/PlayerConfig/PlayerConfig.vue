@@ -106,6 +106,17 @@
           </n-tooltip>
         </n-grid-item>
 
+        <n-grid-item>
+          <n-tooltip trigger="hover">
+            <template #trigger>
+              <Chip title="使用高清歌曲图">
+                <n-switch v-model:value="elainaHDPicStatus" @update:value="elainaHDPicSwitch" />
+              </Chip>
+            </template>
+            原分辨率为315x315，开启后将自动替换为原图
+          </n-tooltip>
+        </n-grid-item>
+
       </n-grid>
     </n-config-provider>
   </ConfigCard>
@@ -121,6 +132,8 @@ import {
   songNameOnTopSwitch,
   elainaProgressBarStatus,
   elainaProgressBarSwitch,
+  elainaHDPicStatus,
+  elainaHDPicSwitch,
   nonSelectFontSize,
   nonSelectLineHeight,
   nonSelectFontWidth,
@@ -142,6 +155,7 @@ onMounted(() => {
   if (songNameOnTopStatus.value) songNameOnTopSwitch(true);
   if (songInfoOnPlayerStatus.value) songInfoOnPlayerSwitch(true);
   if (elainaProgressBarStatus.value) elainaProgressBarSwitch(true);
+  if (elainaHDPicStatus.value) elainaHDPicSwitch(true);
 });
 </script>
 

@@ -7,6 +7,7 @@ export const elainaPlayerStatus = ref(initLS('elaina-elainaPlayerStatus', false)
 export const songNameOnTopStatus = ref(initLS('elaina-songNameOnTopStatus', false));
 export const songInfoOnPlayerStatus = ref(initLS('elaina-songInfoOnPlayerStatus', false));
 export const elainaProgressBarStatus = ref(initLS('elaina-elainaProgressBarStatus', false));
+export const elainaHDPicStatus = ref(initLS('elaina-elainaHDPicStatus', false));
 
 export const nonSelectFontSize = ref(initLS('elaina-nonSelectFontSize', 14));
 export const nonSelectFontWidth = ref(initLS('elaina-nonSelectFontWidth', 700));
@@ -75,6 +76,23 @@ export const elainaProgressBarSwitch = (value: boolean) => {
   putLS('elaina-elainaProgressBarStatus', value);
   if (value) insertClassOnBody('elaina-progress-bar');
   else removeClassOnBody('elaina-progress-bar');
+};
+
+export const elainaHDPicSwitch = (value: boolean) => {
+  putLS('elaina-elainaHDPicStatus', value);
+
+  if (value) {
+    setInterval(() => {
+      const img: HTMLImageElement | null = document.querySelector("img.j-flag");
+
+      if (img) {
+        img.src = img.src.replace(/&thumbnail=315y315/, '');
+      }
+    }, 100);
+  } else if (isNCMClient()) {
+    // @ts-ignore
+    betterncm_native.app.reloadIgnoreCache();
+  }
 };
 
 export const updateValue = () => {
