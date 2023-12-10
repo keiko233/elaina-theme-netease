@@ -3,14 +3,28 @@
     <p>版本: <span>{{ packageJson.version }}</span></p>
     <p>作者: <span>{{ packageJson.author }}</span></p>
     <div class="elaina-btn-group">
-      <n-popover trigger="hover" v-for="btn in btns">
+
+      <div class="elaina-btn" @click="openUrl('https://github.com/keiko233/elaina-theme-netease')">
+        <a>GitHub</a>
+      </div>
+
+      <n-popover trigger="hover">
         <template #trigger>
-          <div class="elaina-btn" @click="openUrl(btn.url)">
-            <a v-text="btn.name" />
+          <div class="elaina-btn">
+            <a>开发版下载</a>
           </div>
         </template>
-        <p>{{ btn.tip }}</p>
-        <img v-if="btn.images" style="margin-top: 6px;" width="128" :src="btn.images">
+        <ActionsCard />
+      </n-popover>
+
+      <n-popover trigger="hover">
+        <template #trigger>
+          <div class="elaina-btn" @click="openUrl('https://afdian.net/a/keiko233')">
+            <a>打赏(爱发电)</a>
+          </div>
+        </template>
+        <p>真的吗！感谢支持！</p>
+        <img style="margin-top: 6px;" width="128" :src="saifuImage">
       </n-popover>
     </div>
   </ConfigCard>
@@ -18,20 +32,10 @@
 
 <script setup lang="ts">
 import packageJson from "../../package.json";
-import { isNCMClient } from "../utils/clientCheck";
 import saifuImage from "../assets/images/saifu.jpg";
+import ActionsCard from './ActionsCard.vue';
+import { openUrl } from '../utils/openUrl';
 
-const openUrl = (url: string) => {
-  // @ts-ignore
-  if (isNCMClient()) betterncm.ncm.openUrl(url);
-  else window.open(url, '_blank');
-}
-
-const btns = ref([
-  { name: 'GitHub', tip: '查看 Repo', url: 'https://github.com/keiko233/elaina-theme-netease' },
-  { name: 'Actions', tip: '开发版下载', url: 'https://github.com/keiko233/elaina-theme-netease/actions' },
-  { name: '打赏(爱发电)', tip: '真的吗！感谢支持！', url: 'https://afdian.net/a/keiko233', images: saifuImage }
-]);
 </script>
 
 <style scoped lang="less"></style>

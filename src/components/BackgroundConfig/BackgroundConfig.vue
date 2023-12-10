@@ -40,9 +40,15 @@
             <a v-if="!staticBackgroundUrl">固定背景图片</a>
             <a v-else>取消固定</a>
           </div>
-          <div class="elaina-btn" @click="writeClipboard(getBackgroundUrl())">
-            <a>复制图片链接</a>
-          </div>
+
+          <n-tooltip trigger="hover" style="user-select: text">
+            <template #trigger>
+              <div class="elaina-btn">
+                <a>图片链接</a>
+              </div>
+            </template>
+            {{ getBackgroundUrl() }}
+          </n-tooltip>
         </ImageInput>
       </div>
 
@@ -68,7 +74,6 @@ import {
   pathOptions,
   pathOptionsSelectValue
 } from '.';
-import { writeClipboard } from '../../utils/navigatorUtils';
 import { initLS, putLS } from '../../utils/localStorage';
 
 const loading = ref(false);
