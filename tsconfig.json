@@ -20,7 +20,12 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "baseUrl": ".",
+    "paths": { 
+      "@/*":["./src/*"],
+      "@root/*":["./*"]
+    }
   },
   "include": [
     "src/**/*.ts",
@@ -28,7 +33,8 @@
     "src/**/*.tsx",
     "src/**/*.vue",
     "./auto-imports.d.ts",
-    "./components.d.ts"
+    "./components.d.ts",
+    "./better-ncm.d.ts"
   ],
   "references": [
     {
