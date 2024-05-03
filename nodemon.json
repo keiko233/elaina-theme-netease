@@ -1,0 +1,13 @@
+{
+  "verbose": false,
+  "debug": false,
+  "exec": "pnpm build",
+  "ignore": [
+    "node_modules"
+  ],
+  "watch": [
+    "./src"
+  ],
+  "ext": "ts mts js mjs css less vue",
+  "inspect": true
+}
